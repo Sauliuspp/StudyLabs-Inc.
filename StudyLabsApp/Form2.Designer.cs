@@ -36,7 +36,13 @@
             this.tabPageKartografija = new System.Windows.Forms.TabPage();
             this.tabPageMeteorologija = new System.Windows.Forms.TabPage();
             this.tabPageNanomedziaguChemija = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.BiochemijaScrollBar = new System.Windows.Forms.VScrollBar();
+            this.BiochemijaRTxtBox1 = new System.Windows.Forms.RichTextBox();
+            this.BiochemijaRTxtBox2 = new System.Windows.Forms.RichTextBox();
             this.ChemistryFacTabControl.SuspendLayout();
+            this.TabPageBiochemija.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ChemistryFacTabControl
@@ -57,6 +63,8 @@
             // 
             // TabPageBiochemija
             // 
+            this.TabPageBiochemija.Controls.Add(this.BiochemijaScrollBar);
+            this.TabPageBiochemija.Controls.Add(this.tableLayoutPanel1);
             this.TabPageBiochemija.Location = new System.Drawing.Point(4, 22);
             this.TabPageBiochemija.Name = "TabPageBiochemija";
             this.TabPageBiochemija.Padding = new System.Windows.Forms.Padding(3);
@@ -125,6 +133,58 @@
             this.tabPageNanomedziaguChemija.Text = "Nanomedžiagų chemija";
             this.tabPageNanomedziaguChemija.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 294F));
+            this.tableLayoutPanel1.Controls.Add(this.BiochemijaRTxtBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.BiochemijaRTxtBox2, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(606, 532);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // BiochemijaScrollBar
+            // 
+            this.BiochemijaScrollBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiochemijaScrollBar.Location = new System.Drawing.Point(609, 0);
+            this.BiochemijaScrollBar.Name = "BiochemijaScrollBar";
+            this.BiochemijaScrollBar.Size = new System.Drawing.Size(17, 535);
+            this.BiochemijaScrollBar.TabIndex = 0;
+            // 
+            // BiochemijaRTxtBox1
+            // 
+            this.BiochemijaRTxtBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiochemijaRTxtBox1.Location = new System.Drawing.Point(3, 3);
+            this.BiochemijaRTxtBox1.Name = "BiochemijaRTxtBox1";
+            this.BiochemijaRTxtBox1.Size = new System.Drawing.Size(306, 250);
+            this.BiochemijaRTxtBox1.TabIndex = 0;
+            this.BiochemijaRTxtBox1.Text = "";
+            this.BiochemijaRTxtBox1.TextChanged += new System.EventHandler(this.BiochemijaRTxtBox_TextChanged);
+            // 
+            // BiochemijaRTxtBox2
+            // 
+            this.BiochemijaRTxtBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiochemijaRTxtBox2.Location = new System.Drawing.Point(315, 3);
+            this.BiochemijaRTxtBox2.Name = "BiochemijaRTxtBox2";
+            this.BiochemijaRTxtBox2.Size = new System.Drawing.Size(288, 250);
+            this.BiochemijaRTxtBox2.TabIndex = 1;
+            this.BiochemijaRTxtBox2.Text = "";
+            this.BiochemijaRTxtBox2.TextChanged += new System.EventHandler(this.BiochemijaRTxtBox2_TextChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,7 +195,10 @@
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "Form2";
             this.Text = "Studdy Buddy";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ChemistryFacTabControl.ResumeLayout(false);
+            this.TabPageBiochemija.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -150,5 +213,9 @@
         private System.Windows.Forms.TabPage tabPageKartografija;
         private System.Windows.Forms.TabPage tabPageMeteorologija;
         private System.Windows.Forms.TabPage tabPageNanomedziaguChemija;
+        private System.Windows.Forms.VScrollBar BiochemijaScrollBar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.RichTextBox BiochemijaRTxtBox1;
+        private System.Windows.Forms.RichTextBox BiochemijaRTxtBox2;
     }
 }
