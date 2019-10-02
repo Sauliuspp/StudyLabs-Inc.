@@ -271,6 +271,7 @@
             // ReturnToMainMenuButton
             // 
             this.ReturnToMainMenuButton.AutoSize = true;
+            this.ReturnToMainMenuButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ReturnToMainMenuButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ReturnToMainMenuButton.Location = new System.Drawing.Point(0, 485);
             this.ReturnToMainMenuButton.Name = "ReturnToMainMenuButton";
@@ -280,17 +281,19 @@
             this.ReturnToMainMenuButton.UseVisualStyleBackColor = true;
             this.ReturnToMainMenuButton.Click += new System.EventHandler(this.ReturnToMainMenuButton_Click);
             // 
-            // Window2
+            // Window
             // 
+            this.AcceptButton = this.FindStuddyBuddies;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.ReturnToMainMenuButton;
             this.ClientSize = new System.Drawing.Size(634, 561);
             this.Controls.Add(this.PanelForUniversityList);
             this.Controls.Add(this.StuddyBuddy);
             this.Controls.Add(this.MainMenuPanel);
             this.MaximumSize = new System.Drawing.Size(650, 600);
             this.MinimumSize = new System.Drawing.Size(500, 500);
-            this.Name = "Window2";
+            this.Name = "Window";
             this.Text = "Studdy Buddy";
             this.MainMenuPanel.ResumeLayout(false);
             this.PanelForUniversityList.ResumeLayout(false);

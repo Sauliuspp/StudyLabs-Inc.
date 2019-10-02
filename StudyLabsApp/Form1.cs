@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,15 +11,26 @@ using System.Windows.Forms;
 
 namespace StudyLabsApp
 {
+    /// <summary>
+    /// Study buddy application
+    /// </summary>
     public partial class Window : Form
     {
+        #region Constructor
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public Window()
         {
             InitializeComponent();
         }
 
+        #endregion
+
         private void EnterForums_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Not available in current version");
             //MainMenuPanel.Visible = false;
             //StuddyBuddy.Visible = false;
         }
