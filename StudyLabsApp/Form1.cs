@@ -52,8 +52,14 @@ namespace StudyLabsApp
 
         private void ChemistryGeosciencesButton_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
-            form.Show();
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
+
+        private void BecomeAStuddyBuddy_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
         }
     }
 }

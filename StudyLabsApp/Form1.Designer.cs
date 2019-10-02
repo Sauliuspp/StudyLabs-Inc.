@@ -31,6 +31,7 @@
             this.MainMenuPanel = new System.Windows.Forms.TableLayoutPanel();
             this.EnterForums = new System.Windows.Forms.Button();
             this.FindStuddyBuddies = new System.Windows.Forms.Button();
+            this.BecomeAStuddyBuddy = new System.Windows.Forms.Button();
             this.StuddyBuddy = new System.Windows.Forms.Label();
             this.PanelForUniversityList = new System.Windows.Forms.Panel();
             this.UniversityList = new System.Windows.Forms.TableLayoutPanel();
@@ -59,14 +60,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainMenuPanel.ColumnCount = 1;
             this.MainMenuPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainMenuPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.MainMenuPanel.Controls.Add(this.EnterForums, 0, 0);
             this.MainMenuPanel.Controls.Add(this.FindStuddyBuddies, 0, 1);
+            this.MainMenuPanel.Controls.Add(this.BecomeAStuddyBuddy, 0, 2);
             this.MainMenuPanel.Location = new System.Drawing.Point(12, 123);
             this.MainMenuPanel.Name = "MainMenuPanel";
-            this.MainMenuPanel.RowCount = 2;
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.MainMenuPanel.RowCount = 3;
+            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.MainMenuPanel.Size = new System.Drawing.Size(610, 426);
             this.MainMenuPanel.TabIndex = 0;
             // 
@@ -76,7 +78,7 @@
             this.EnterForums.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.EnterForums.Location = new System.Drawing.Point(3, 3);
             this.EnterForums.Name = "EnterForums";
-            this.EnterForums.Size = new System.Drawing.Size(604, 207);
+            this.EnterForums.Size = new System.Drawing.Size(604, 136);
             this.EnterForums.TabIndex = 0;
             this.EnterForums.Text = "Enter forums";
             this.EnterForums.UseVisualStyleBackColor = true;
@@ -86,13 +88,25 @@
             // 
             this.FindStuddyBuddies.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FindStuddyBuddies.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.FindStuddyBuddies.Location = new System.Drawing.Point(3, 216);
+            this.FindStuddyBuddies.Location = new System.Drawing.Point(3, 145);
             this.FindStuddyBuddies.Name = "FindStuddyBuddies";
-            this.FindStuddyBuddies.Size = new System.Drawing.Size(604, 207);
+            this.FindStuddyBuddies.Size = new System.Drawing.Size(604, 136);
             this.FindStuddyBuddies.TabIndex = 1;
-            this.FindStuddyBuddies.Text = "Find studdy buddies";
+            this.FindStuddyBuddies.Text = "Find StuddyBuddies";
             this.FindStuddyBuddies.UseVisualStyleBackColor = true;
             this.FindStuddyBuddies.Click += new System.EventHandler(this.FindStuddyBuddies_Click);
+            // 
+            // BecomeAStuddyBuddy
+            // 
+            this.BecomeAStuddyBuddy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BecomeAStuddyBuddy.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BecomeAStuddyBuddy.Location = new System.Drawing.Point(3, 287);
+            this.BecomeAStuddyBuddy.Name = "BecomeAStuddyBuddy";
+            this.BecomeAStuddyBuddy.Size = new System.Drawing.Size(604, 136);
+            this.BecomeAStuddyBuddy.TabIndex = 2;
+            this.BecomeAStuddyBuddy.Text = "Become a StuddyBuddy";
+            this.BecomeAStuddyBuddy.UseVisualStyleBackColor = true;
+            this.BecomeAStuddyBuddy.Click += new System.EventHandler(this.BecomeAStuddyBuddy_Click);
             // 
             // StuddyBuddy
             // 
@@ -104,7 +118,7 @@
             this.StuddyBuddy.Name = "StuddyBuddy";
             this.StuddyBuddy.Size = new System.Drawing.Size(610, 111);
             this.StuddyBuddy.TabIndex = 1;
-            this.StuddyBuddy.Text = "Studdy buddy";
+            this.StuddyBuddy.Text = "StuddyBuddy";
             this.StuddyBuddy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PanelForUniversityList
@@ -324,6 +338,7 @@
         private System.Windows.Forms.Button LawButton;
         private System.Windows.Forms.Button CommunicationButton;
         private System.Windows.Forms.Button ChemistryGeosciencesButton;
+        private System.Windows.Forms.Button BecomeAStuddyBuddy;
     }
 }
 
