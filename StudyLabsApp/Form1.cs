@@ -19,10 +19,10 @@ namespace StudyLabsApp
     public partial class Window : Form
     {
         ResXResourceReader Faculties = new ResXResourceReader
-                (@"C:\Users\Legion\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
+                (@"C:\Users\vinca\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
 
         ResXResourceReader Studies = new ResXResourceReader
-                (@"C:\Users\Legion\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
+                (@"C:\Users\vinca\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
 
         #region Constructor
 
@@ -100,6 +100,12 @@ namespace StudyLabsApp
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form4 form = new Form4();
+            form.Show();
         }
     }
 }

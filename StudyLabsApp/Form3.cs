@@ -15,10 +15,10 @@ namespace StudyLabsApp
     public partial class Form3 : Form
     {
         ResXResourceReader Faculties = new ResXResourceReader
-                (@"C:\Users\Legion\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
+                (@"C:\Users\vinca\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
 
         ResXResourceReader Studies = new ResXResourceReader
-                (@"C:\Users\Legion\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
+                (@"C:\Users\vinca\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
 
         public Form3()
         {
@@ -47,6 +47,8 @@ namespace StudyLabsApp
 
                     // Create a studdy buddy and save all of the atributes in a class
                     AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname,link,selectedOption1,selectedOption2);
+
+                    Output create_SB = new Output(nickname, link, selectedOption1, selectedOption1);
 
 
                     MessageBox.Show("Your nickname: " + StuddyBuddy.Get_nickname() + Environment.NewLine + "Your Link: " + StuddyBuddy.Get_link() + Environment.NewLine +
@@ -101,6 +103,11 @@ namespace StudyLabsApp
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
         {
 
         }

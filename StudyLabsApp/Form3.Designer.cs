@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.StudiesComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.FacultyComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@
             this.NicknameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Submit = new System.Windows.Forms.Button();
-            this.StudiesComboBox = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,24 @@
             this.panel1.Size = new System.Drawing.Size(596, 450);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 288);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Choose your studies: ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // StudiesComboBox
+            // 
+            this.StudiesComboBox.FormattingEnabled = true;
+            this.StudiesComboBox.Location = new System.Drawing.Point(142, 288);
+            this.StudiesComboBox.Name = "StudiesComboBox";
+            this.StudiesComboBox.Size = new System.Drawing.Size(284, 21);
+            this.StudiesComboBox.TabIndex = 12;
             // 
             // label4
             // 
@@ -135,24 +153,6 @@
             this.Submit.UseVisualStyleBackColor = true;
             this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
-            // StudiesComboBox
-            // 
-            this.StudiesComboBox.FormattingEnabled = true;
-            this.StudiesComboBox.Location = new System.Drawing.Point(142, 288);
-            this.StudiesComboBox.Name = "StudiesComboBox";
-            this.StudiesComboBox.Size = new System.Drawing.Size(284, 21);
-            this.StudiesComboBox.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 288);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Choose your studies: ";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +161,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

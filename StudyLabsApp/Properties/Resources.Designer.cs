@@ -59,31 +59,5 @@ namespace StudyLabsApp.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Petras Petraitis
-        ///VU MIF 2 kursas
-        ///Biochemija
-        ///Kontaktai: 
-        ///Laikas: Pirmadienis-Penktadienis 17:00.
-        /// </summary>
-        internal static string Biochemija {
-            get {
-                return ResourceManager.GetString("Biochemija", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Jonas Jonaitis
-        ///VU Chemijos ir geomokslų fakultetas 4 kursas
-        ///Kontaktai: Jonas.J@gmail.com
-        ///Tvarkarastis: Pirmadienis - Treciadienis 13:00/14:00
-        ///.
-        /// </summary>
-        internal static string Biochemija2 {
-            get {
-                return ResourceManager.GetString("Biochemija2", resourceCulture);
-            }
-        }
     }
 }
