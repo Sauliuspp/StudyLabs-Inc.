@@ -27,15 +27,6 @@ namespace StudyLabsApp
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            string resource_data = Properties.Resources.Biochemija;
-            List<string> bioC1 = resource_data.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
-
-            BiochemijaRTxtBox1.Lines = bioC1.ToArray();
-
-            string resource_data1 = Properties.Resources.Biochemija2;
-            List<string> bioC2 = resource_data1.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
-
-            BiochemijaRTxtBox2.Lines = bioC2.ToArray();
 
         }
 
