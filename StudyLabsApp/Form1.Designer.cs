@@ -37,6 +37,10 @@
             this.ReturnButton = new System.Windows.Forms.Button();
             this.StudiesComboBox = new System.Windows.Forms.ComboBox();
             this.FacultyComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.MainMenuPanel.SuspendLayout();
             this.PanelForUniversityList.SuspendLayout();
             this.SuspendLayout();
@@ -111,6 +115,10 @@
             // 
             // PanelForUniversityList
             // 
+            this.PanelForUniversityList.Controls.Add(this.button1);
+            this.PanelForUniversityList.Controls.Add(this.label3);
+            this.PanelForUniversityList.Controls.Add(this.label2);
+            this.PanelForUniversityList.Controls.Add(this.label1);
             this.PanelForUniversityList.Controls.Add(this.ReturnButton);
             this.PanelForUniversityList.Controls.Add(this.StudiesComboBox);
             this.PanelForUniversityList.Controls.Add(this.FacultyComboBox);
@@ -135,7 +143,7 @@
             // StudiesComboBox
             // 
             this.StudiesComboBox.FormattingEnabled = true;
-            this.StudiesComboBox.Location = new System.Drawing.Point(67, 197);
+            this.StudiesComboBox.Location = new System.Drawing.Point(67, 295);
             this.StudiesComboBox.Name = "StudiesComboBox";
             this.StudiesComboBox.Size = new System.Drawing.Size(481, 21);
             this.StudiesComboBox.TabIndex = 1;
@@ -143,11 +151,53 @@
             // FacultyComboBox
             // 
             this.FacultyComboBox.FormattingEnabled = true;
-            this.FacultyComboBox.Location = new System.Drawing.Point(67, 87);
+            this.FacultyComboBox.Location = new System.Drawing.Point(67, 163);
             this.FacultyComboBox.Name = "FacultyComboBox";
             this.FacultyComboBox.Size = new System.Drawing.Size(481, 21);
             this.FacultyComboBox.TabIndex = 0;
             this.FacultyComboBox.SelectedIndexChanged += new System.EventHandler(this.FacultyComboBox_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(121, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(386, 55);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Pick your studies";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(64, 142);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 18);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Pick your desired faculty: ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(67, 269);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 18);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Pick your desired studies: ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(67, 376);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 70);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Search for StuddyBuddies";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Window
             // 
@@ -164,6 +214,7 @@
             this.Text = "Studdy Buddy";
             this.MainMenuPanel.ResumeLayout(false);
             this.PanelForUniversityList.ResumeLayout(false);
+            this.PanelForUniversityList.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -179,6 +230,10 @@
         private System.Windows.Forms.ComboBox StudiesComboBox;
         private System.Windows.Forms.ComboBox FacultyComboBox;
         private System.Windows.Forms.Button ReturnButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

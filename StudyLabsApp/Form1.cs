@@ -19,10 +19,10 @@ namespace StudyLabsApp
     public partial class Window : Form
     {
         ResXResourceReader Faculties = new ResXResourceReader
-                (@"C:\Users\Saulius\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
+                (@"C:\Users\Legion\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
 
         ResXResourceReader Studies = new ResXResourceReader
-                (@"C:\Users\Saulius\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
+                (@"C:\Users\Legion\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
 
         #region Constructor
 
@@ -32,20 +32,6 @@ namespace StudyLabsApp
         public Window()
         {
             InitializeComponent();
-            /*
-            FacultyComboBox.Items.Add("Faculty of Chemistry and Geosciences");
-            FacultyComboBox.Items.Add("Faculty of Communication");
-            FacultyComboBox.Items.Add("Faculty of Law");
-            FacultyComboBox.Items.Add("Faculty of Economics and Business Administration");
-            FacultyComboBox.Items.Add("Faculty of History");
-            FacultyComboBox.Items.Add("Faculty of Mathematics and Informatics");
-            FacultyComboBox.Items.Add("Faculty of Medicine");
-            FacultyComboBox.Items.Add("Faculty of Philology");
-            FacultyComboBox.Items.Add("Faculty of Philosophy");
-            FacultyComboBox.Items.Add("Faculty of Physics");
-            FacultyComboBox.Items.Add("Institute of International Relations and Political Science");
-            FacultyComboBox.Items.Add("Kaunas Faculty");
-            */
 
             // Create an IDictionaryEnumerator to iterate through the resources.
             IDictionaryEnumerator FacultiesDictionary = Faculties.GetEnumerator();
@@ -104,6 +90,16 @@ namespace StudyLabsApp
                     StudiesComboBox.Items.Add(d.Key.ToString());
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

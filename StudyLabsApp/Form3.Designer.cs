@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.FacultyComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,12 +37,15 @@
             this.NicknameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Submit = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.StudiesComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.StudiesComboBox);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.FacultyComboBox);
             this.panel1.Controls.Add(this.label3);
@@ -55,6 +59,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(596, 450);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 243);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Choose your faculty:";
             // 
             // FacultyComboBox
             // 
@@ -121,14 +135,23 @@
             this.Submit.UseVisualStyleBackColor = true;
             this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
-            // label4
+            // StudiesComboBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 243);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Choose your faculty:";
+            this.StudiesComboBox.FormattingEnabled = true;
+            this.StudiesComboBox.Location = new System.Drawing.Point(142, 288);
+            this.StudiesComboBox.Name = "StudiesComboBox";
+            this.StudiesComboBox.Size = new System.Drawing.Size(284, 21);
+            this.StudiesComboBox.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 288);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Choose your studies: ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // Form3
             // 
@@ -155,5 +178,7 @@
         private System.Windows.Forms.TextBox NicknameBox;
         private System.Windows.Forms.ComboBox FacultyComboBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox StudiesComboBox;
     }
 }

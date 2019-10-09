@@ -14,32 +14,21 @@ namespace StudyLabsApp
 {
     public partial class Form3 : Form
     {
-        ResXResourceReader rsxr = new ResXResourceReader
-                (@"C:\Users\Saulius\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
+        ResXResourceReader Faculties = new ResXResourceReader
+                (@"C:\Users\Legion\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
+
+        ResXResourceReader Studies = new ResXResourceReader
+                (@"C:\Users\Legion\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
 
         public Form3()
         {
             InitializeComponent();
-            /*
-            FacultyComboBox.Items.Add("Faculty of Chemistry and Geosciences");
-            FacultyComboBox.Items.Add("Faculty of Communication");
-            FacultyComboBox.Items.Add("Faculty of Law");
-            FacultyComboBox.Items.Add("Faculty of Economics and Business Administration");
-            FacultyComboBox.Items.Add("Faculty of History");
-            FacultyComboBox.Items.Add("Faculty of Mathematics and Informatics");
-            FacultyComboBox.Items.Add("Faculty of Medicine");
-            FacultyComboBox.Items.Add("Faculty of Philology");
-            FacultyComboBox.Items.Add("Faculty of Philosophy");
-            FacultyComboBox.Items.Add("Faculty of Physics");
-            FacultyComboBox.Items.Add("Institute of International Relations and Political Science");
-            FacultyComboBox.Items.Add("Kaunas Faculty");
-            */
 
             // Create an IDictionaryEnumerator to iterate through the resources.
-            IDictionaryEnumerator id = rsxr.GetEnumerator();
+            IDictionaryEnumerator FacultiesDictionary = Faculties.GetEnumerator();
 
             // Iterate through the resources and display the contents
-            foreach (DictionaryEntry d in rsxr)
+            foreach (DictionaryEntry d in Faculties)
             {
                 FacultyComboBox.Items.Add(d.Key.ToString());
             }
@@ -49,11 +38,22 @@ namespace StudyLabsApp
         {
             if(FacultyComboBox.SelectedIndex>=0)
             {
-                string selectedOption = FacultyComboBox.SelectedItem.ToString();
-                string nickname = NicknameBox.Text.ToString();
-                string link = LinkBox.Text.ToString();
-                MessageBox.Show("Your nickname: " + nickname + Environment.NewLine + "Your Link: " + link + Environment.NewLine + "Chosen faculty: " + selectedOption);
-                this.Close();
+                if(StudiesComboBox.SelectedIndex>=0)
+                {
+                    string selectedOption1 = FacultyComboBox.SelectedItem.ToString();
+                    string selectedOption2 = StudiesComboBox.SelectedItem.ToString();
+                    string nickname = NicknameBox.Text.ToString();
+                    string link = LinkBox.Text.ToString();
+
+                    // Create a studdy buddy and save all of the atributes in a class
+                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname,link,selectedOption1,selectedOption2);
+
+
+                    MessageBox.Show("Your nickname: " + StuddyBuddy.Get_nickname() + Environment.NewLine + "Your Link: " + StuddyBuddy.Get_link() + Environment.NewLine +
+                        "Chosen faculty: " + StuddyBuddy.Get_faculty() + Environment.NewLine + "Chosen studies: " + StuddyBuddy.Get_studies()) ;
+                    this.Close();
+                }
+
             }
         }
 
@@ -77,6 +77,30 @@ namespace StudyLabsApp
         }
 
         private void FacultyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            StudiesComboBox.Items.Clear();
+            // Create an IDictionaryEnumerator to iterate through the resources.
+            IDictionaryEnumerator StudiesDictionary = Studies.GetEnumerator();
+
+            // Iterate through the resources and display the contents
+            foreach (DictionaryEntry d in Studies)
+            {
+                int studiesValue = Int32.Parse(d.Value.ToString());
+
+                if (studiesValue == FacultyComboBox.SelectedIndex)
+                {
+                    StudiesComboBox.Items.Add(d.Key.ToString());
+                }
+            }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
