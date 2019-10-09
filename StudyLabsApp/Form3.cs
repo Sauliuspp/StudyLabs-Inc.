@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +14,13 @@ namespace StudyLabsApp
 {
     public partial class Form3 : Form
     {
+        ResXResourceReader rsxr = new ResXResourceReader
+                (@"C:\Users\Saulius\source\repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
+
         public Form3()
         {
             InitializeComponent();
+            /*
             FacultyComboBox.Items.Add("Faculty of Chemistry and Geosciences");
             FacultyComboBox.Items.Add("Faculty of Communication");
             FacultyComboBox.Items.Add("Faculty of Law");
@@ -27,11 +33,21 @@ namespace StudyLabsApp
             FacultyComboBox.Items.Add("Faculty of Physics");
             FacultyComboBox.Items.Add("Institute of International Relations and Political Science");
             FacultyComboBox.Items.Add("Kaunas Faculty");
+            */
+
+            // Create an IDictionaryEnumerator to iterate through the resources.
+            IDictionaryEnumerator id = rsxr.GetEnumerator();
+
+            // Iterate through the resources and display the contents
+            foreach (DictionaryEntry d in rsxr)
+            {
+                FacultyComboBox.Items.Add(d.Key.ToString());
+            }
         }
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            if(FacultyComboBox.SelectedIndex>0)
+            if(FacultyComboBox.SelectedIndex>=0)
             {
                 string selectedOption = FacultyComboBox.SelectedItem.ToString();
                 string nickname = NicknameBox.Text.ToString();
