@@ -15,10 +15,10 @@ namespace StudyLabsApp
     public partial class Form3 : Form
     {
         ResXResourceReader Faculties = new ResXResourceReader
-                (@"C:\Users\vinca\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
+                (@"C:\Users\saulius\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
 
         ResXResourceReader Studies = new ResXResourceReader
-                (@"C:\Users\vinca\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
+                (@"C:\Users\saulius\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
 
         public Form3()
         {
