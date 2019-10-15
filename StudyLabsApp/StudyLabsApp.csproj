@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,8 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AStuddyBuddy.cs" />
-    <Compile Include="Output.cs" />
+    <Compile Include="DatabaseIO\DatabaseInput.cs" />
+    <Compile Include="DatabaseIO\DatabaseOutput.cs" />
     <Compile Include="MainMenuWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +74,11 @@
     </Compile>
     <Compile Include="ForumsWindow.Designer.cs">
       <DependentUpon>ForumsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SignUpWindow.cs">
       <SubType>Form</SubType>
@@ -104,6 +109,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StuddyBuddy\AStuddyBuddy.cs" />
+    <Compile Include="UserIO\UIInput.cs" />
+    <Compile Include="UserIO\UIOutput.cs" />
     <EmbeddedResource Include="MainMenuWindow.resx">
       <DependentUpon>MainMenuWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,11 +146,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <None Include="StuddyBuddyDBDataSet.xsc">
       <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
     </None>

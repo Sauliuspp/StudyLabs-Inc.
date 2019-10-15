@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using StudyLabsApp.UserIO;
 
 namespace StudyLabsApp
 {
@@ -20,38 +21,10 @@ namespace StudyLabsApp
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            load_Listview();
+            DataTable table = DatabaseOutput.LoadData();
+
+            UIOutput.DisplayData(table, listView1);
         }
-
-
-        private void load_Listview() // DUOMENU IKELIMAS I LIST VIEW
-        {
-            //load list
-            string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
-
-            //Database
-            SqlConnection cn_connection = new SqlConnection(cn_string);
-            if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
-
-            string sql_Text = "SELECT * FROM StuddyBuddy";
-
-            DataTable tbl = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, cn_connection);
-            adapter.Fill(tbl);
-
-            foreach (DataRow row in tbl.Rows)
-            {
-                ListViewItem item = new ListViewItem(row[1].ToString());
-                for (int i = 2; i < tbl.Columns.Count; i++)
-                {
-                    item.SubItems.Add(row[i].ToString());
-                }
-                listView1.Items.Add(item);
-            }
-
-
-        }
-
 
         private void label1_Click(object sender, EventArgs e)
         {

@@ -46,10 +46,8 @@ namespace StudyLabsApp
                     string link = LinkBox.Text.ToString();
 
                     // Create a studdy buddy and save all of the atributes in a class
-                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname,link,selectedOption1,selectedOption2);
-
-                    Output create_SB = new Output(nickname, link, selectedOption1, selectedOption2);
-
+                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname, link, selectedOption1, selectedOption2);
+                    DatabaseInput.AddEntryToDatabase(StuddyBuddy);
 
                     MessageBox.Show("Your nickname: " + StuddyBuddy.nickname + Environment.NewLine + "Your Link: " + StuddyBuddy.link + Environment.NewLine +
                         "Chosen faculty: " + StuddyBuddy.faculty + Environment.NewLine + "Chosen studies: " + StuddyBuddy.studies) ;

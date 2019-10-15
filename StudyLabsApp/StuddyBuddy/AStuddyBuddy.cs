@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudyLabsApp
 {
-    class AStuddyBuddy
+    public class AStuddyBuddy
     {
         public String nickname { get; set; }
         public String link { get; set; }
