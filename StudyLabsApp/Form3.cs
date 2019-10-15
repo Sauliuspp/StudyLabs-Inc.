@@ -51,8 +51,8 @@ namespace StudyLabsApp
                     Output create_SB = new Output(nickname, link, selectedOption1, selectedOption2);
 
 
-                    MessageBox.Show("Your nickname: " + StuddyBuddy.Get_nickname() + Environment.NewLine + "Your Link: " + StuddyBuddy.Get_link() + Environment.NewLine +
-                        "Chosen faculty: " + StuddyBuddy.Get_faculty() + Environment.NewLine + "Chosen studies: " + StuddyBuddy.Get_studies()) ;
+                    MessageBox.Show("Your nickname: " + StuddyBuddy.nickname + Environment.NewLine + "Your Link: " + StuddyBuddy.link + Environment.NewLine +
+                        "Chosen faculty: " + StuddyBuddy.faculty + Environment.NewLine + "Chosen studies: " + StuddyBuddy.studies) ;
                     this.Close();
                 }
 
