@@ -22,7 +22,6 @@ namespace StudyLabsApp
         private void Form4_Load(object sender, EventArgs e)
         {
             DataTable table = DatabaseOutput.LoadData();
-
             UIOutput.DisplayData(table, listView1);
         }
 

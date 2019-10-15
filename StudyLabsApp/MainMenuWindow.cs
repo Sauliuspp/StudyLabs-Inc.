@@ -18,11 +18,14 @@ namespace StudyLabsApp
     /// </summary>
     public partial class MainMenuWindow : Form
     {
-        ResXResourceReader Faculties = new ResXResourceReader
-                (@"C:\Users\saulius\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
+        public static string workingDirectory = Environment.CurrentDirectory;
+        public static string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
 
-        ResXResourceReader Studies = new ResXResourceReader
-                (@"C:\Users\saulius\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
+        public static ResXResourceReader Faculties = new ResXResourceReader
+                (projectDirectory + @"\Resources\Faculties.resx");
+
+        public static ResXResourceReader Studies = new ResXResourceReader
+                (projectDirectory + @"\Resources\Faculties_and_studies.resx");
 
         #region Constructor
 
