@@ -1,6 +1,6 @@
 ﻿namespace StudyLabsApp
 {
-    partial class Window
+    partial class MainMenuWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -149,7 +149,6 @@
             this.label3.Size = new System.Drawing.Size(181, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "Pick your desired studies: ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -170,7 +169,6 @@
             this.label1.Size = new System.Drawing.Size(386, 55);
             this.label1.TabIndex = 3;
             this.label1.Text = "Pick your studies";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ReturnButton
             // 

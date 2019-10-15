@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
@@ -12,7 +13,10 @@ using System.Windows.Forms;
 
 namespace StudyLabsApp
 {
-    public partial class Form3 : Form
+    /// <summary>
+    /// Study buddy application
+    /// </summary>
+    public partial class MainMenuWindow : Form
     {
         ResXResourceReader Faculties = new ResXResourceReader
                 (@"C:\Users\saulius\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties.resx");
@@ -20,7 +24,12 @@ namespace StudyLabsApp
         ResXResourceReader Studies = new ResXResourceReader
                 (@"C:\Users\saulius\Source\Repos\Sauliuspp\StudyLabs-Inc\StudyLabsApp\Resources\Faculties_and_studies.resx");
 
-        public Form3()
+        #region Constructor
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public MainMenuWindow()
         {
             InitializeComponent();
 
@@ -32,50 +41,37 @@ namespace StudyLabsApp
             {
                 FacultyComboBox.Items.Add(d.Key.ToString());
             }
-        }
-
-        private void Submit_Click(object sender, EventArgs e)
-        {
-            if(FacultyComboBox.SelectedIndex>=0)
-            {
-                if(StudiesComboBox.SelectedIndex>=0)
-                {
-                    string selectedOption1 = FacultyComboBox.SelectedItem.ToString();
-                    string selectedOption2 = StudiesComboBox.SelectedItem.ToString();
-                    string nickname = NicknameBox.Text.ToString();
-                    string link = LinkBox.Text.ToString();
-
-                    // Create a studdy buddy and save all of the atributes in a class
-                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname,link,selectedOption1,selectedOption2);
-
-                    Output create_SB = new Output(nickname, link, selectedOption1, selectedOption2);
-
-
-                    MessageBox.Show("Your nickname: " + StuddyBuddy.nickname + Environment.NewLine + "Your Link: " + StuddyBuddy.link + Environment.NewLine +
-                        "Chosen faculty: " + StuddyBuddy.faculty + Environment.NewLine + "Chosen studies: " + StuddyBuddy.studies) ;
-                    this.Close();
-                }
-
-            }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        #endregion
+
+        private void EnterForums_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Not available in current version");
+            //MainMenuPanel.Visible = false;
+            //StuddyBuddy.Visible = false;
+        }
+
+        private void FindStuddyBuddies_Click(object sender, EventArgs e)
+        {
+            MainMenuPanel.Visible = false;
+            StuddyBuddy.Visible = false;
+            PanelForUniversityList.Visible = true;
 
         }
 
-        private void NicknameBox_TextChanged(object sender, EventArgs e)
+        private void BecomeAStuddyBuddy_Click(object sender, EventArgs e)
         {
-
+            SignUpWindow form3 = new SignUpWindow();
+            form3.Show();
         }
-        private void LinkBox_TextChanged(object sender, EventArgs e)
-        {
 
+        private void ReturnButton_Click(object sender, EventArgs e)
+        {
+            PanelForUniversityList.Visible = false;
+            MainMenuPanel.Visible = true;
+            StuddyBuddy.Visible = true;
         }
 
         private void FacultyComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,22 +90,12 @@ namespace StudyLabsApp
                     StudiesComboBox.Items.Add(d.Key.ToString());
                 }
             }
-
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
+            StuddyBuddyListWindow form = new StuddyBuddyListWindow();
+            form.Show();
         }
     }
 }

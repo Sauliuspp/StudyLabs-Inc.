@@ -1,6 +1,6 @@
 ﻿namespace StudyLabsApp
 {
-    partial class Form3
+    partial class SignUpWindow
     {
         /// <summary>
         /// Required designer variable.

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace StudyLabsApp
 {
-    public partial class Form4 : Form
+    public partial class StuddyBuddyListWindow : Form
     {
-        public Form4()
+        public StuddyBuddyListWindow()
         {
             InitializeComponent();
         }

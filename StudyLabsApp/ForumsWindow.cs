@@ -13,9 +13,9 @@ using StudyLabsApp.Properties;
 
 namespace StudyLabsApp
 {
-    public partial class Form2 : Form
+    public partial class ForumsWindow : Form
     {
-        public Form2()
+        public ForumsWindow()
         {
             InitializeComponent();
         }
