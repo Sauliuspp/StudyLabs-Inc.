@@ -51,13 +51,15 @@ namespace StudyLabsApp
                     string link = LinkBox.Text.ToString();
 
                     // Create a studdy buddy and save all of the atributes in a class
-                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname, link, selectedOption1, selectedOption2);
+                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname, link, selectedOption1, selectedOption2, Level.Starter);
                     DatabaseProcessor.AddEntryToDatabase(StuddyBuddy);
 
                     MessageBox.Show("Your nickname: "   + StuddyBuddy.Nickname  + Environment.NewLine +
                                     "Your Link: "       + StuddyBuddy.Link      + Environment.NewLine +
                                     "Chosen faculty: "  + StuddyBuddy.Faculty   + Environment.NewLine +
-                                    "Chosen studies: "  + StuddyBuddy.Studies) ;
+                                    "Chosen studies: "  + StuddyBuddy.Studies   + Environment.NewLine +
+                                    "Your level: "      + StuddyBuddy.EnumProperty) ;
+                    LevelUp(StuddyBuddy);
                     this.Close();
                 }
 
@@ -115,6 +117,17 @@ namespace StudyLabsApp
         private void Form3_Load(object sender, EventArgs e)
         {
 
+        }
+        //A method to increase the level of a studdybuddy
+        private void LevelUp(AStuddyBuddy StuddyBuddy)
+        {
+            int enumvalue = (int)StuddyBuddy.EnumProperty;
+            enumvalue++;
+            Level therightvalue = (Level)enumvalue;
+
+            StuddyBuddy.EnumProperty = therightvalue;
+
+            MessageBox.Show("Your new level: " + StuddyBuddy.EnumProperty);
         }
     }
 }
