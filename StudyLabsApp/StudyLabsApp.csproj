@@ -79,6 +79,7 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RegexChecker.cs" />
     <Compile Include="SignUpWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,7 +109,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="StuddyBuddy\AStuddyBuddy.cs" />
+    <Compile Include="Entities\AStuddyBuddy.cs" />
+    <Compile Include="Entities\Teacher.cs" />
     <Compile Include="UserIO\UIInput.cs" />
     <Compile Include="UserIO\UIOutput.cs" />
     <EmbeddedResource Include="MainMenuWindow.resx">

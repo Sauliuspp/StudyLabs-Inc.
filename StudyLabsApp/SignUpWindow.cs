@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -45,22 +46,39 @@ namespace StudyLabsApp
             {
                 if(StudiesComboBox.SelectedIndex>=0)
                 {
-                    string selectedOption1 = FacultyComboBox.SelectedItem.ToString();
-                    string selectedOption2 = StudiesComboBox.SelectedItem.ToString();
-                    string nickname = NicknameBox.Text.ToString();
-                    string link = LinkBox.Text.ToString();
+                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(NicknameBox.Text.ToString(),
+                                                           LinkBox.Text.ToString(),
+                                                           FacultyComboBox.SelectedItem.ToString(),
+                                                           StudiesComboBox.SelectedItem.ToString());
 
-                    // Create a studdy buddy and save all of the atributes in a class
-                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname, link, selectedOption1, selectedOption2);
-                    DatabaseProcessor.AddEntryToDatabase(StuddyBuddy);
+                    RegexChecker regexObject = new RegexChecker();
+                    bool nicknameValid = regexObject.CheckNickname(StuddyBuddy.Nickname);
+                    bool linkValid = regexObject.CheckLink(StuddyBuddy.Link);
+                    bool personExists = DatabaseProcessor.FindExistingPerson(StuddyBuddy);
 
-                    MessageBox.Show("Your nickname: "   + StuddyBuddy.Nickname  + Environment.NewLine +
-                                    "Your Link: "       + StuddyBuddy.Link      + Environment.NewLine +
-                                    "Chosen faculty: "  + StuddyBuddy.Faculty   + Environment.NewLine +
-                                    "Chosen studies: "  + StuddyBuddy.Studies) ;
-                    this.Close();
+                    if (nicknameValid && linkValid && !personExists)
+                    {
+                        DatabaseProcessor.AddEntryToDatabase(StuddyBuddy);
+
+                        MessageBox.Show("Your nickname: "  + StuddyBuddy.Nickname   + Environment.NewLine +
+                                        "Your Link: "      + StuddyBuddy.Link       + Environment.NewLine +
+                                        "Chosen faculty: " + StuddyBuddy.Faculty    + Environment.NewLine +
+                                        "Chosen studies: " + StuddyBuddy.Studies);
+                        this.Close();
+                    }
+                    else if(!nicknameValid)
+                    {
+                        MessageBox.Show("Nickname is not valid");
+                    }
+                    else if (!linkValid)
+                    {
+                        MessageBox.Show("Link is not valid");
+                    }
+                    else if (personExists)
+                    {
+                        MessageBox.Show("This person already exists");
+                    }
                 }
-
             }
         }
 

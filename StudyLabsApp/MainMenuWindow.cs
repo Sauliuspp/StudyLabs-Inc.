@@ -95,9 +95,10 @@ namespace StudyLabsApp
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
-            StuddyBuddyListWindow form = new StuddyBuddyListWindow();
+            StuddyBuddyListWindow form = new StuddyBuddyListWindow(FacultyComboBox.SelectedItem.ToString(),
+                                                                   StudiesComboBox.SelectedItem.ToString());
             form.Show();
         }
     }

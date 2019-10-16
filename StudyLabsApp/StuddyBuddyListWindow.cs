@@ -15,20 +15,20 @@ namespace StudyLabsApp
 {
     public partial class StuddyBuddyListWindow : Form
     {
-        public StuddyBuddyListWindow()
+        string faculty;
+        string studies;
+
+        public StuddyBuddyListWindow(string faculty, string studies)
         {
             InitializeComponent();
+            this.faculty = faculty;
+            this.studies = studies;
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
             DataTable table = DatabaseProcessor.LoadData();
-            UIOutput.DisplayData(table, listView1);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            UIOutput.DisplayData(table, StuddyBuddyList, faculty, studies);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

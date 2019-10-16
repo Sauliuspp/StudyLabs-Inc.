@@ -34,7 +34,7 @@
             this.BecomeAStuddyBuddy = new System.Windows.Forms.Button();
             this.StuddyBuddy = new System.Windows.Forms.Label();
             this.PanelForUniversityList = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -115,7 +115,7 @@
             // 
             // PanelForUniversityList
             // 
-            this.PanelForUniversityList.Controls.Add(this.button1);
+            this.PanelForUniversityList.Controls.Add(this.SearchButton);
             this.PanelForUniversityList.Controls.Add(this.label3);
             this.PanelForUniversityList.Controls.Add(this.label2);
             this.PanelForUniversityList.Controls.Add(this.label1);
@@ -129,16 +129,16 @@
             this.PanelForUniversityList.TabIndex = 2;
             this.PanelForUniversityList.Visible = false;
             // 
-            // button1
+            // SearchButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(67, 376);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 70);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Search for StuddyBuddies";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Location = new System.Drawing.Point(67, 376);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(159, 70);
+            this.SearchButton.TabIndex = 6;
+            this.SearchButton.Text = "Search for StuddyBuddies";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // label3
             // 
@@ -198,7 +198,7 @@
             this.FacultyComboBox.TabIndex = 0;
             this.FacultyComboBox.SelectedIndexChanged += new System.EventHandler(this.FacultyComboBox_SelectedIndexChanged);
             // 
-            // Window
+            // MainMenuWindow
             // 
             this.AcceptButton = this.FindStuddyBuddies;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,7 +209,7 @@
             this.Controls.Add(this.MainMenuPanel);
             this.MaximumSize = new System.Drawing.Size(650, 600);
             this.MinimumSize = new System.Drawing.Size(500, 500);
-            this.Name = "Window";
+            this.Name = "MainMenuWindow";
             this.Text = "Studdy Buddy";
             this.MainMenuPanel.ResumeLayout(false);
             this.PanelForUniversityList.ResumeLayout(false);
@@ -232,7 +232,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
 
