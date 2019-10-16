@@ -110,7 +110,6 @@
       <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Entities\AStuddyBuddy.cs" />
-    <Compile Include="Entities\Teacher.cs" />
     <Compile Include="UserIO\UIInput.cs" />
     <Compile Include="UserIO\UIOutput.cs" />
     <EmbeddedResource Include="MainMenuWindow.resx">

@@ -80,6 +80,7 @@ namespace StudyLabsApp
         private void FacultyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             StudiesComboBox.Items.Clear();
+            FacultyComboBox.SelectedItem = "";
             // Create an IDictionaryEnumerator to iterate through the resources.
             IDictionaryEnumerator StudiesDictionary = Studies.GetEnumerator();
 

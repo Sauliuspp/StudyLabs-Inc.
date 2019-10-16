@@ -30,20 +30,5 @@ namespace StudyLabsApp
             DataTable table = DatabaseProcessor.LoadData();
             UIOutput.DisplayData(table, StuddyBuddyList, faculty, studies);
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lst_SBuddy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace StudyLabsApp
+﻿using System.Windows.Forms;
+
+namespace StudyLabsApp
 {
     partial class SignUpWindow
     {
@@ -59,7 +61,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(596, 450);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label5
             // 
@@ -69,7 +70,6 @@
             this.label5.Size = new System.Drawing.Size(108, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "Choose your studies: ";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // StudiesComboBox
             // 
@@ -78,6 +78,7 @@
             this.StudiesComboBox.Name = "StudiesComboBox";
             this.StudiesComboBox.Size = new System.Drawing.Size(284, 21);
             this.StudiesComboBox.TabIndex = 12;
+            this.StudiesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // label4
             // 
@@ -96,6 +97,7 @@
             this.FacultyComboBox.Size = new System.Drawing.Size(284, 21);
             this.FacultyComboBox.TabIndex = 10;
             this.FacultyComboBox.SelectedIndexChanged += new System.EventHandler(this.FacultyComboBox_SelectedIndexChanged);
+            this.FacultyComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // label3
             // 
@@ -114,7 +116,6 @@
             this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Enter your nickname:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // LinkBox
             // 
@@ -129,7 +130,6 @@
             this.NicknameBox.Name = "NicknameBox";
             this.NicknameBox.Size = new System.Drawing.Size(201, 20);
             this.NicknameBox.TabIndex = 2;
-            this.NicknameBox.TextChanged += new System.EventHandler(this.NicknameBox_TextChanged);
             // 
             // label1
             // 
@@ -141,7 +141,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Sign Up to become \r\na StuddyBuddy";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Submit
             // 
@@ -161,7 +160,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "SignUpWindow";
             this.Text = "Studdy Buddy";
-            this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

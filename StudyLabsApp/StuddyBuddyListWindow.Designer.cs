@@ -49,7 +49,6 @@
             this.StuddyBuddyList.TabIndex = 4;
             this.StuddyBuddyList.UseCompatibleStateImageBehavior = false;
             this.StuddyBuddyList.View = System.Windows.Forms.View.Details;
-            this.StuddyBuddyList.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // nickname_header
             // 

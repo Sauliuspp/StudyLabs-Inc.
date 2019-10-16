@@ -30,13 +30,9 @@ namespace StudyLabsApp
         {
             InitializeComponent();
 
-            // Create an IDictionaryEnumerator to iterate through the resources.
-            IDictionaryEnumerator FacultiesDictionary = Faculties.GetEnumerator();
-
-            // Iterate through the resources and display the contents
-            foreach (DictionaryEntry d in Faculties)
+            foreach (DictionaryEntry entry in Faculties)
             {
-                FacultyComboBox.Items.Add(d.Key.ToString());
+                FacultyComboBox.Items.Add(entry.Key.ToString());
             }
         }
 
@@ -82,56 +78,19 @@ namespace StudyLabsApp
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NicknameBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void LinkBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FacultyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             StudiesComboBox.Items.Clear();
-            // Create an IDictionaryEnumerator to iterate through the resources.
-            IDictionaryEnumerator StudiesDictionary = Studies.GetEnumerator();
 
-            // Iterate through the resources and display the contents
-            foreach (DictionaryEntry d in Studies)
+            foreach (DictionaryEntry entry in Studies)
             {
-                int studiesValue = Int32.Parse(d.Value.ToString());
+                int studiesValue = Int32.Parse(entry.Value.ToString());
 
                 if (studiesValue == FacultyComboBox.SelectedIndex)
                 {
-                    StudiesComboBox.Items.Add(d.Key.ToString());
+                    StudiesComboBox.Items.Add(entry.Key.ToString());
                 }
             }
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
 
         }
     }
