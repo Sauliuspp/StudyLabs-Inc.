@@ -54,10 +54,10 @@ namespace StudyLabsApp
                     AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname, link, selectedOption1, selectedOption2);
                     DatabaseProcessor.AddEntryToDatabase(StuddyBuddy);
 
-                    MessageBox.Show("Your nickname: "   + StuddyBuddy.nickname  + Environment.NewLine +
-                                    "Your Link: "       + StuddyBuddy.link      + Environment.NewLine +
-                                    "Chosen faculty: "  + StuddyBuddy.faculty   + Environment.NewLine +
-                                    "Chosen studies: "  + StuddyBuddy.studies) ;
+                    MessageBox.Show("Your nickname: "   + StuddyBuddy.Nickname  + Environment.NewLine +
+                                    "Your Link: "       + StuddyBuddy.Link      + Environment.NewLine +
+                                    "Chosen faculty: "  + StuddyBuddy.Faculty   + Environment.NewLine +
+                                    "Chosen studies: "  + StuddyBuddy.Studies) ;
                     this.Close();
                 }
 

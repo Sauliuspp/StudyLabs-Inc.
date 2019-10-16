@@ -19,10 +19,10 @@ namespace StudyLabsApp.DatabaseIO
             SqlConnection cn_connection = new SqlConnection(cn_string);
             if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
 
-            string newBuddyNick = entry.nickname;
-            string newBuddyLink = entry.link;
-            string newBuddyFaculty = entry.faculty;
-            string newBuddyStudies = entry.studies;
+            string newBuddyNick = entry.Nickname;
+            string newBuddyLink = entry.Link;
+            string newBuddyFaculty = entry.Faculty;
+            string newBuddyStudies = entry.Studies;
 
             string sql_Text = "INSERT INTO StuddyBuddy ([Nickname],[Facebook],[Faculty],[Studies]) VALUES('" + newBuddyNick + "'," +
                 "'" + newBuddyLink + "','" + newBuddyFaculty + "','" + newBuddyStudies + "')";

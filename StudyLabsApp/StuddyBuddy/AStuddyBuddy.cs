@@ -9,16 +9,17 @@ namespace StudyLabsApp
 {
     public class AStuddyBuddy
     {
-        public String nickname { get; set; }
-        public String link { get; set; }
-        public String faculty { get; set; }
-        public String studies { get; set; }
-        public AStuddyBuddy(String nickname, String link, String faculty, String studies)
+        public string Nickname { get; set; }
+        public string Link { get; set; }
+        public string Faculty { get; set; }
+        public string Studies { get; set; }
+        
+        public AStuddyBuddy(string nickname, string link, string faculty, string studies)
         {
-            this.nickname = nickname;
-            this.link = link;
-            this.faculty = faculty;
-            this.studies = studies;
+            this.Nickname = nickname;
+            this.Link = link;
+            this.Faculty = faculty;
+            this.Studies = studies;
         }
     }
 }
