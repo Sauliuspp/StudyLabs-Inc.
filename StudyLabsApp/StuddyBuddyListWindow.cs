@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using StudyLabsApp.UserIO;
+using StudyLabsApp.DatabaseIO;
 
 namespace StudyLabsApp
 {
@@ -21,7 +22,7 @@ namespace StudyLabsApp
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            DataTable table = DatabaseOutput.LoadData();
+            DataTable table = DatabaseProcessor.LoadData();
             UIOutput.DisplayData(table, listView1);
         }
 

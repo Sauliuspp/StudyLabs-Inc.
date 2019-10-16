@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudyLabsApp.DatabaseIO;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +52,7 @@ namespace StudyLabsApp
 
                     // Create a studdy buddy and save all of the atributes in a class
                     AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname, link, selectedOption1, selectedOption2);
-                    DatabaseInput.AddEntryToDatabase(StuddyBuddy);
+                    DatabaseProcessor.AddEntryToDatabase(StuddyBuddy);
 
                     MessageBox.Show("Your nickname: "   + StuddyBuddy.nickname  + Environment.NewLine +
                                     "Your Link: "       + StuddyBuddy.link      + Environment.NewLine +

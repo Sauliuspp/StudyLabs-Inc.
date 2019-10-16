@@ -61,8 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseIO\DatabaseInput.cs" />
-    <Compile Include="DatabaseIO\DatabaseOutput.cs" />
+    <Compile Include="DatabaseIO\DatabaseProcessor.cs" />
     <Compile Include="MainMenuWindow.cs">
       <SubType>Form</SubType>
     </Compile>
