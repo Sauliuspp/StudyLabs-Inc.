@@ -10,18 +10,24 @@ namespace StudyLabsApp.UserIO
 {
     public static class UIOutput
     {
+        private static IEnumerable<DataRow> tableRows;
+
         public static void DisplayData(DataTable table, ListView listView, string comboBoxFaculty, string comboBoxStudies)
         {
-            foreach (DataRow row in table.Rows)
+            tableRows = from DataRow r in table.Rows
+                           select r;
+
+            List<DataRow> rows = tableRows.ToList();
+
+            foreach (DataRow row in rows)
             {
-                string tableFaculty = row.Field<string>("Faculty");
-                string tableStudies = row.Field<string>("Studies");
-                if (tableFaculty == comboBoxFaculty && tableStudies == comboBoxStudies)
+                if (row.Field<string>("Faculty") == comboBoxFaculty &&
+                    row.Field<string>("Studies") == comboBoxStudies)
                 {
-                    ListViewItem item = new ListViewItem(row[1].ToString());
-                    for (int i = 2; i < table.Columns.Count; i++)
+                    ListViewItem item = new ListViewItem(row.Field<string>("Nickname"));
+                    for (int j = 2; j < table.Columns.Count; j++)
                     {
-                        item.SubItems.Add(row[i].ToString());
+                        item.SubItems.Add(row[j].ToString());
                     }
                     listView.Items.Add(item);
                 }

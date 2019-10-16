@@ -183,6 +183,7 @@
             // 
             // StudiesComboBox
             // 
+            this.StudiesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StudiesComboBox.FormattingEnabled = true;
             this.StudiesComboBox.Location = new System.Drawing.Point(67, 295);
             this.StudiesComboBox.Name = "StudiesComboBox";
@@ -191,6 +192,7 @@
             // 
             // FacultyComboBox
             // 
+            this.FacultyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FacultyComboBox.FormattingEnabled = true;
             this.FacultyComboBox.Location = new System.Drawing.Point(67, 163);
             this.FacultyComboBox.Name = "FacultyComboBox";
