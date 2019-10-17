@@ -45,7 +45,7 @@ namespace StudyLabsApp
                     AStuddyBuddy StuddyBuddy = new AStuddyBuddy(NicknameBox.Text.ToString(),
                                                            LinkBox.Text.ToString(),
                                                            FacultyComboBox.SelectedItem.ToString(),
-                                                           StudiesComboBox.SelectedItem.ToString());
+                                                           StudiesComboBox.SelectedItem.ToString(),Level.Starter);
 
                     RegexChecker regexObject = new RegexChecker();
                     bool nicknameValid = regexObject.CheckNickname(StuddyBuddy.Nickname);
@@ -59,7 +59,9 @@ namespace StudyLabsApp
                         MessageBox.Show("Your nickname: "  + StuddyBuddy.Nickname   + Environment.NewLine +
                                         "Your Link: "      + StuddyBuddy.Link       + Environment.NewLine +
                                         "Chosen faculty: " + StuddyBuddy.Faculty    + Environment.NewLine +
-                                        "Chosen studies: " + StuddyBuddy.Studies);
+                                        "Chosen studies: " + StuddyBuddy.Studies    + Environment.NewLine +
+                                        "Your level: "     + StuddyBuddy.EnumProperty);
+                        LevelUp(StuddyBuddy);
                         this.Close();
                     }
                     else if(!nicknameValid)
@@ -92,6 +94,17 @@ namespace StudyLabsApp
                 }
             }
 
+        }
+        //A method to increase the level of a studdybuddy
+        private void LevelUp(AStuddyBuddy StuddyBuddy)
+        {
+            int enumvalue = (int)StuddyBuddy.EnumProperty;
+            enumvalue++;
+            Level therightvalue = (Level)enumvalue;
+
+            StuddyBuddy.EnumProperty = therightvalue;
+
+            MessageBox.Show("Your new level: " + StuddyBuddy.EnumProperty);
         }
     }
 }
