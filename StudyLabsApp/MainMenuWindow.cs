@@ -80,6 +80,7 @@ namespace StudyLabsApp
         private void FacultyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             StudiesComboBox.Items.Clear();
+            FacultyComboBox.SelectedItem = "";
             // Create an IDictionaryEnumerator to iterate through the resources.
             IDictionaryEnumerator StudiesDictionary = Studies.GetEnumerator();
 
@@ -95,9 +96,10 @@ namespace StudyLabsApp
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
-            StuddyBuddyListWindow form = new StuddyBuddyListWindow();
+            StuddyBuddyListWindow form = new StuddyBuddyListWindow(FacultyComboBox.SelectedItem.ToString(),
+                                                                   StudiesComboBox.SelectedItem.ToString());
             form.Show();
         }
     }

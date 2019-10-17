@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,13 +30,9 @@ namespace StudyLabsApp
         {
             InitializeComponent();
 
-            // Create an IDictionaryEnumerator to iterate through the resources.
-            IDictionaryEnumerator FacultiesDictionary = Faculties.GetEnumerator();
-
-            // Iterate through the resources and display the contents
-            foreach (DictionaryEntry d in Faculties)
+            foreach (DictionaryEntry entry in Faculties)
             {
-                FacultyComboBox.Items.Add(d.Key.ToString());
+                FacultyComboBox.Items.Add(entry.Key.ToString());
             }
         }
 
@@ -45,76 +42,69 @@ namespace StudyLabsApp
             {
                 if(StudiesComboBox.SelectedIndex>=0)
                 {
-                    string selectedOption1 = FacultyComboBox.SelectedItem.ToString();
-                    string selectedOption2 = StudiesComboBox.SelectedItem.ToString();
-                    string nickname = NicknameBox.Text.ToString();
-                    string link = LinkBox.Text.ToString();
+                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(NicknameBox.Text.ToString(),
+                                                           LinkBox.Text.ToString(),
+                                                           FacultyComboBox.SelectedItem.ToString(),
+                                                           StudiesComboBox.SelectedItem.ToString(),Level.Starter);
 
-                    // Create a studdy buddy and save all of the atributes in a class
-                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname, link, selectedOption1, selectedOption2);
-                    DatabaseProcessor.AddEntryToDatabase(StuddyBuddy);
+                    RegexChecker regexObject = new RegexChecker();
+                    bool nicknameValid = regexObject.CheckNickname(StuddyBuddy.Nickname);
+                    bool linkValid = regexObject.CheckLink(StuddyBuddy.Link);
+                    bool personExists = DatabaseProcessor.FindExistingPerson(StuddyBuddy);
 
-                    MessageBox.Show("Your nickname: "   + StuddyBuddy.Nickname  + Environment.NewLine +
-                                    "Your Link: "       + StuddyBuddy.Link      + Environment.NewLine +
-                                    "Chosen faculty: "  + StuddyBuddy.Faculty   + Environment.NewLine +
-                                    "Chosen studies: "  + StuddyBuddy.Studies) ;
-                    this.Close();
+                    if (nicknameValid && linkValid && !personExists)
+                    {
+                        DatabaseProcessor.AddEntryToDatabase(StuddyBuddy);
+
+                        MessageBox.Show("Your nickname: "  + StuddyBuddy.Nickname   + Environment.NewLine +
+                                        "Your Link: "      + StuddyBuddy.Link       + Environment.NewLine +
+                                        "Chosen faculty: " + StuddyBuddy.Faculty    + Environment.NewLine +
+                                        "Chosen studies: " + StuddyBuddy.Studies    + Environment.NewLine +
+                                        "Your level: "     + StuddyBuddy.EnumProperty);
+                        LevelUp(StuddyBuddy);
+                        this.Close();
+                    }
+                    else if(!nicknameValid)
+                    {
+                        MessageBox.Show("Nickname is not valid");
+                    }
+                    else if (!linkValid)
+                    {
+                        MessageBox.Show("Link is not valid");
+                    }
+                    else if (personExists)
+                    {
+                        MessageBox.Show("This person already exists");
+                    }
                 }
-
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NicknameBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void LinkBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void FacultyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             StudiesComboBox.Items.Clear();
-            // Create an IDictionaryEnumerator to iterate through the resources.
-            IDictionaryEnumerator StudiesDictionary = Studies.GetEnumerator();
 
-            // Iterate through the resources and display the contents
-            foreach (DictionaryEntry d in Studies)
+            foreach (DictionaryEntry entry in Studies)
             {
-                int studiesValue = Int32.Parse(d.Value.ToString());
+                int studiesValue = Int32.Parse(entry.Value.ToString());
 
                 if (studiesValue == FacultyComboBox.SelectedIndex)
                 {
-                    StudiesComboBox.Items.Add(d.Key.ToString());
+                    StudiesComboBox.Items.Add(entry.Key.ToString());
                 }
             }
 
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        //A method to increase the level of a studdybuddy
+        private void LevelUp(AStuddyBuddy StuddyBuddy)
         {
+            int enumvalue = (int)StuddyBuddy.EnumProperty;
+            enumvalue++;
+            Level therightvalue = (Level)enumvalue;
 
-        }
+            StuddyBuddy.EnumProperty = therightvalue;
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("Your new level: " + StuddyBuddy.EnumProperty);
         }
     }
 }

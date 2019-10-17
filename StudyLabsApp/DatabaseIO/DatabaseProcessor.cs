@@ -52,5 +52,26 @@ namespace StudyLabsApp.DatabaseIO
             // lst_SBuddy.DataSource = tbl;
             return table;
         }
+
+        public static bool FindExistingPerson(AStuddyBuddy person)
+        {
+            DataTable table = LoadData();
+            List<AStuddyBuddy> list = new List<AStuddyBuddy>();
+            string tableNickname;
+            string tableFaculty;
+            string tableStudies;
+
+            foreach (DataRow row in table.Rows)
+            {
+                tableNickname = row.Field<string>("Nickname");
+                tableFaculty = row.Field<string>("Faculty");
+                tableStudies = row.Field<string>("Studies");
+                if (person.Nickname == tableNickname && person.Faculty == tableFaculty && person.Studies == tableStudies)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
