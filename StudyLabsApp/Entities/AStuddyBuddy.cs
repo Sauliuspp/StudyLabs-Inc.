@@ -21,7 +21,7 @@ namespace StudyLabsApp
         Genius,
         PhD
     }
-    public class AStuddyBuddy
+    public class AStuddyBuddy : IComparable
     {
         public string Nickname { get; set; }
         public string Link { get; set; }
@@ -38,6 +38,19 @@ namespace StudyLabsApp
             this.Studies = studies;
             this.Status = 1;
             this.Points = 0;
+        }
+
+        public int CompareTo(object obj)
+        {
+            if(!(obj is AStuddyBuddy))
+            {
+                throw new ArgumentException("Object is not AStuddyBuddy");
+            }
+            else
+            {
+                AStuddyBuddy other = obj as AStuddyBuddy;
+                return this.CompareTo(other);
+            }
         }
     }
 }
