@@ -54,6 +54,9 @@ namespace StudyLabsApp.UserIO
                 }
             }
 
+            studdyBuddyList.Sort();
+            studdyBuddyList.Reverse();
+
             foreach (AStuddyBuddy buddy in studdyBuddyList)
             {
                 ListViewItem item = new ListViewItem(buddy.Nickname);
