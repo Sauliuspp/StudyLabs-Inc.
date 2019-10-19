@@ -117,4 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Nickname_header.Text" xml:space="preserve">
+    <value>Nickname</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Nickname_header.Width" type="System.Int32, mscorlib">
+    <value>151</value>
+  </data>
+  <data name="FB_header.Text" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="FB_header.Width" type="System.Int32, mscorlib">
+    <value>175</value>
+  </data>
+  <data name="Faculty_header.Text" xml:space="preserve">
+    <value>Faculty</value>
+  </data>
+  <data name="Faculty_header.Width" type="System.Int32, mscorlib">
+    <value>163</value>
+  </data>
+  <data name="Studies_header.Text" xml:space="preserve">
+    <value>Studies</value>
+  </data>
+  <data name="Studies_header.Width" type="System.Int32, mscorlib">
+    <value>303</value>
+  </data>
+  <data name="Level_header.Text" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Level_header.Width" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="Points_header.Text" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="Points_header.Width" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="StuddyBuddyList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="StuddyBuddyList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="StuddyBuddyList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>984, 511</value>
+  </data>
+  <data name="StuddyBuddyList.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;StuddyBuddyList.Name" xml:space="preserve">
+    <value>StuddyBuddyList</value>
+  </data>
+  <data name="&gt;&gt;StuddyBuddyList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StuddyBuddyList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;StuddyBuddyList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>984, 511</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 550</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 550</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Studdy Buddy</value>
+  </data>
+  <data name="&gt;&gt;Nickname_header.Name" xml:space="preserve">
+    <value>Nickname_header</value>
+  </data>
+  <data name="&gt;&gt;Nickname_header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FB_header.Name" xml:space="preserve">
+    <value>FB_header</value>
+  </data>
+  <data name="&gt;&gt;FB_header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Faculty_header.Name" xml:space="preserve">
+    <value>Faculty_header</value>
+  </data>
+  <data name="&gt;&gt;Faculty_header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Studies_header.Name" xml:space="preserve">
+    <value>Studies_header</value>
+  </data>
+  <data name="&gt;&gt;Studies_header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Level_header.Name" xml:space="preserve">
+    <value>Level_header</value>
+  </data>
+  <data name="&gt;&gt;Level_header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Points_header.Name" xml:space="preserve">
+    <value>Points_header</value>
+  </data>
+  <data name="&gt;&gt;Points_header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>RankingsWindow</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

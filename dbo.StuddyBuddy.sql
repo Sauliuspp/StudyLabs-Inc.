@@ -4,8 +4,8 @@
     [Facebook] NVARCHAR (255) NULL,
     [Faculty]  NVARCHAR (255) NULL,
     [Studies]  NVARCHAR (255) NULL,
-	[Status]   NVARCHAR (255) NULL,
-	[Points]   INT			  NULL,
+    [Status]   INT            NULL,
+    [Points]   INT            NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

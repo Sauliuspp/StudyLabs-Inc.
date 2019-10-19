@@ -92,6 +92,9 @@
     <Compile Include="SignUpWindow.Designer.cs">
       <DependentUpon>SignUpWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="StuddyBuddyDBDataSet.cs">
+      <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StuddyBuddyListWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ForumsWindow.resx">
       <DependentUpon>ForumsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankingsWindow.dje.resx">
+      <DependentUpon>RankingsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RankingsWindow.resx">
       <DependentUpon>RankingsWindow.cs</DependentUpon>

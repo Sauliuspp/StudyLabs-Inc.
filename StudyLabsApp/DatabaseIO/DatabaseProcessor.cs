@@ -23,9 +23,16 @@ namespace StudyLabsApp.DatabaseIO
             string newBuddyLink = entry.Link;
             string newBuddyFaculty = entry.Faculty;
             string newBuddyStudies = entry.Studies;
+            int newBuddyStatus = (int) Level.Starter;
+            int newBuddyPoints = 0;
 
-            string sql_Text = "INSERT INTO StuddyBuddy ([Nickname],[Facebook],[Faculty],[Studies]) VALUES('" + newBuddyNick + "'," +
-                "'" + newBuddyLink + "','" + newBuddyFaculty + "','" + newBuddyStudies + "')";
+            string sql_Text = "INSERT INTO StuddyBuddy ([Nickname],[Facebook],[Faculty],[Studies],[Status],[Points]) VALUES('"
+                + newBuddyNick + "','" +
+                newBuddyLink + "','" +
+                newBuddyFaculty + "','" +
+                newBuddyStudies + "','" +
+                newBuddyStatus + "','" +
+                newBuddyPoints +  "')";
 
             SqlCommand cmd_Command = new SqlCommand(sql_Text, cn_connection);
             cmd_Command.ExecuteNonQuery();

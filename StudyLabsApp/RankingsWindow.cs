@@ -34,7 +34,7 @@ namespace StudyLabsApp
             }
         }
 
-        public void RankingsWindow_Load(object sender, EventArgs e)
+        private void RankingsWindow_Load(object sender, EventArgs e)
         {
             DatabaseProcessor DBprocessor = new DatabaseProcessor();
             DataTable table = DBprocessor.LoadData();

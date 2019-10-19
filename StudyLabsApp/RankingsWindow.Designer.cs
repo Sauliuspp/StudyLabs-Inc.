@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RankingsWindow));
             this.StuddyBuddyList = new System.Windows.Forms.ListView();
             this.Nickname_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FB_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Faculty_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Studies_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Level_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Points_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // StuddyBuddyList
@@ -43,51 +45,45 @@
             this.FB_header,
             this.Faculty_header,
             this.Studies_header,
-            this.Level_header});
-            this.StuddyBuddyList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Level_header,
+            this.Points_header});
+            resources.ApplyResources(this.StuddyBuddyList, "StuddyBuddyList");
             this.StuddyBuddyList.HideSelection = false;
-            this.StuddyBuddyList.Location = new System.Drawing.Point(0, 0);
             this.StuddyBuddyList.Name = "StuddyBuddyList";
-            this.StuddyBuddyList.Size = new System.Drawing.Size(834, 511);
-            this.StuddyBuddyList.TabIndex = 5;
             this.StuddyBuddyList.UseCompatibleStateImageBehavior = false;
             this.StuddyBuddyList.View = System.Windows.Forms.View.Details;
             // 
             // Nickname_header
             // 
-            this.Nickname_header.Text = "Nickname";
-            this.Nickname_header.Width = 164;
+            resources.ApplyResources(this.Nickname_header, "Nickname_header");
             // 
             // FB_header
             // 
-            this.FB_header.Text = "Facebook";
-            this.FB_header.Width = 179;
+            resources.ApplyResources(this.FB_header, "FB_header");
             // 
             // Faculty_header
             // 
-            this.Faculty_header.Text = "Faculty";
-            this.Faculty_header.Width = 172;
+            resources.ApplyResources(this.Faculty_header, "Faculty_header");
             // 
             // Studies_header
             // 
-            this.Studies_header.Text = "Studies";
-            this.Studies_header.Width = 167;
+            resources.ApplyResources(this.Studies_header, "Studies_header");
             // 
             // Level_header
             // 
-            this.Level_header.Text = "Level";
-            this.Level_header.Width = 147;
+            resources.ApplyResources(this.Level_header, "Level_header");
+            // 
+            // Points_header
+            // 
+            resources.ApplyResources(this.Points_header, "Points_header");
             // 
             // RankingsWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 511);
             this.Controls.Add(this.StuddyBuddyList);
-            this.MaximumSize = new System.Drawing.Size(850, 550);
-            this.MinimumSize = new System.Drawing.Size(850, 550);
             this.Name = "RankingsWindow";
-            this.Text = "RankingsForm";
+            this.Load += new System.EventHandler(this.RankingsWindow_Load);
             this.ResumeLayout(false);
 
         }
@@ -100,5 +96,6 @@
         private System.Windows.Forms.ColumnHeader Faculty_header;
         private System.Windows.Forms.ColumnHeader Studies_header;
         private System.Windows.Forms.ColumnHeader Level_header;
+        private System.Windows.Forms.ColumnHeader Points_header;
     }
 }

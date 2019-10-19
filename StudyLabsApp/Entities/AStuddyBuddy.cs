@@ -19,36 +19,25 @@ namespace StudyLabsApp
         Magician,
         MrKnowItAll,
         Genius,
-        PhD,
+        PhD
     }
     public class AStuddyBuddy
     {
-        Level Status;
-        public Level EnumProperty
-        {
-            get
-            {
-                return Status;
-            }
-            set
-            {
-                Status = value;
-            }
-        }
         public string Nickname { get; set; }
         public string Link { get; set; }
         public string Faculty { get; set; }
         public string Studies { get; set; }
+        public int Status { get; set; }
         public int Points { get; set; }
 
-        public AStuddyBuddy(string nickname, string link, string faculty, string studies, Level status, int points = 0)
+        public AStuddyBuddy(string nickname, string link, string faculty, string studies)
         {
             this.Nickname = nickname;
             this.Link = link;
             this.Faculty = faculty;
             this.Studies = studies;
-            this.Status = status;
-            this.Points = points;
+            this.Status = 1;
+            this.Points = 0;
         }
     }
 }

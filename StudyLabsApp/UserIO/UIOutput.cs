@@ -37,19 +37,35 @@ namespace StudyLabsApp.UserIO
             List<AStuddyBuddy> studdyBuddyList = new List<AStuddyBuddy>();
             AStuddyBuddy studdyBuddy;
 
-            foreach (DataRow row in tableRows)
+            foreach (DataRow row in table.Rows)
             {
                 if (row.Field<string>("Faculty") == selectedFaculty)
                 {
                     studdyBuddy = new AStuddyBuddy(row.Field<string>("Nickname"),
                                                row.Field<string>("Facebook"),
                                                row.Field<string>("Faculty"),
-                                               row.Field<string>("Studies"),
-                                               row.Field<Level>("Status")
-                                               //row.Field<int>("Points")
-                                               );
+                                               row.Field<string>("Studies"))
+                    {
+                        Status = row.Field<int>("Status"),
+                        Points = row.Field<int>("Points")
+                    };
+
                     studdyBuddyList.Add(studdyBuddy);
                 }
+            }
+
+            foreach (AStuddyBuddy buddy in studdyBuddyList)
+            {
+                ListViewItem item = new ListViewItem(buddy.Nickname);
+                for (int j = 2; j < table.Columns.Count; j++)
+                {
+                    item.SubItems.Add(buddy.Link);
+                    item.SubItems.Add(buddy.Faculty);
+                    item.SubItems.Add(buddy.Studies);
+                    item.SubItems.Add(Enum.GetName(typeof(Level), buddy.Status));
+                    item.SubItems.Add(buddy.Points.ToString());
+                }
+                listView.Items.Add(item);
             }
         }
     }

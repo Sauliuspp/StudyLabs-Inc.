@@ -33,7 +33,8 @@
             this.fb_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.faculty_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.studies_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Level_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Points_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // StuddyBuddyList
@@ -43,12 +44,13 @@
             this.fb_header,
             this.faculty_header,
             this.studies_header,
-            this.Level_header});
+            this.Status_header,
+            this.Points_header});
             this.StuddyBuddyList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StuddyBuddyList.HideSelection = false;
             this.StuddyBuddyList.Location = new System.Drawing.Point(0, 0);
             this.StuddyBuddyList.Name = "StuddyBuddyList";
-            this.StuddyBuddyList.Size = new System.Drawing.Size(834, 511);
+            this.StuddyBuddyList.Size = new System.Drawing.Size(984, 511);
             this.StuddyBuddyList.TabIndex = 4;
             this.StuddyBuddyList.UseCompatibleStateImageBehavior = false;
             this.StuddyBuddyList.View = System.Windows.Forms.View.Details;
@@ -56,7 +58,7 @@
             // nickname_header
             // 
             this.nickname_header.Text = "Nickname";
-            this.nickname_header.Width = 164;
+            this.nickname_header.Width = 178;
             // 
             // fb_header
             // 
@@ -66,26 +68,31 @@
             // faculty_header
             // 
             this.faculty_header.Text = "Faculty";
-            this.faculty_header.Width = 172;
+            this.faculty_header.Width = 154;
             // 
             // studies_header
             // 
             this.studies_header.Text = "Studies";
-            this.studies_header.Width = 167;
+            this.studies_header.Width = 284;
             // 
-            // Level_header
+            // Status_header
             // 
-            this.Level_header.Text = "Level";
-            this.Level_header.Width = 147;
+            this.Status_header.Text = "Level";
+            this.Status_header.Width = 101;
+            // 
+            // Points_header
+            // 
+            this.Points_header.Text = "Points";
+            this.Points_header.Width = 83;
             // 
             // StuddyBuddyListWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 511);
+            this.ClientSize = new System.Drawing.Size(984, 511);
             this.Controls.Add(this.StuddyBuddyList);
-            this.MaximumSize = new System.Drawing.Size(850, 550);
-            this.MinimumSize = new System.Drawing.Size(850, 550);
+            this.MaximumSize = new System.Drawing.Size(1000, 550);
+            this.MinimumSize = new System.Drawing.Size(1000, 550);
             this.Name = "StuddyBuddyListWindow";
             this.Text = "Buddy list";
             this.Load += new System.EventHandler(this.Form4_Load);
@@ -99,6 +106,7 @@
         private System.Windows.Forms.ColumnHeader fb_header;
         private System.Windows.Forms.ColumnHeader faculty_header;
         private System.Windows.Forms.ColumnHeader studies_header;
-        private System.Windows.Forms.ColumnHeader Level_header;
+        private System.Windows.Forms.ColumnHeader Status_header;
+        private System.Windows.Forms.ColumnHeader Points_header;
     }
 }
