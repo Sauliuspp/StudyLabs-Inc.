@@ -21,7 +21,7 @@ namespace StudyLabsApp
         Genius,
         PhD
     }
-    public class AStuddyBuddy : IComparable
+    public class AStuddyBuddy : IEquatable<AStuddyBuddy>
     {
         public string Nickname { get; set; }
         public string Link { get; set; }
@@ -40,16 +40,17 @@ namespace StudyLabsApp
             this.Points = 0;
         }
 
-        public int CompareTo(object obj)
+        public bool Equals(AStuddyBuddy other)
         {
-            if(!(obj is AStuddyBuddy))
+            if (!(other is AStuddyBuddy))
             {
                 throw new ArgumentException("Object is not AStuddyBuddy");
             }
             else
             {
-                AStuddyBuddy other = obj as AStuddyBuddy;
-                return this.CompareTo(other);
+                return  this.Nickname == other.Nickname &&
+                        this.Nickname == other.Faculty &&
+                        this.Studies == other.Studies;
             }
         }
     }

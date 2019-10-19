@@ -63,16 +63,14 @@ namespace StudyLabsApp.DatabaseIO
         public bool FindExistingPerson(AStuddyBuddy person)
         {
             DataTable table = LoadData();
-            string tableNickname;
-            string tableFaculty;
-            string tableStudies;
 
             foreach (DataRow row in table.Rows)
             {
-                tableNickname = row.Field<string>("Nickname");
-                tableFaculty = row.Field<string>("Faculty");
-                tableStudies = row.Field<string>("Studies");
-                if (person.Nickname == tableNickname && person.Faculty == tableFaculty && person.Studies == tableStudies)
+                AStuddyBuddy tableBuddy = new AStuddyBuddy(row.Field<string>("Nickname"),
+                                                      row.Field<string>("Facebook"),
+                                                      row.Field<string>("Faculty"),
+                                                      row.Field<string>("Studies"));
+                if (person.Equals(tableBuddy))
                 {
                     return true;
                 }
