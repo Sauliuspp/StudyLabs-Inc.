@@ -81,8 +81,6 @@ namespace StudyLabsApp
         {
             StudiesComboBox.Items.Clear();
             FacultyComboBox.SelectedItem = "";
-            // Create an IDictionaryEnumerator to iterate through the resources.
-            IDictionaryEnumerator StudiesDictionary = Studies.GetEnumerator();
 
             // Iterate through the resources and display the contents
             foreach (DictionaryEntry d in Studies)
