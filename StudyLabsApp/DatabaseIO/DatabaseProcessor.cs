@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace StudyLabsApp.DatabaseIO
 {
-    class DatabaseProcessor
+    public class DatabaseProcessor
     {
-        public static void AddEntryToDatabase(AStuddyBuddy entry)
+        public void AddEntryToDatabase(AStuddyBuddy entry)
         {
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
@@ -31,7 +31,7 @@ namespace StudyLabsApp.DatabaseIO
             cmd_Command.ExecuteNonQuery();
         }
 
-        public static DataTable LoadData() // Kopija kas yra Form4 reikia iskelti WIP
+        public DataTable LoadData() // Kopija kas yra Form4 reikia iskelti WIP
         {
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
@@ -53,10 +53,9 @@ namespace StudyLabsApp.DatabaseIO
             return table;
         }
 
-        public static bool FindExistingPerson(AStuddyBuddy person)
+        public bool FindExistingPerson(AStuddyBuddy person)
         {
             DataTable table = LoadData();
-            List<AStuddyBuddy> list = new List<AStuddyBuddy>();
             string tableNickname;
             string tableFaculty;
             string tableStudies;

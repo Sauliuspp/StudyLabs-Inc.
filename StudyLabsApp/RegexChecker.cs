@@ -21,7 +21,7 @@ namespace StudyLabsApp
 
         public bool CheckLink(string input)
         { 
-            Regex linkRegex = new Regex(@"^www.facebook\.com/");
+            Regex linkRegex = new Regex(@"^www\.facebook\.com/");
             if (linkRegex.IsMatch(input))
             {
                 return true;

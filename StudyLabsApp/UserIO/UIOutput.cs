@@ -8,21 +8,19 @@ using System.Windows.Forms;
 
 namespace StudyLabsApp.UserIO
 {
-    public static class UIOutput
+    public class UIOutput
     {
-        private static IEnumerable<DataRow> tableRows;
+        private IEnumerable<DataRow> tableRows;
 
-        public static void DisplayData(DataTable table, ListView listView, string comboBoxFaculty, string comboBoxStudies)
+        public void DisplayData(DataTable table, ListView listView, string selectedFaculty, string selectedStudies)
         {
             tableRows = from DataRow r in table.Rows
-                           select r;
+                        select r;
 
-            List<DataRow> rows = tableRows.ToList();
-
-            foreach (DataRow row in rows)
+            foreach (DataRow row in tableRows)
             {
-                if (row.Field<string>("Faculty") == comboBoxFaculty &&
-                    row.Field<string>("Studies") == comboBoxStudies)
+                if (row.Field<string>("Faculty") == selectedFaculty &&
+                    row.Field<string>("Studies") == selectedStudies)
                 {
                     ListViewItem item = new ListViewItem(row.Field<string>("Nickname"));
                     for (int j = 2; j < table.Columns.Count; j++)
@@ -30,6 +28,27 @@ namespace StudyLabsApp.UserIO
                         item.SubItems.Add(row[j].ToString());
                     }
                     listView.Items.Add(item);
+                }
+            }
+        }
+
+        public void DisplayData(DataTable table, ListView listView, string selectedFaculty)
+        {
+            List<AStuddyBuddy> studdyBuddyList = new List<AStuddyBuddy>();
+            AStuddyBuddy studdyBuddy;
+
+            foreach (DataRow row in tableRows)
+            {
+                if (row.Field<string>("Faculty") == selectedFaculty)
+                {
+                    studdyBuddy = new AStuddyBuddy(row.Field<string>("Nickname"),
+                                               row.Field<string>("Facebook"),
+                                               row.Field<string>("Faculty"),
+                                               row.Field<string>("Studies"),
+                                               row.Field<Level>("Status")
+                                               //row.Field<int>("Points")
+                                               );
+                    studdyBuddyList.Add(studdyBuddy);
                 }
             }
         }

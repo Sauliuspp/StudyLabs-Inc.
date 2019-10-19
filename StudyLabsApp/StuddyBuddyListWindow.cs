@@ -18,17 +18,27 @@ namespace StudyLabsApp
         string faculty;
         string studies;
 
-        public StuddyBuddyListWindow(string faculty, string studies)
+        public StuddyBuddyListWindow(ComboBox faculty, ComboBox studies)
         {
             InitializeComponent();
-            this.faculty = faculty;
-            this.studies = studies;
+            if (faculty.SelectedItem == null || studies.SelectedItem == null)
+            {
+                MessageBox.Show("Choose faculty and studies");
+            }
+            else 
+            {
+                this.faculty = faculty.SelectedItem.ToString();
+                this.studies = studies.SelectedItem.ToString();
+                this.Show();
+            }
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            DataTable table = DatabaseProcessor.LoadData();
-            UIOutput.DisplayData(table, StuddyBuddyList, faculty, studies);
+            DatabaseProcessor DBprocessor = new DatabaseProcessor();
+            DataTable table = DBprocessor.LoadData();
+            UIOutput displayer = new UIOutput();
+            displayer.DisplayData(table, StuddyBuddyList, faculty, studies);
         }
     }
 }

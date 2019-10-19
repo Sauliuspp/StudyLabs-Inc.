@@ -41,6 +41,7 @@
             this.ReturnButton = new System.Windows.Forms.Button();
             this.StudiesComboBox = new System.Windows.Forms.ComboBox();
             this.FacultyComboBox = new System.Windows.Forms.ComboBox();
+            this.RankingsButton = new System.Windows.Forms.Button();
             this.MainMenuPanel.SuspendLayout();
             this.PanelForUniversityList.SuspendLayout();
             this.SuspendLayout();
@@ -58,9 +59,9 @@
             this.MainMenuPanel.Location = new System.Drawing.Point(12, 123);
             this.MainMenuPanel.Name = "MainMenuPanel";
             this.MainMenuPanel.RowCount = 3;
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.MainMenuPanel.Size = new System.Drawing.Size(610, 426);
             this.MainMenuPanel.TabIndex = 0;
             // 
@@ -115,6 +116,7 @@
             // 
             // PanelForUniversityList
             // 
+            this.PanelForUniversityList.Controls.Add(this.RankingsButton);
             this.PanelForUniversityList.Controls.Add(this.SearchButton);
             this.PanelForUniversityList.Controls.Add(this.label3);
             this.PanelForUniversityList.Controls.Add(this.label2);
@@ -200,6 +202,17 @@
             this.FacultyComboBox.TabIndex = 0;
             this.FacultyComboBox.SelectedIndexChanged += new System.EventHandler(this.FacultyComboBox_SelectedIndexChanged);
             // 
+            // RankingsButton
+            // 
+            this.RankingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RankingsButton.Location = new System.Drawing.Point(389, 376);
+            this.RankingsButton.Name = "RankingsButton";
+            this.RankingsButton.Size = new System.Drawing.Size(159, 70);
+            this.RankingsButton.TabIndex = 7;
+            this.RankingsButton.Text = "Find best StuddyBuddies for the faculty";
+            this.RankingsButton.UseVisualStyleBackColor = true;
+            this.RankingsButton.Click += new System.EventHandler(this.RankingsButton_Click_1);
+            // 
             // MainMenuWindow
             // 
             this.AcceptButton = this.FindStuddyBuddies;
@@ -235,6 +248,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button RankingsButton;
     }
 }
 
