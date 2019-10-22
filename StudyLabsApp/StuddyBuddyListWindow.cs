@@ -40,5 +40,10 @@ namespace StudyLabsApp
             UIOutput displayer = new UIOutput();
             displayer.DisplayData(table, StuddyBuddyList, faculty, studies);
         }
+
+        private void StuddyBuddyList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

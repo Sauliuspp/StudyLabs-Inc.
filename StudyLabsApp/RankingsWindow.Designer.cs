@@ -52,6 +52,7 @@
             this.StuddyBuddyList.Name = "StuddyBuddyList";
             this.StuddyBuddyList.UseCompatibleStateImageBehavior = false;
             this.StuddyBuddyList.View = System.Windows.Forms.View.Details;
+            this.StuddyBuddyList.SelectedIndexChanged += new System.EventHandler(this.StuddyBuddyList_SelectedIndexChanged);
             // 
             // Nickname_header
             // 

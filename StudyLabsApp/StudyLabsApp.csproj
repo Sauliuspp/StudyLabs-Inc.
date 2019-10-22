@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseIO\DatabaseProcessor.cs" />
+    <Compile Include="ExtentionMethods\IntExtensions.cs" />
     <Compile Include="MainMenuWindow.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -34,6 +34,7 @@
             this.BecomeAStuddyBuddy = new System.Windows.Forms.Button();
             this.StuddyBuddy = new System.Windows.Forms.Label();
             this.PanelForUniversityList = new System.Windows.Forms.Panel();
+            this.RankingsButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.ReturnButton = new System.Windows.Forms.Button();
             this.StudiesComboBox = new System.Windows.Forms.ComboBox();
             this.FacultyComboBox = new System.Windows.Forms.ComboBox();
-            this.RankingsButton = new System.Windows.Forms.Button();
             this.MainMenuPanel.SuspendLayout();
             this.PanelForUniversityList.SuspendLayout();
             this.SuspendLayout();
@@ -130,6 +130,18 @@
             this.PanelForUniversityList.Size = new System.Drawing.Size(634, 561);
             this.PanelForUniversityList.TabIndex = 2;
             this.PanelForUniversityList.Visible = false;
+            this.PanelForUniversityList.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelForUniversityList_Paint);
+            // 
+            // RankingsButton
+            // 
+            this.RankingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RankingsButton.Location = new System.Drawing.Point(389, 376);
+            this.RankingsButton.Name = "RankingsButton";
+            this.RankingsButton.Size = new System.Drawing.Size(159, 70);
+            this.RankingsButton.TabIndex = 7;
+            this.RankingsButton.Text = "Find best StuddyBuddies for the faculty";
+            this.RankingsButton.UseVisualStyleBackColor = true;
+            this.RankingsButton.Click += new System.EventHandler(this.RankingsButton_Click_1);
             // 
             // SearchButton
             // 
@@ -201,17 +213,6 @@
             this.FacultyComboBox.Size = new System.Drawing.Size(481, 21);
             this.FacultyComboBox.TabIndex = 0;
             this.FacultyComboBox.SelectedIndexChanged += new System.EventHandler(this.FacultyComboBox_SelectedIndexChanged);
-            // 
-            // RankingsButton
-            // 
-            this.RankingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RankingsButton.Location = new System.Drawing.Point(389, 376);
-            this.RankingsButton.Name = "RankingsButton";
-            this.RankingsButton.Size = new System.Drawing.Size(159, 70);
-            this.RankingsButton.TabIndex = 7;
-            this.RankingsButton.Text = "Find best StuddyBuddies for the faculty";
-            this.RankingsButton.UseVisualStyleBackColor = true;
-            this.RankingsButton.Click += new System.EventHandler(this.RankingsButton_Click_1);
             // 
             // MainMenuWindow
             // 

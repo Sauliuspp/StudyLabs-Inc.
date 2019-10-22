@@ -30,6 +30,9 @@ namespace StudyLabsApp
         public int Status { get; set; }
         public int Points { get; set; }
 
+        public AStuddyBuddy()
+            : this("No Nickname","No Link","No faculty","No studies") { }
+
         public AStuddyBuddy(string nickname, string link, string faculty, string studies)
         {
             this.Nickname = nickname;

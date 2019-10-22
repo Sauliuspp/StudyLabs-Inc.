@@ -12,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudyLabsApp.ExtentionMethods;
 
 namespace StudyLabsApp
 {
@@ -100,9 +101,22 @@ namespace StudyLabsApp
         private void LevelUp(AStuddyBuddy StuddyBuddy)
         {
             int enumvalue = (int)StuddyBuddy.Status;
+
+            //Extension method usage
+            if (enumvalue.IsGreaterThan(10)){
+                MessageBox.Show("You have reached maximum level possible! Good job! ");
+                return;
+            }
+
             StuddyBuddy.Status = enumvalue + 1;
 
+            //Boxing happening. Enum type to string
             MessageBox.Show("Your new level: " + (Level) StuddyBuddy.Status);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

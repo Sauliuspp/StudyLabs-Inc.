@@ -105,5 +105,10 @@ namespace StudyLabsApp
             RankingsWindow form = new RankingsWindow(FacultyComboBox,
                                                      StudiesComboBox);
         }
+
+        private void PanelForUniversityList_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

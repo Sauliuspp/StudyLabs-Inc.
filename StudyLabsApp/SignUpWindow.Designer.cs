@@ -61,6 +61,7 @@ namespace StudyLabsApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(596, 450);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label5
             // 
@@ -73,12 +74,12 @@ namespace StudyLabsApp
             // 
             // StudiesComboBox
             // 
+            this.StudiesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StudiesComboBox.FormattingEnabled = true;
             this.StudiesComboBox.Location = new System.Drawing.Point(142, 288);
             this.StudiesComboBox.Name = "StudiesComboBox";
             this.StudiesComboBox.Size = new System.Drawing.Size(284, 21);
             this.StudiesComboBox.TabIndex = 12;
-            this.StudiesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // label4
             // 
@@ -91,13 +92,13 @@ namespace StudyLabsApp
             // 
             // FacultyComboBox
             // 
+            this.FacultyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FacultyComboBox.FormattingEnabled = true;
             this.FacultyComboBox.Location = new System.Drawing.Point(142, 240);
             this.FacultyComboBox.Name = "FacultyComboBox";
             this.FacultyComboBox.Size = new System.Drawing.Size(284, 21);
             this.FacultyComboBox.TabIndex = 10;
             this.FacultyComboBox.SelectedIndexChanged += new System.EventHandler(this.FacultyComboBox_SelectedIndexChanged);
-            this.FacultyComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // label3
             // 
