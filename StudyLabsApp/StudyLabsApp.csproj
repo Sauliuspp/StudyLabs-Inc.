@@ -79,12 +79,21 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RankingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RankingsWindow.Designer.cs">
+      <DependentUpon>RankingsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegexChecker.cs" />
     <Compile Include="SignUpWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SignUpWindow.Designer.cs">
       <DependentUpon>SignUpWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StuddyBuddyDBDataSet.cs">
+      <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="StuddyBuddyListWindow.cs">
       <SubType>Form</SubType>
@@ -117,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ForumsWindow.resx">
       <DependentUpon>ForumsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankingsWindow.dje.resx">
+      <DependentUpon>RankingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankingsWindow.resx">
+      <DependentUpon>RankingsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUpWindow.resx">
       <DependentUpon>SignUpWindow.cs</DependentUpon>

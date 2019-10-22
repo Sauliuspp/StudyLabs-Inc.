@@ -81,8 +81,6 @@ namespace StudyLabsApp
         {
             StudiesComboBox.Items.Clear();
             FacultyComboBox.SelectedItem = "";
-            // Create an IDictionaryEnumerator to iterate through the resources.
-            IDictionaryEnumerator StudiesDictionary = Studies.GetEnumerator();
 
             // Iterate through the resources and display the contents
             foreach (DictionaryEntry d in Studies)
@@ -98,9 +96,14 @@ namespace StudyLabsApp
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            StuddyBuddyListWindow form = new StuddyBuddyListWindow(FacultyComboBox.SelectedItem.ToString(),
-                                                                   StudiesComboBox.SelectedItem.ToString());
-            form.Show();
+            StuddyBuddyListWindow form = new StuddyBuddyListWindow(FacultyComboBox,
+                                                                   StudiesComboBox);
+        }
+
+        private void RankingsButton_Click_1(object sender, EventArgs e)
+        {
+            RankingsWindow form = new RankingsWindow(FacultyComboBox,
+                                                     StudiesComboBox);
         }
     }
 }

@@ -45,23 +45,24 @@ namespace StudyLabsApp
                     AStuddyBuddy StuddyBuddy = new AStuddyBuddy(NicknameBox.Text.ToString(),
                                                            LinkBox.Text.ToString(),
                                                            FacultyComboBox.SelectedItem.ToString(),
-                                                           StudiesComboBox.SelectedItem.ToString(),Level.Starter);
+                                                           StudiesComboBox.SelectedItem.ToString());
 
                     RegexChecker regexObject = new RegexChecker();
+                    DatabaseProcessor DBprocessor = new DatabaseProcessor();
                     bool nicknameValid = regexObject.CheckNickname(StuddyBuddy.Nickname);
                     bool linkValid = regexObject.CheckLink(StuddyBuddy.Link);
-                    bool personExists = DatabaseProcessor.FindExistingPerson(StuddyBuddy);
+                    bool personExists = DBprocessor.FindExistingPerson(StuddyBuddy);
 
                     if (nicknameValid && linkValid && !personExists)
                     {
-                        DatabaseProcessor.AddEntryToDatabase(StuddyBuddy);
+                        DBprocessor.AddEntryToDatabase(StuddyBuddy);
 
                         MessageBox.Show("Your nickname: "  + StuddyBuddy.Nickname   + Environment.NewLine +
                                         "Your Link: "      + StuddyBuddy.Link       + Environment.NewLine +
                                         "Chosen faculty: " + StuddyBuddy.Faculty    + Environment.NewLine +
                                         "Chosen studies: " + StuddyBuddy.Studies    + Environment.NewLine +
-                                        "Your level: "     + StuddyBuddy.EnumProperty);
-                        LevelUp(StuddyBuddy);
+                                        "Your level: "     + (Level) StuddyBuddy.Status);
+                        //LevelUp(StuddyBuddy);
                         this.Close();
                     }
                     else if(!nicknameValid)
@@ -98,13 +99,10 @@ namespace StudyLabsApp
         //A method to increase the level of a studdybuddy
         private void LevelUp(AStuddyBuddy StuddyBuddy)
         {
-            int enumvalue = (int)StuddyBuddy.EnumProperty;
-            enumvalue++;
-            Level therightvalue = (Level)enumvalue;
+            int enumvalue = (int)StuddyBuddy.Status;
+            StuddyBuddy.Status = enumvalue + 1;
 
-            StuddyBuddy.EnumProperty = therightvalue;
-
-            MessageBox.Show("Your new level: " + StuddyBuddy.EnumProperty);
+            MessageBox.Show("Your new level: " + (Level) StuddyBuddy.Status);
         }
     }
 }

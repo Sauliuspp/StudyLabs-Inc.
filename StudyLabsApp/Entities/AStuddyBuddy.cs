@@ -19,34 +19,55 @@ namespace StudyLabsApp
         Magician,
         MrKnowItAll,
         Genius,
-        PhD,
+        PhD
     }
-    public class AStuddyBuddy
+    public class AStuddyBuddy : IEquatable<AStuddyBuddy>, IComparable
     {
-        Level Status;
-        public Level EnumProperty
-        {
-            get
-            {
-                return Status;
-            }
-            set
-            {
-                Status = value;
-            }
-        }
         public string Nickname { get; set; }
         public string Link { get; set; }
         public string Faculty { get; set; }
         public string Studies { get; set; }
-        
-        public AStuddyBuddy(string nickname, string link, string faculty, string studies, Level status)
+        public int Status { get; set; }
+        public int Points { get; set; }
+
+        public AStuddyBuddy(string nickname, string link, string faculty, string studies)
         {
             this.Nickname = nickname;
             this.Link = link;
             this.Faculty = faculty;
             this.Studies = studies;
-            this.Status = status;
+            this.Status = 1;
+            this.Points = 0;
+        }
+
+        public bool Equals(AStuddyBuddy other)
+        {
+            if (!(other is AStuddyBuddy))
+            {
+                throw new ArgumentException("Object is not AStuddyBuddy");
+            }
+            else
+            {
+                return  this.Nickname == other.Nickname &&
+                        this.Faculty == other.Faculty &&
+                        this.Studies == other.Studies;
+            }
+        }
+
+        public int CompareTo(object obj)
+        {
+            AStuddyBuddy other = obj as AStuddyBuddy;
+            if (!(obj is AStuddyBuddy))
+            {
+                throw new ArgumentException("Object is not AStuddyBuddy");
+            }
+            else
+            {
+                return this.Points.CompareTo(other.Points);
+                     /*this.Nickname.CompareTo(other.Nickname) +
+                       this.Faculty.CompareTo(other.Faculty) +
+                       this.Studies.CompareTo(other.Studies);*/
+            }
         }
     }
 }

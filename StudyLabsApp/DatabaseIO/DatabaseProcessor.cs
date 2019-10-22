@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace StudyLabsApp.DatabaseIO
 {
-    class DatabaseProcessor
+    public class DatabaseProcessor
     {
-        public static void AddEntryToDatabase(AStuddyBuddy entry)
+        public void AddEntryToDatabase(AStuddyBuddy entry)
         {
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
@@ -23,15 +23,22 @@ namespace StudyLabsApp.DatabaseIO
             string newBuddyLink = entry.Link;
             string newBuddyFaculty = entry.Faculty;
             string newBuddyStudies = entry.Studies;
+            int newBuddyStatus = (int) Level.Starter;
+            int newBuddyPoints = 0;
 
-            string sql_Text = "INSERT INTO StuddyBuddy ([Nickname],[Facebook],[Faculty],[Studies]) VALUES('" + newBuddyNick + "'," +
-                "'" + newBuddyLink + "','" + newBuddyFaculty + "','" + newBuddyStudies + "')";
+            string sql_Text = "INSERT INTO StuddyBuddy ([Nickname],[Facebook],[Faculty],[Studies],[Status],[Points]) VALUES('"
+                + newBuddyNick + "','" +
+                newBuddyLink + "','" +
+                newBuddyFaculty + "','" +
+                newBuddyStudies + "','" +
+                newBuddyStatus + "','" +
+                newBuddyPoints +  "')";
 
             SqlCommand cmd_Command = new SqlCommand(sql_Text, cn_connection);
             cmd_Command.ExecuteNonQuery();
         }
 
-        public static DataTable LoadData() // Kopija kas yra Form4 reikia iskelti WIP
+        public DataTable LoadData() // Kopija kas yra Form4 reikia iskelti WIP
         {
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
@@ -53,20 +60,17 @@ namespace StudyLabsApp.DatabaseIO
             return table;
         }
 
-        public static bool FindExistingPerson(AStuddyBuddy person)
+        public bool FindExistingPerson(AStuddyBuddy person)
         {
             DataTable table = LoadData();
-            List<AStuddyBuddy> list = new List<AStuddyBuddy>();
-            string tableNickname;
-            string tableFaculty;
-            string tableStudies;
 
             foreach (DataRow row in table.Rows)
             {
-                tableNickname = row.Field<string>("Nickname");
-                tableFaculty = row.Field<string>("Faculty");
-                tableStudies = row.Field<string>("Studies");
-                if (person.Nickname == tableNickname && person.Faculty == tableFaculty && person.Studies == tableStudies)
+                AStuddyBuddy tableBuddy = new AStuddyBuddy(row.Field<string>("Nickname"),
+                                                      row.Field<string>("Facebook"),
+                                                      row.Field<string>("Faculty"),
+                                                      row.Field<string>("Studies"));
+                if (person.Equals(tableBuddy))
                 {
                     return true;
                 }
