@@ -43,10 +43,10 @@ namespace StudyLabsApp
             {
                 if(StudiesComboBox.SelectedIndex>=0)
                 {
-                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(NicknameBox.Text.ToString(),
-                                                           LinkBox.Text.ToString(),
-                                                           FacultyComboBox.SelectedItem.ToString(),
-                                                           StudiesComboBox.SelectedItem.ToString());
+                    AStuddyBuddy StuddyBuddy = new AStuddyBuddy(nickname: NicknameBox.Text.ToString(),
+                                                                link: LinkBox.Text.ToString(),
+                                                                faculty: FacultyComboBox.SelectedItem.ToString(),
+                                                                studies: StudiesComboBox.SelectedItem.ToString());
 
                     RegexChecker regexObject = new RegexChecker();
                     DatabaseProcessor DBprocessor = new DatabaseProcessor();
@@ -88,22 +88,32 @@ namespace StudyLabsApp
 
             foreach (DictionaryEntry entry in Studies)
             {
-                int studiesValue = Int32.Parse(entry.Value.ToString());
-
-                if (studiesValue == FacultyComboBox.SelectedIndex)
+                int studiesValue;
+                try
                 {
-                    StudiesComboBox.Items.Add(entry.Key.ToString());
+                    studiesValue = Int32.Parse(entry.Value.ToString());
+
+                    if (studiesValue == FacultyComboBox.SelectedIndex)
+                    {
+                        StudiesComboBox.Items.Add(entry.Key.ToString());
+                    }
                 }
+                catch (FormatException)
+                {
+                    Console.WriteLine($"Unable to parse '{entry.Value.ToString()}'");
+                }
+
             }
 
         }
         //A method to increase the level of a studdybuddy
         private void LevelUp(AStuddyBuddy StuddyBuddy)
         {
+            //Enum widening to int
             int enumvalue = (int)StuddyBuddy.Status;
 
             //Extension method usage
-            if (enumvalue.IsGreaterThan(10)){
+            if (enumvalue.MathComparisons<int>(10,">")){
                 MessageBox.Show("You have reached maximum level possible! Good job! ");
                 return;
             }

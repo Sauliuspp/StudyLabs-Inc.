@@ -30,10 +30,11 @@ namespace StudyLabsApp
         public int Status { get; set; }
         public int Points { get; set; }
 
+
         public AStuddyBuddy()
             : this("No Nickname","No Link","No faculty","No studies") { }
 
-        public AStuddyBuddy(string nickname, string link, string faculty, string studies)
+        public AStuddyBuddy(string nickname, string link, string faculty, string studies, int status = 0, int points = 0)
         {
             this.Nickname = nickname;
             this.Link = link;
@@ -45,13 +46,14 @@ namespace StudyLabsApp
 
         public bool Equals(AStuddyBuddy other)
         {
+
             if (!(other is AStuddyBuddy))
             {
                 throw new ArgumentException("Object is not AStuddyBuddy");
             }
             else
             {
-                return  this.Nickname == other.Nickname &&
+                return this.Nickname == other.Nickname &&
                         this.Faculty == other.Faculty &&
                         this.Studies == other.Studies;
             }

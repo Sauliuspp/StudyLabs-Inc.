@@ -38,7 +38,7 @@ namespace StudyLabsApp
             DatabaseProcessor DBprocessor = new DatabaseProcessor();
             DataTable table = DBprocessor.LoadData();
             UIOutput displayer = new UIOutput();
-            displayer.DisplayData(table, StuddyBuddyList, faculty, studies);
+            displayer.DisplayData(table, listView: StuddyBuddyList, selectedFaculty: faculty, selectedStudies: studies);
         }
 
         private void StuddyBuddyList_SelectedIndexChanged(object sender, EventArgs e)

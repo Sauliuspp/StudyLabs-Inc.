@@ -66,7 +66,7 @@ namespace StudyLabsApp.DatabaseIO
             cmd_Command.ExecuteNonQuery();
         }
 
-        public DataTable LoadData() // Copy what is in form 4
+        public DataTable LoadData()
         {
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
@@ -81,10 +81,6 @@ namespace StudyLabsApp.DatabaseIO
             SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, cn_connection);
             adapter.Fill(table);
 
-            //Show database list
-            // lst_SBuddy.DisplayMember = "Nickname";
-            // lst_SBuddy.ValueMember = "Id";
-            // lst_SBuddy.DataSource = tbl;
             return table;
         }
 
@@ -94,11 +90,13 @@ namespace StudyLabsApp.DatabaseIO
 
             foreach (DataRow row in table.Rows)
             {
-                AStuddyBuddy tableBuddy = new AStuddyBuddy(row.Field<string>("Nickname"),
-                                                      row.Field<string>("Facebook"),
-                                                      row.Field<string>("Faculty"),
-                                                      row.Field<string>("Studies"));
-                if (person.Equals(tableBuddy))
+                AStuddyBuddy tableBuddy = new AStuddyBuddy(nickname: row.Field<string>("Nickname"),
+                                                           link: row.Field<string>("Facebook"),
+                                                           faculty: row.Field<string>("Faculty"),
+                                                           studies: row.Field<string>("Studies"));
+
+                if(GenericsEquals.AreEqual<String>(person.Nickname,tableBuddy.Nickname)
+                    || GenericsEquals.AreEqual<String>(person.Link, tableBuddy.Link))
                 {
                     return true;
                 }
