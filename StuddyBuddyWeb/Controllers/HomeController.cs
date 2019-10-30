@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StuddyBuddyWeb.Processors;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -27,10 +28,14 @@ namespace StudyLabsWeb.Controllers
             return View();
         }
 
-        public ActionResult Rankings()
+        public ActionResult Rankings(string selectedFaculty)
         {
             ViewBag.Message = "Rankings";
-            return View();
+
+            AStuddyBuddyProcessor studdyBuddyList = new AStuddyBuddyProcessor();
+            studdyBuddyList.LoadData(selectedFaculty);
+
+            return View(studdyBuddyList);
         }
     }
 }

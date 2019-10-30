@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudyLabsWeb.DatabaseIO
+namespace StudyLabsWeb.Processors
 {
     public class DatabaseProcessor
     {
