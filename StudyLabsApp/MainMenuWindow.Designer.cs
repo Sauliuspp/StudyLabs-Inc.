@@ -141,7 +141,7 @@
             this.RankingsButton.TabIndex = 7;
             this.RankingsButton.Text = "Find best StuddyBuddies for the faculty";
             this.RankingsButton.UseVisualStyleBackColor = true;
-            this.RankingsButton.Click += new System.EventHandler(this.RankingsButton_Click_1);
+            this.RankingsButton.Click += new System.EventHandler(this.RankingsButton_Click);
             // 
             // SearchButton
             // 

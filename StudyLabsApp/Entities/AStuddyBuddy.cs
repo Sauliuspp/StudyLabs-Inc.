@@ -67,9 +67,6 @@ namespace StudyLabsApp
             else
             {
                 return this.Points.CompareTo(other.Points);
-                     /*this.Nickname.CompareTo(other.Nickname) +
-                       this.Faculty.CompareTo(other.Faculty) +
-                       this.Studies.CompareTo(other.Studies);*/
             }
         }
     }

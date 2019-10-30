@@ -100,7 +100,7 @@ namespace StudyLabsApp
                                                                    StudiesComboBox);
         }
 
-        private void RankingsButton_Click_1(object sender, EventArgs e)
+        private void RankingsButton_Click(object sender, EventArgs e)
         {
             RankingsWindow form = new RankingsWindow(FacultyComboBox,
                                                      StudiesComboBox);
