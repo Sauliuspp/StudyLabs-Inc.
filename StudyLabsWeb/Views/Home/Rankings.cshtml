@@ -1,4 +1,5 @@
-﻿
+﻿@using StudyLabsWeb.Models
+@model  StudyLabsWeb.Models.AStuddyBuddyViewModel
 @{
     ViewBag.Title = "Rankings";
     //Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +7,31 @@
 
 <h2>@ViewBag.Title</h2>
 
+@{
+    int index = 0;
+    foreach (var studdyBuddy in Model.StuddyBuddies)
+    {
+        List<AStuddyBuddy> entries = Model.StuddyBuddies;
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => studdyBuddy.Nickname)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => studdyBuddy.Link)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => studdyBuddy.Faculty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => studdyBuddy.Studies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => studdyBuddy.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => studdyBuddy.Points)
+            </td>
+        </tr>
+    }
+    index++;
+}

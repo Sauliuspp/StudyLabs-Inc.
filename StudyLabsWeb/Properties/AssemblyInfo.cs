@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("StuddyBuddyWeb")]
+[assembly: AssemblyProduct("StudyLabsWeb")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("480cafd5-8b86-4296-b97c-fc68848ca6a5")]
+[assembly: Guid("52de9d15-4a60-4fcd-99bf-57e6851757be")]
 
 // Version information for an assembly consists of the following four values:
 //

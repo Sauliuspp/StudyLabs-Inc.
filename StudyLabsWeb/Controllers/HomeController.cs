@@ -1,4 +1,5 @@
-﻿using StuddyBuddyWeb.Processors;
+﻿using StudyLabsWeb.Models;
+using StudyLabsWeb.Processors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,9 +33,10 @@ namespace StudyLabsWeb.Controllers
         {
             ViewBag.Message = "Rankings";
 
-            AStuddyBuddyProcessor studdyBuddyList = new AStuddyBuddyProcessor();
-            studdyBuddyList.LoadData(selectedFaculty);
-
+            AStuddyBuddyProcessor studdyBuddyInfo = new AStuddyBuddyProcessor();
+            List<AStuddyBuddy> studdyBuddies = studdyBuddyInfo.LoadData(selectedFaculty);
+            AStuddyBuddyViewModel studdyBuddyList = new AStuddyBuddyViewModel();
+            studdyBuddyList.StuddyBuddies = studdyBuddies;
             return View(studdyBuddyList);
         }
     }

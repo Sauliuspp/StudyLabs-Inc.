@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace StuddyBuddyWeb
+namespace StudyLabsWeb
 {
     public class BundleConfig
     {

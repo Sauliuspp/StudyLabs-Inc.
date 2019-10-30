@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,7 +107,12 @@ namespace StudyLabsApp
             RankingsWindow form = new RankingsWindow(FacultyComboBox,
                                                      StudiesComboBox);
             */
-            
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://localhost:44385/");
+                request.Method = "GET";
+            //specify other request properties
+
+                WebResponse response = request.GetResponse();
+
         }
 
         private void PanelForUniversityList_Paint(object sender, PaintEventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace StuddyBuddyWeb.App_Data
+﻿namespace StudyLabsApp
 {
 
 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
 
-namespace StuddyBuddyWeb.Processors
+namespace StudyLabsWeb.Processors
 {
     public class AStuddyBuddyProcessor
     {
