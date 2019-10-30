@@ -128,5 +128,10 @@ namespace StudyLabsApp
         {
 
         }
+
+        private void SignUpWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

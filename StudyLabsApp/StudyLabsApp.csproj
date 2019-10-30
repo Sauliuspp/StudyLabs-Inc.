@@ -179,6 +179,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\StuddyBudyicon.ico" />
+    <None Include="Resources\StuddyBudyicon.png" />
+    <None Include="Resources\StuddyBudyiconSMALL.png" />
+    <None Include="Resources\booksIMGlogo.png" />
     <Content Include="StuddyBuddyDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
