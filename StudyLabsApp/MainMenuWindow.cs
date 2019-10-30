@@ -102,8 +102,11 @@ namespace StudyLabsApp
 
         private void RankingsButton_Click(object sender, EventArgs e)
         {
+            /*
             RankingsWindow form = new RankingsWindow(FacultyComboBox,
                                                      StudiesComboBox);
+            */
+            
         }
 
         private void PanelForUniversityList_Paint(object sender, PaintEventArgs e)

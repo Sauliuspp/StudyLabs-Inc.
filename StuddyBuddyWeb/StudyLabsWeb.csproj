@@ -151,6 +151,14 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="StuddyBuddyDBDataSet.cs">
+      <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StuddyBuddyDBDataSet.Designer.cs">
+      <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -179,6 +187,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="StuddyBuddyDB.mdf" />
+    <Content Include="StuddyBuddyDB_log.ldf">
+      <DependentUpon>StuddyBuddyDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -194,6 +206,17 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Rankings.cshtml" />
+    <Content Include="StuddyBuddyDBDataSet.xsc">
+      <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="StuddyBuddyDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StuddyBuddyDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="StuddyBuddyDBDataSet.xss">
+      <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
