@@ -40,8 +40,8 @@ namespace StudyLabsApp
             this.Link = link;
             this.Faculty = faculty;
             this.Studies = studies;
-            this.Status = 1;
-            this.Points = 0;
+            this.Status = status;
+            this.Points = points;
         }
 
         public bool Equals(AStuddyBuddy other)
@@ -69,9 +69,6 @@ namespace StudyLabsApp
             else
             {
                 return this.Points.CompareTo(other.Points);
-                     /*this.Nickname.CompareTo(other.Nickname) +
-                       this.Faculty.CompareTo(other.Faculty) +
-                       this.Studies.CompareTo(other.Studies);*/
             }
         }
     }
