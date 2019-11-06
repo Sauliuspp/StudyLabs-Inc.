@@ -52,6 +52,11 @@ namespace StudyLabsApp
 
         private void EnterForums_Click(object sender, EventArgs e)
         {
+            panelLeft.Visible = true;
+            panelLeft.Height = EnterForums.Height;
+            panelLeft.Top = EnterForums.Top;
+            PanelForUniversityList.Visible = false;
+            lForums.Visible = true;
             MessageBox.Show("Not available in current version");
             //MainMenuPanel.Visible = false;
             //StuddyBuddy.Visible = false;
@@ -59,14 +64,18 @@ namespace StudyLabsApp
 
         private void FindStuddyBuddies_Click(object sender, EventArgs e)
         {
-            MainMenuPanel.Visible = false;
-            StuddyBuddy.Visible = false;
+            panelLeft.Visible = true;
+            panelLeft.Height = FindStuddyBuddies.Height;
+            panelLeft.Top = FindStuddyBuddies.Top;
             PanelForUniversityList.Visible = true;
 
         }
 
         private void BecomeAStuddyBuddy_Click(object sender, EventArgs e)
         {
+            panelLeft.Visible = true;
+            panelLeft.Height = BecomeAStuddyBuddy.Height;
+            panelLeft.Top = BecomeAStuddyBuddy.Top;
             SignUpWindow form3 = new SignUpWindow();
             form3.Show();
         }
@@ -74,7 +83,8 @@ namespace StudyLabsApp
         private void ReturnButton_Click(object sender, EventArgs e)
         {
             PanelForUniversityList.Visible = false;
-            MainMenuPanel.Visible = true;
+            panelLeft.Visible = false;
+            lForums.Visible = false;
             StuddyBuddy.Visible = true;
         }
 
@@ -116,6 +126,32 @@ namespace StudyLabsApp
         }
 
         private void PanelForUniversityList_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void StuddyBuddy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainMenuWindow_Load(object sender, EventArgs e)
+        {
+            lForums.Visible = false;
+            panelLeft.Visible = false;
+        }
+
+        private void lForums_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lBookImage_Click(object sender, EventArgs e)
         {
 
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StuddyBuddyListWindow));
             this.StuddyBuddyList = new System.Windows.Forms.ListView();
             this.nickname_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.fb_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,6 +40,7 @@
             // 
             // StuddyBuddyList
             // 
+            this.StuddyBuddyList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.StuddyBuddyList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nickname_header,
             this.fb_header,
@@ -47,6 +49,8 @@
             this.Status_header,
             this.Points_header});
             this.StuddyBuddyList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StuddyBuddyList.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StuddyBuddyList.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.StuddyBuddyList.HideSelection = false;
             this.StuddyBuddyList.Location = new System.Drawing.Point(0, 0);
             this.StuddyBuddyList.Name = "StuddyBuddyList";
@@ -64,7 +68,7 @@
             // fb_header
             // 
             this.fb_header.Text = "Facebook";
-            this.fb_header.Width = 179;
+            this.fb_header.Width = 193;
             // 
             // faculty_header
             // 
@@ -74,17 +78,17 @@
             // studies_header
             // 
             this.studies_header.Text = "Studies";
-            this.studies_header.Width = 284;
+            this.studies_header.Width = 273;
             // 
             // Status_header
             // 
             this.Status_header.Text = "Level";
-            this.Status_header.Width = 101;
+            this.Status_header.Width = 93;
             // 
             // Points_header
             // 
             this.Points_header.Text = "Points";
-            this.Points_header.Width = 83;
+            this.Points_header.Width = 88;
             // 
             // StuddyBuddyListWindow
             // 
@@ -92,6 +96,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 511);
             this.Controls.Add(this.StuddyBuddyList);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1000, 550);
             this.MinimumSize = new System.Drawing.Size(1000, 550);
             this.Name = "StuddyBuddyListWindow";
