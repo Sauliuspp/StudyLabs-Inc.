@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,9 @@ namespace StudyLabsApp
     /// </summary>
     public partial class MainMenuWindow : Form
     {
+        private int maxNumber = 0;
+        private int currentNumber = 0;
+
         public static string workingDirectory = Environment.CurrentDirectory;
         public static string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
 
@@ -36,6 +40,12 @@ namespace StudyLabsApp
         public MainMenuWindow()
         {
             InitializeComponent();
+            this.Shown += new EventHandler(MainMenuWindow_Shown);
+
+            NextImageButton.Enabled = false;
+            PreviousImageButton.Enabled = true;
+
+            APIHelper.InitializeClient();
 
             // Create an IDictionaryEnumerator to iterate through the resources.
             IDictionaryEnumerator FacultiesDictionary = Faculties.GetEnumerator();
@@ -45,10 +55,20 @@ namespace StudyLabsApp
             {
                 FacultyComboBox.Items.Add(d.Key.ToString());
             }
-
         }
 
         #endregion
+
+        private void MainMenuWindow_Load(object sender, EventArgs e)
+        {
+            lForums.Visible = false;
+            panelLeft.Visible = false;
+        }
+
+        private async void MainMenuWindow_Shown(Object sender, EventArgs e)
+        {
+            await LoadImage();
+        }
 
         private void EnterForums_Click(object sender, EventArgs e)
         {
@@ -57,7 +77,6 @@ namespace StudyLabsApp
             panelLeft.Top = EnterForums.Top;
             PanelForUniversityList.Visible = false;
             lForums.Visible = true;
-            MessageBox.Show("Not available in current version");
             //MainMenuPanel.Visible = false;
             //StuddyBuddy.Visible = false;
         }
@@ -113,47 +132,54 @@ namespace StudyLabsApp
 
         private void RankingsButton_Click(object sender, EventArgs e)
         {
-            /*
             RankingsWindow form = new RankingsWindow(FacultyComboBox,
                                                      StudiesComboBox);
-            */
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://localhost:44385/");
-                request.Method = "GET";
-            //specify other request properties
-
-                WebResponse response = request.GetResponse();
-
         }
 
-        private void PanelForUniversityList_Paint(object sender, PaintEventArgs e)
+        private async void PreviousImageButton_Click(object sender, EventArgs e)
         {
+            if (currentNumber > 1)
+            {
+                currentNumber -= 1;
+                NextImageButton.Enabled = true;
+                await LoadImage(currentNumber);
 
+                if (currentNumber == 1)
+                {
+                    PreviousImageButton.Enabled = false;
+                }
+
+            }
         }
 
-        private void StuddyBuddy_Click(object sender, EventArgs e)
+        private async void NextImageButton_Click(object sender, EventArgs e)
         {
+            if (currentNumber < maxNumber)
+            {
+                currentNumber += 1;
+                PreviousImageButton.Enabled = true;
+                await LoadImage(currentNumber);
 
+                if (currentNumber == maxNumber)
+                {
+                    NextImageButton.Enabled = false;
+                }
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private async Task LoadImage(int imageNumber = 0)
         {
+            var comic = await ComicProcessor.LoadComic(imageNumber);
 
-        }
+            if (imageNumber == 0)
+            {
+                maxNumber = comic.Num;
+            }
 
-        private void MainMenuWindow_Load(object sender, EventArgs e)
-        {
-            lForums.Visible = false;
-            panelLeft.Visible = false;
-        }
+            currentNumber = comic.Num;
 
-        private void lForums_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lBookImage_Click(object sender, EventArgs e)
-        {
-
+            var uriSource = new Uri(comic.Img, UriKind.Absolute);
+            ComicBox.LoadAsync(uriSource.ToString());
         }
     }
 }

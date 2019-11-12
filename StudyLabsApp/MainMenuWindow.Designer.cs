@@ -43,12 +43,15 @@
             this.BecomeAStuddyBuddy = new System.Windows.Forms.Button();
             this.FindStuddyBuddies = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lBookImage = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.lForums = new System.Windows.Forms.Label();
+            this.ComicBox = new System.Windows.Forms.PictureBox();
+            this.PreviousImageButton = new System.Windows.Forms.Button();
+            this.NextImageButton = new System.Windows.Forms.Button();
             this.PanelForUniversityList.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // StuddyBuddy
@@ -56,7 +59,7 @@
             this.StuddyBuddy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StuddyBuddy.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.StuddyBuddy.Font = new System.Drawing.Font("standard 07_57", 18F);
+            this.StuddyBuddy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.StuddyBuddy.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.StuddyBuddy.Image = global::StudyLabsApp.Properties.Resources.StuddyBudyiconSMALL;
             this.StuddyBuddy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -66,7 +69,6 @@
             this.StuddyBuddy.TabIndex = 1;
             this.StuddyBuddy.Text = "StuddyBuddy";
             this.StuddyBuddy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.StuddyBuddy.Click += new System.EventHandler(this.StuddyBuddy_Click);
             // 
             // PanelForUniversityList
             // 
@@ -78,12 +80,11 @@
             this.PanelForUniversityList.Controls.Add(this.ReturnButton);
             this.PanelForUniversityList.Controls.Add(this.StudiesComboBox);
             this.PanelForUniversityList.Controls.Add(this.FacultyComboBox);
-            this.PanelForUniversityList.Location = new System.Drawing.Point(175, 0);
+            this.PanelForUniversityList.Location = new System.Drawing.Point(169, 0);
             this.PanelForUniversityList.Name = "PanelForUniversityList";
-            this.PanelForUniversityList.Size = new System.Drawing.Size(459, 563);
+            this.PanelForUniversityList.Size = new System.Drawing.Size(465, 563);
             this.PanelForUniversityList.TabIndex = 2;
             this.PanelForUniversityList.Visible = false;
-            this.PanelForUniversityList.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelForUniversityList_Paint);
             // 
             // RankingsButton
             // 
@@ -145,7 +146,6 @@
             this.label1.Size = new System.Drawing.Size(411, 56);
             this.label1.TabIndex = 3;
             this.label1.Text = "Pick your studies";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ReturnButton
             // 
@@ -156,7 +156,7 @@
             this.ReturnButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.ReturnButton.Location = new System.Drawing.Point(0, 494);
             this.ReturnButton.Name = "ReturnButton";
-            this.ReturnButton.Size = new System.Drawing.Size(459, 69);
+            this.ReturnButton.Size = new System.Drawing.Size(465, 69);
             this.ReturnButton.TabIndex = 2;
             this.ReturnButton.Text = "Return to Main Menu";
             this.ReturnButton.UseVisualStyleBackColor = false;
@@ -229,15 +229,13 @@
             this.panel1.Size = new System.Drawing.Size(170, 424);
             this.panel1.TabIndex = 3;
             // 
-            // lBookImage
+            // panelLeft
             // 
-            this.lBookImage.Image = global::StudyLabsApp.Properties.Resources.booksIMGlogo;
-            this.lBookImage.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.lBookImage.Location = new System.Drawing.Point(298, 261);
-            this.lBookImage.Name = "lBookImage";
-            this.lBookImage.Size = new System.Drawing.Size(336, 302);
-            this.lBookImage.TabIndex = 4;
-            this.lBookImage.Click += new System.EventHandler(this.lBookImage_Click);
+            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panelLeft.Location = new System.Drawing.Point(160, 45);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(10, 103);
+            this.panelLeft.TabIndex = 8;
             // 
             // label5
             // 
@@ -252,23 +250,47 @@
             this.label5.Text = "StudyLabs Inc.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panelLeft
-            // 
-            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panelLeft.Location = new System.Drawing.Point(160, 45);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(10, 103);
-            this.panelLeft.TabIndex = 8;
-            // 
             // lForums
             // 
-            this.lForums.Font = new System.Drawing.Font("standard 07_57", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lForums.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lForums.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lForums.Location = new System.Drawing.Point(254, 59);
             this.lForums.Name = "lForums";
             this.lForums.Size = new System.Drawing.Size(319, 127);
             this.lForums.TabIndex = 5;
             this.lForums.Text = "Not available in current version";
+            // 
+            // ComicBox
+            // 
+            this.ComicBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComicBox.Location = new System.Drawing.Point(175, 163);
+            this.ComicBox.Name = "ComicBox";
+            this.ComicBox.Size = new System.Drawing.Size(450, 342);
+            this.ComicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ComicBox.TabIndex = 6;
+            this.ComicBox.TabStop = false;
+            // 
+            // PreviousImageButton
+            // 
+            this.PreviousImageButton.Location = new System.Drawing.Point(178, 515);
+            this.PreviousImageButton.Name = "PreviousImageButton";
+            this.PreviousImageButton.Size = new System.Drawing.Size(220, 35);
+            this.PreviousImageButton.TabIndex = 7;
+            this.PreviousImageButton.Text = "Previous image";
+            this.PreviousImageButton.UseVisualStyleBackColor = true;
+            this.PreviousImageButton.Click += new System.EventHandler(this.PreviousImageButton_Click);
+            // 
+            // NextImageButton
+            // 
+            this.NextImageButton.Location = new System.Drawing.Point(401, 515);
+            this.NextImageButton.Name = "NextImageButton";
+            this.NextImageButton.Size = new System.Drawing.Size(220, 35);
+            this.NextImageButton.TabIndex = 8;
+            this.NextImageButton.Text = "Next image";
+            this.NextImageButton.UseVisualStyleBackColor = true;
+            this.NextImageButton.Click += new System.EventHandler(this.NextImageButton_Click);
             // 
             // MainMenuWindow
             // 
@@ -280,11 +302,13 @@
             this.Controls.Add(this.PanelForUniversityList);
             this.Controls.Add(this.StuddyBuddy);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lBookImage);
             this.Controls.Add(this.lForums);
+            this.Controls.Add(this.ComicBox);
+            this.Controls.Add(this.PreviousImageButton);
+            this.Controls.Add(this.NextImageButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(650, 600);
-            this.MinimumSize = new System.Drawing.Size(500, 500);
+            this.MinimumSize = new System.Drawing.Size(650, 600);
             this.Name = "MainMenuWindow";
             this.Text = "Studdy Buddy";
             this.Load += new System.EventHandler(this.MainMenuWindow_Load);
@@ -292,6 +316,7 @@
             this.PanelForUniversityList.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComicBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,10 +336,12 @@
         private System.Windows.Forms.Button BecomeAStuddyBuddy;
         private System.Windows.Forms.Button FindStuddyBuddies;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lBookImage;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lForums;
+        private System.Windows.Forms.PictureBox ComicBox;
+        private System.Windows.Forms.Button PreviousImageButton;
+        private System.Windows.Forms.Button NextImageButton;
     }
 }
 
