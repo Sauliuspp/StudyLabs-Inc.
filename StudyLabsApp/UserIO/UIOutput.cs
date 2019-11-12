@@ -1,7 +1,11 @@
-﻿using System;
+﻿using StudyLabsApp.Resources;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,6 +14,13 @@ namespace StudyLabsApp.UserIO
 {
     public class UIOutput
     {
+
+        public static string workingDirectory = Environment.CurrentDirectory;
+        public static string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+
+        public static ResXResourceReader Faculties = new ResXResourceReader(projectDirectory + @"\Resources\Faculties.resx");
+        public static ResXResourceReader Studies = new ResXResourceReader(projectDirectory + @"\Resources\Faculties_and_studies.resx");
+
         private IEnumerable<DataRow> tableRows;
 
         public void DisplayData(DataTable table, ListView listView, string selectedFaculty, string selectedStudies)
@@ -69,6 +80,28 @@ namespace StudyLabsApp.UserIO
                     item.SubItems.Add(buddy.Points.ToString());
                 }
                 listView.Items.Add(item);
+            }
+        }
+
+        public void ShowFaculties(ComboBox FacultyComboBox)
+        {
+            // Iterate through the resources and display the contents
+            foreach (DictionaryEntry d in Faculties)
+            {
+                FacultyComboBox.Items.Add(d.Key.ToString());
+            }
+        }
+
+        public void ShowStudies(ComboBox FacultyComboBox, ComboBox StudiesComboBox)
+        {
+            foreach (DictionaryEntry d in Studies)
+            {
+                int studiesValue = Int32.Parse(d.Value.ToString());
+
+                if (studiesValue == FacultyComboBox.SelectedIndex)
+                {
+                    StudiesComboBox.Items.Add(d.Key.ToString());
+                }
             }
         }
     }

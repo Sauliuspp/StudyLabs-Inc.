@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudyLabsApp.UserIO;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,15 +24,6 @@ namespace StudyLabsApp
         private int maxNumber = 0;
         private int currentNumber = 0;
 
-        public static string workingDirectory = Environment.CurrentDirectory;
-        public static string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
-
-        public static ResXResourceReader Faculties = new ResXResourceReader
-                (projectDirectory + @"\Resources\Faculties.resx");
-
-        public static ResXResourceReader Studies = new ResXResourceReader
-                (projectDirectory + @"\Resources\Faculties_and_studies.resx");
-
         #region Constructor
 
         /// <summary>
@@ -46,15 +38,8 @@ namespace StudyLabsApp
             PreviousImageButton.Enabled = true;
 
             APIHelper.InitializeClient();
-
-            // Create an IDictionaryEnumerator to iterate through the resources.
-            IDictionaryEnumerator FacultiesDictionary = Faculties.GetEnumerator();
-
-            // Iterate through the resources and display the contents
-            foreach (DictionaryEntry d in Faculties)
-            {
-                FacultyComboBox.Items.Add(d.Key.ToString());
-            }
+            UIOutput output = new UIOutput();
+            output.ShowFaculties(this.FacultyComboBox);
         }
 
         #endregion
@@ -112,16 +97,9 @@ namespace StudyLabsApp
             StudiesComboBox.Items.Clear();
             FacultyComboBox.SelectedItem = "";
 
-            // Iterate through the resources and display the contents
-            foreach (DictionaryEntry d in Studies)
-            {
-                int studiesValue = Int32.Parse(d.Value.ToString());
+            UIOutput output = new UIOutput();
+            output.ShowStudies(this.FacultyComboBox, this.StudiesComboBox);
 
-                if (studiesValue == FacultyComboBox.SelectedIndex)
-                {
-                    StudiesComboBox.Items.Add(d.Key.ToString());
-                }
-            }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
