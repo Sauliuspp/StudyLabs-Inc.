@@ -1,0 +1,11 @@
+C:\Users\Legion\source\repos\DemoLibrary\bin\Debug\DemoLibrary.dll.config
+C:\Users\Legion\source\repos\DemoLibrary\bin\Debug\DemoLibrary.dll
+C:\Users\Legion\source\repos\DemoLibrary\bin\Debug\DemoLibrary.pdb
+C:\Users\Legion\source\repos\DemoLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Legion\source\repos\DemoLibrary\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Legion\source\repos\DemoLibrary\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Legion\source\repos\DemoLibrary\obj\Debug\DemoLibrary.csprojAssemblyReference.cache
+C:\Users\Legion\source\repos\DemoLibrary\obj\Debug\DemoLibrary.csproj.CopyComplete
+C:\Users\Legion\source\repos\DemoLibrary\obj\Debug\DemoLibrary.dll
+C:\Users\Legion\source\repos\DemoLibrary\obj\Debug\DemoLibrary.pdb
+C:\Users\Legion\source\repos\DemoLibrary\bin\Debug\Newtonsoft.Json.xml
