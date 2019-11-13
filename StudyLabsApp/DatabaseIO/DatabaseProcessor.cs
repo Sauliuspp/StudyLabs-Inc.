@@ -10,36 +10,8 @@ namespace StudyLabsApp.DatabaseIO
 {
     public class DatabaseProcessor
     {
-        struct Information
-        {
-            public string newBuddyNick;
-            public string newBuddyLink;
-            public string newBuddyFaculty;
-            public string newBuddyStudies;
-            public int newBuddyStatus;
-            public int newBuddyPoints;
-
-            public Information(
-                string nick = "Not provided",
-                string link = "Not provided",
-                string faculty = "Not provided",
-                string studies = "Not provided",
-                int status = 1,
-                int points = 0)
-            {
-                newBuddyNick = nick;
-                newBuddyLink = link;
-                newBuddyFaculty = faculty;
-                newBuddyStudies = studies;
-                newBuddyStatus = status;
-                newBuddyPoints = points;
-            }
-        }
         public void AddEntryToDatabase(AStuddyBuddy entry)
         {
-            //Default parameter initiation from struct
-            Information info = new Information();
-
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
 
@@ -47,26 +19,19 @@ namespace StudyLabsApp.DatabaseIO
             SqlConnection cn_connection = new SqlConnection(cn_string);
             if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
 
-            info.newBuddyNick = entry.Nickname;
-            info.newBuddyLink = entry.Link;
-            info.newBuddyFaculty = entry.Faculty;
-            info.newBuddyStudies = entry.Studies;
-            info.newBuddyStatus = (int) Level.Starter;
-            info.newBuddyPoints = 0;
-
             string sql_Text = "INSERT INTO StuddyBuddy ([Nickname],[Facebook],[Faculty],[Studies],[Status],[Points]) VALUES('"
-                + info.newBuddyNick + "','" +
-                info.newBuddyLink + "','" +
-                info.newBuddyFaculty + "','" +
-                info.newBuddyStudies + "','" +
-                info.newBuddyStatus + "','" +
-                info.newBuddyPoints +  "')";
+                + entry.Nickname + "','" +
+                entry.Link + "','" +
+                entry.Faculty + "','" +
+                entry.Studies + "','" +
+                (int)Level.Starter + "','" +
+                0 +  "')";
 
             SqlCommand cmd_Command = new SqlCommand(sql_Text, cn_connection);
             cmd_Command.ExecuteNonQuery();
         }
 
-        public DataTable LoadData() // Copy what is in form 4
+        public DataTable LoadStuddyBuddyData() // Copy what is in form 4
         {
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
@@ -81,16 +46,30 @@ namespace StudyLabsApp.DatabaseIO
             SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, cn_connection);
             adapter.Fill(table);
 
-            //Show database list
-            // lst_SBuddy.DisplayMember = "Nickname";
-            // lst_SBuddy.ValueMember = "Id";
-            // lst_SBuddy.DataSource = tbl;
+            return table;
+        }
+
+        public DataTable LoadForumThreads() // Copy what is in form 4
+        {
+            //load list
+            string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
+
+            //Database
+            SqlConnection cn_connection = new SqlConnection(cn_string);
+            if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
+
+            string sql_Text = "SELECT * FROM ForumThread";
+
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, cn_connection);
+            adapter.Fill(table);
+
             return table;
         }
 
         public bool FindExistingPerson(AStuddyBuddy person)
         {
-            DataTable table = LoadData();
+            DataTable table = LoadStuddyBuddyData();
 
             foreach (DataRow row in table.Rows)
             {

@@ -37,7 +37,7 @@ namespace StudyLabsApp
         private void RankingsWindow_Load(object sender, EventArgs e)
         {
             DatabaseProcessor DBprocessor = new DatabaseProcessor();
-            DataTable table = DBprocessor.LoadData();
+            DataTable table = DBprocessor.LoadStuddyBuddyData();
             UIOutput displayer = new UIOutput();
             displayer.DisplayData(table, StuddyBuddyList, faculty);
         }

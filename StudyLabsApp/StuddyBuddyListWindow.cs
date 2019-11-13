@@ -36,7 +36,7 @@ namespace StudyLabsApp
         private void Form4_Load(object sender, EventArgs e)
         {
             DatabaseProcessor DBprocessor = new DatabaseProcessor();
-            DataTable table = DBprocessor.LoadData();
+            DataTable table = DBprocessor.LoadStuddyBuddyData();
             UIOutput displayer = new UIOutput();
             displayer.DisplayData(table, StuddyBuddyList, faculty, studies);
         }
