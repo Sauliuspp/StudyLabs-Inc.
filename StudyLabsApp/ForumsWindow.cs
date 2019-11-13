@@ -10,6 +10,8 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using StudyLabsApp.Properties;
+using StudyLabsApp.UserIO;
+using StudyLabsApp.DatabaseIO;
 
 namespace StudyLabsApp
 {
@@ -18,21 +20,39 @@ namespace StudyLabsApp
         public ForumsWindow()
         {
             InitializeComponent();
+
+            UIOutput output = new UIOutput();
+            output.ShowFaculties(FacultyComboBox);
         }
 
-        private void BiochemijaRTxtBox_TextChanged(object sender, EventArgs e)
+        private void FacultyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            StudiesComboBox.Items.Clear();
+            FacultyComboBox.SelectedItem = "";
 
+            UIOutput output = new UIOutput();
+            output.ShowStudies(this.FacultyComboBox, this.StudiesComboBox);
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void StudiesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            QuestionList.Items.Clear();
+            DatabaseProcessor dbProcessor = new DatabaseProcessor();
+            DataTable table = dbProcessor.LoadForumThreads();
 
+            UIOutput output = new UIOutput();
+            output.ShowForumThreads(table,
+                                    QuestionList,
+                                    FacultyComboBox.SelectedItem.ToString(),
+                                    StudiesComboBox.SelectedItem.ToString());
         }
 
-        private void BiochemijaRTxtBox2_TextChanged(object sender, EventArgs e)
+        private void QuestionList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            if (QuestionList.SelectedItems.Count == 1)
+            {
 
+            }
         }
     }
 }

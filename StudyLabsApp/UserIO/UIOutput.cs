@@ -104,5 +104,26 @@ namespace StudyLabsApp.UserIO
                 }
             }
         }
+
+        public void ShowForumThreads(DataTable table, ListView listView, string faculty, string studies)
+        {
+            tableRows = from DataRow r in table.Rows
+                        select r;
+
+            foreach (DataRow row in tableRows)
+            {
+                if (row.Field<string>("Faculty") == faculty &&
+                    row.Field<string>("Studies") == studies)
+                {
+                    ListViewItem item = new ListViewItem(row.Field<string>("Question"));
+                    for (int j = 0; j < table.Rows.Count; j++)
+                    {
+                        item.SubItems.Add(row[2].ToString());
+                        item.SubItems.Add(row[5].ToString());
+                    }
+                    listView.Items.Add(item);
+                }
+            }
+        }
     }
 }

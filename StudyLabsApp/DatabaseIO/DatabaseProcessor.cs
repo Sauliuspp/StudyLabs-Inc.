@@ -49,7 +49,7 @@ namespace StudyLabsApp.DatabaseIO
             return table;
         }
 
-        public DataTable LoadForumThreads() // Copy what is in form 4
+        public DataTable LoadForumThreads()
         {
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;

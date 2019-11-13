@@ -45,6 +45,7 @@
             this.FacultyComboBox.Name = "FacultyComboBox";
             this.FacultyComboBox.Size = new System.Drawing.Size(306, 21);
             this.FacultyComboBox.TabIndex = 0;
+            this.FacultyComboBox.SelectedIndexChanged += new System.EventHandler(this.FacultyComboBox_SelectedIndexChanged);
             // 
             // StudiesComboBox
             // 
@@ -55,6 +56,7 @@
             this.StudiesComboBox.Name = "StudiesComboBox";
             this.StudiesComboBox.Size = new System.Drawing.Size(303, 21);
             this.StudiesComboBox.TabIndex = 1;
+            this.StudiesComboBox.SelectedIndexChanged += new System.EventHandler(this.StudiesComboBox_SelectedIndexChanged);
             // 
             // QuestionList
             // 
@@ -62,6 +64,7 @@
             this.Question_header,
             this.Author_header,
             this.Date_header});
+            this.QuestionList.FullRowSelect = true;
             this.QuestionList.HideSelection = false;
             this.QuestionList.Location = new System.Drawing.Point(12, 34);
             this.QuestionList.Name = "QuestionList";
@@ -69,6 +72,7 @@
             this.QuestionList.TabIndex = 2;
             this.QuestionList.UseCompatibleStateImageBehavior = false;
             this.QuestionList.View = System.Windows.Forms.View.Details;
+            this.QuestionList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.QuestionList_MouseDoubleClick);
             // 
             // Question_header
             // 
@@ -97,7 +101,6 @@
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "ForumsWindow";
             this.Text = "Studdy Buddy";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }

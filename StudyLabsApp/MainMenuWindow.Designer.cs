@@ -61,7 +61,7 @@
             this.StuddyBuddy.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.StuddyBuddy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.StuddyBuddy.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.StuddyBuddy.Image = global::StudyLabsApp.Properties.Resources.StuddyBudyiconSMALL;
+            //this.StuddyBuddy.Image = global::StudyLabsApp.Properties.Resources.StuddyBudyiconSMALL;
             this.StuddyBuddy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.StuddyBuddy.Location = new System.Drawing.Point(0, 0);
             this.StuddyBuddy.Name = "StuddyBuddy";
