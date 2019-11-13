@@ -67,6 +67,24 @@ namespace StudyLabsApp.DatabaseIO
             return table;
         }
 
+        public DataTable LoadQuestions()
+        {
+            //load list
+            string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
+
+            //Database
+            SqlConnection cn_connection = new SqlConnection(cn_string);
+            if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
+
+            string sql_Text = "SELECT * FROM Question";
+
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, cn_connection);
+            adapter.Fill(table);
+
+            return table;
+        }
+
         public bool FindExistingPerson(AStuddyBuddy person)
         {
             DataTable table = LoadStuddyBuddyData();
