@@ -85,6 +85,7 @@
             this.PanelForUniversityList.Size = new System.Drawing.Size(465, 563);
             this.PanelForUniversityList.TabIndex = 2;
             this.PanelForUniversityList.Visible = false;
+            this.PanelForUniversityList.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelForUniversityList_Paint);
             // 
             // RankingsButton
             // 

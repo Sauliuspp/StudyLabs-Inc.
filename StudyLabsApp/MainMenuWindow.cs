@@ -14,6 +14,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Cia butina itraukti musu webservice
+using StudyLabsApp.ServiceReferenceTest;
+
 namespace StudyLabsApp
 {
     /// <summary>
@@ -23,6 +26,8 @@ namespace StudyLabsApp
     {
         private int maxNumber = 0;
         private int currentNumber = 0;
+
+        WebService1SoapClient obj;
 
         #region Constructor
 
@@ -48,6 +53,19 @@ namespace StudyLabsApp
         {
             lForums.Visible = false;
             panelLeft.Visible = false;
+
+
+            //Cia vyksta testas, kur isbandome web service. Paleidus turi pirma ismest message box su atsakymu, tada paleis programa
+            //***********************************************************************************************************************
+            obj = new WebService1SoapClient();
+
+            int ans = obj.addition(1, 2);
+
+            string ats = ans.ToString();
+
+            MessageBox.Show(ats);
+            //***********************************************************************************************************************
+            //end
         }
 
         private async void MainMenuWindow_Shown(Object sender, EventArgs e)
@@ -158,6 +176,11 @@ namespace StudyLabsApp
 
             var uriSource = new Uri(comic.Img, UriKind.Absolute);
             ComicBox.LoadAsync(uriSource.ToString());
+        }
+
+        private void PanelForUniversityList_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
