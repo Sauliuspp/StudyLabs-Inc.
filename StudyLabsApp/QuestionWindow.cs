@@ -15,18 +15,14 @@ namespace StudyLabsApp
     public partial class QuestionWindow : Form
     {
         int QuestionId;
-        string SelectedFaculty;
-        string SelectedStudies;
-        public QuestionWindow(string id, string faculty, string studies)
+        public QuestionWindow(string id)
         {
             this.QuestionId = Int32.Parse(id);
-            this.SelectedFaculty = faculty;
-            this.SelectedStudies = studies;
 
             InitializeComponent();
 
             UIOutput output = new UIOutput();
-            output.ShowFilteredDiscussion(Discussion, QuestionId, SelectedFaculty, SelectedStudies);
+            output.ShowFilteredDiscussion(Discussion, QuestionId);
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)

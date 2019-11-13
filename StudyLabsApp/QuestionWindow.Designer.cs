@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Discussion = new System.Windows.Forms.ListView();
+            this.Time_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nickname_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Message_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nickname = new System.Windows.Forms.Label();
@@ -41,25 +42,31 @@
             // Discussion
             // 
             this.Discussion.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Time_header,
             this.Nickname_header,
             this.Message_header});
             this.Discussion.HideSelection = false;
-            this.Discussion.Location = new System.Drawing.Point(13, 13);
+            this.Discussion.Location = new System.Drawing.Point(12, 12);
             this.Discussion.Name = "Discussion";
             this.Discussion.Size = new System.Drawing.Size(859, 375);
             this.Discussion.TabIndex = 0;
             this.Discussion.UseCompatibleStateImageBehavior = false;
             this.Discussion.View = System.Windows.Forms.View.Details;
             // 
+            // Time_header
+            // 
+            this.Time_header.Text = "Time";
+            this.Time_header.Width = 117;
+            // 
             // Nickname_header
             // 
             this.Nickname_header.Text = "Nickname";
-            this.Nickname_header.Width = 124;
+            this.Nickname_header.Width = 120;
             // 
             // Message_header
             // 
             this.Message_header.Text = "Message";
-            this.Message_header.Width = 731;
+            this.Message_header.Width = 617;
             // 
             // Nickname
             // 
@@ -133,5 +140,6 @@
         private System.Windows.Forms.TextBox NicknameTextBox;
         private System.Windows.Forms.TextBox MessageTextBox;
         private System.Windows.Forms.Button SubmitButton;
+        private System.Windows.Forms.ColumnHeader Time_header;
     }
 }

@@ -150,7 +150,7 @@ namespace StudyLabsApp.UserIO
             }
         }
 
-        public void ShowFilteredDiscussion(ListView listView, int QuestionId, string faculty, string studies)
+        public void ShowFilteredDiscussion(ListView listView, int QuestionId)
         {
             DatabaseProcessor dbProcessor = new DatabaseProcessor();
             DataTable discussionTable = dbProcessor.LoadFilteredDiscussion(QuestionId);
@@ -160,18 +160,17 @@ namespace StudyLabsApp.UserIO
 
             foreach (DataRow row in tableRows)
             {
-                if (row.Field<string>("Faculty") == faculty &&
-                    row.Field<string>("Studies") == studies)
+                DateTime date = row.Field<DateTime>("Time");
+                string time = date.ToString();
+                //string date = Convert.ToString(row.Field<string>("Time"));
+
+                ListViewItem item = new ListViewItem(time);
+                for (int j = 0; j < discussionTable.Rows.Count; j++)
                 {
-                    ListViewItem item = new ListViewItem(row.Field<string>("Question"));
-                    for (int j = 0; j < discussionTable.Rows.Count; j++)
-                    {
-                        item.SubItems.Add(row[2].ToString());
-                        item.SubItems.Add(row[5].ToString());
-                        item.SubItems.Add(row[0].ToString());
-                    }
-                    listView.Items.Add(item);
+                    item.SubItems.Add(row[0].ToString());
+                    item.SubItems.Add(row[2].ToString());
                 }
+                listView.Items.Add(item);
             }
         }
     }

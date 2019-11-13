@@ -53,9 +53,7 @@ namespace StudyLabsApp
             {
                 var questionId = QuestionList.SelectedItems[0].SubItems[3].Text;
 
-                QuestionWindow form = new QuestionWindow(questionId,
-                                                         FacultyComboBox.SelectedItem.ToString(),
-                                                         StudiesComboBox.SelectedItem.ToString());
+                QuestionWindow form = new QuestionWindow(questionId);
                 form.Show();
             }
         }

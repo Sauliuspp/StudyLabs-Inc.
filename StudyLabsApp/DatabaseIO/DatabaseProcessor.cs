@@ -95,7 +95,7 @@ namespace StudyLabsApp.DatabaseIO
             if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
 
             string sql_Text = "SELECT Nickname, Time, Reply " +
-                              "FROM Question, " +
+                              "FROM Question " +
                               "WHERE QuestionId = " + id;
 
             DataTable table = new DataTable();
