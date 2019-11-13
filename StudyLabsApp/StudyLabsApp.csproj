@@ -100,9 +100,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIHelper.cs" />
-    <Compile Include="ComicModel.cs" />
-    <Compile Include="ComicProcessor.cs" />
+    <Compile Include="ComicFiles\APIHelper.cs" />
+    <Compile Include="ComicFiles\ComicModel.cs" />
+    <Compile Include="ComicFiles\ComicProcessor.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -110,6 +110,8 @@
     </Compile>
     <Compile Include="DatabaseIO\DatabaseProcessor.cs" />
     <Compile Include="ExtentionMethods\IntExtensions.cs" />
+    <Compile Include="ForumFiles\ForumThread.cs" />
+    <Compile Include="ForumFiles\ForumThreadList.cs" />
     <Compile Include="MainMenuWindow.cs">
       <SubType>Form</SubType>
     </Compile>
