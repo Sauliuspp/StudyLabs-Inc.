@@ -1,8 +1,10 @@
-﻿using StudyLabsApp.UserIO;
+﻿using StudyLabsApp.Properties;
+using StudyLabsApp.UserIO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -46,6 +48,7 @@ namespace StudyLabsApp
 
         private void MainMenuWindow_Load(object sender, EventArgs e)
         {
+            this.BackColor = Settings.Default.DefaultColor;
             StuddyBuddy.Visible = true;
             panelLeft.Visible = false;
         }
@@ -157,6 +160,40 @@ namespace StudyLabsApp
 
             var uriSource = new Uri(comic.Img, UriKind.Absolute);
             ComicBox.LoadAsync(uriSource.ToString());
+        }
+
+        private void oliveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelForUniversityList.BackColor = Properties.Settings.Default.Olive;
+            this.BackColor = Properties.Settings.Default.Olive;
+            SaveSettings();
+        }
+
+        private void purpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelForUniversityList.BackColor = Properties.Settings.Default.Purple;
+            this.BackColor = Properties.Settings.Default.Purple;
+            SaveSettings();
+        }
+
+        private void darkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelForUniversityList.BackColor = Properties.Settings.Default.Gray;
+            this.BackColor = Properties.Settings.Default.Gray;
+            SaveSettings();
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelForUniversityList.BackColor = Properties.Settings.Default.Red;
+            this.BackColor = Properties.Settings.Default.Red;
+            SaveSettings();
+        }
+
+        private void SaveSettings()
+        {
+            Properties.Settings.Default.DefaultColor = this.BackColor;
+            Properties.Settings.Default.Save();
         }
     }
 }

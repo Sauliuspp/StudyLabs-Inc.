@@ -33,5 +33,65 @@ namespace StudyLabsApp.Properties {
                 return ((string)(this["StuddyBuddyDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Olive")]
+        public global::System.Drawing.Color Olive {
+            get {
+                return ((global::System.Drawing.Color)(this["Olive"]));
+            }
+            set {
+                this["Olive"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("192, 192, 255")]
+        public global::System.Drawing.Color Purple {
+            get {
+                return ((global::System.Drawing.Color)(this["Purple"]));
+            }
+            set {
+                this["Purple"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gray")]
+        public global::System.Drawing.Color Gray {
+            get {
+                return ((global::System.Drawing.Color)(this["Gray"]));
+            }
+            set {
+                this["Gray"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("192, 64, 0")]
+        public global::System.Drawing.Color Red {
+            get {
+                return ((global::System.Drawing.Color)(this["Red"]));
+            }
+            set {
+                this["Red"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("41, 44, 51")]
+        public global::System.Drawing.Color DefaultColor {
+            get {
+                return ((global::System.Drawing.Color)(this["DefaultColor"]));
+            }
+            set {
+                this["DefaultColor"] = value;
+            }
+        }
     }
 }
