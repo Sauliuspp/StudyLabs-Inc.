@@ -246,7 +246,6 @@ ServiceFabricBackup/
 *.rptproj.bak
 
 # SQL Server files
-*.mdf
 *.ldf
 *.ndf
 
@@ -338,3 +337,4 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/WebApplication3/App_Data/StuddyBuddyDB.mdf

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudyLabsApp.ServiceReferenceDB;
 
 namespace StudyLabsApp
 {
@@ -16,6 +17,7 @@ namespace StudyLabsApp
     {
         string faculty;
         string studies;
+        WebService2SoapClient dbObj;
         public RankingsWindow(ComboBox faculty, ComboBox studies)
         {
             InitializeComponent();
@@ -36,10 +38,13 @@ namespace StudyLabsApp
 
         private void RankingsWindow_Load(object sender, EventArgs e)
         {
+            //WEB SERVICE DB LoadData
+            dbObj = new WebService2SoapClient();
             DatabaseProcessor DBprocessor = new DatabaseProcessor();
-            DataTable table = DBprocessor.LoadData();
+            DataTable table = dbObj.LoadData();
             UIOutput displayer = new UIOutput();
             displayer.DisplayData(table, StuddyBuddyList, faculty);
+            //END
         }
 
         private void StuddyBuddyList_SelectedIndexChanged(object sender, EventArgs e)

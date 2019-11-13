@@ -103,6 +103,11 @@
     <Compile Include="APIHelper.cs" />
     <Compile Include="ComicModel.cs" />
     <Compile Include="ComicProcessor.cs" />
+    <Compile Include="Connected Services\ServiceReferenceDB\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReferenceTest\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,6 +148,11 @@
     <Compile Include="StuddyBuddyDBDataSet.cs">
       <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StuddyBuddyDBDataSet.Designer.cs">
+      <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="StuddyBuddyListWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,11 +170,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Faculties_and_studies.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StuddyBuddyDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Entities\AStuddyBuddy.cs" />
     <Compile Include="UserIO\UIInput.cs" />
@@ -205,26 +210,28 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Faculties_and_studies.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceReferenceDB\WebServiceDatabse.wsdl" />
     <None Include="Connected Services\ServiceReferenceTest\StudyLabsApp.ServiceReferenceTest.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceTest\WebService1.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="StuddyBuddyDBDataSet.xsc">
+    <Content Include="StuddyBuddyDBDataSet.xsc">
       <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
-    </None>
+    </Content>
     <None Include="StuddyBuddyDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>StuddyBuddyDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="StuddyBuddyDBDataSet.xss">
+    <Content Include="StuddyBuddyDBDataSet.xss">
       <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -241,13 +248,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="StuddyBuddyDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StuddyBuddyDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>StuddyBuddyDB.mdf</DependentUpon>
-    </Content>
+    <None Include="Connected Services\ServiceReferenceDB\WebServiceDatabse.disco" />
+    <None Include="Connected Services\ServiceReferenceDB\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceDB\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceDB\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -265,6 +272,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceDB\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceTest\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace StudyLabsApp {
+namespace WebApplication3 {
     
     
     /// <summary>
@@ -681,7 +681,7 @@ namespace StudyLabsApp {
         }
     }
 }
-namespace StudyLabsApp.StuddyBuddyDBDataSetTableAdapters {
+namespace WebApplication3.StuddyBuddyDBDataSetTableAdapters {
     
     
     /// <summary>

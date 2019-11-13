@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudyLabsApp.ExtentionMethods;
+using StudyLabsApp.ServiceReferenceDB;
 
 namespace StudyLabsApp
 {
@@ -48,15 +49,45 @@ namespace StudyLabsApp
                                                            FacultyComboBox.SelectedItem.ToString(),
                                                            StudiesComboBox.SelectedItem.ToString());
 
+                    /*WEB NEVEIKIANTIS budas kuri meginau
+                    using (var buddy = new WebService2SoapClient())
+                    {
+                        AStuddyBuddy StuddyBuddy = new AStuddyBuddy
+                        {
+                            Nickname = NicknameBox.Text.ToString(),
+                            Link = LinkBox.Text.ToString(),
+                            Faculty = FacultyComboBox.SelectedItem.ToString(),
+                            Studies = StudiesComboBox.SelectedItem.ToString()
+                        };
+                        buddy.FindExistingPerson(StuddyBuddy);
+                    }
+                    */
+                    /*----------------------------------------------------------------------------------------------------------------------
+                    PS jei istrini AStuddyBuddy klase is servico tada irgi neveikia (dabar blogai nes duplicates)
+                    Gal ateityje iseitu perkelti kad ASBuddy klase butu tik web servise bet nezinau ar taip gerai
+                    */
+
+                    //from WebServiceDataBase
+                    //dbObj = new WebService2SoapClient();
+
                     RegexChecker regexObject = new RegexChecker();
-                    DatabaseProcessor DBprocessor = new DatabaseProcessor();
+                    DatabaseProcessor dbProcessor = new DatabaseProcessor();
                     bool nicknameValid = regexObject.CheckNickname(StuddyBuddy.Nickname);
                     bool linkValid = regexObject.CheckLink(StuddyBuddy.Link);
-                    bool personExists = DBprocessor.FindExistingPerson(StuddyBuddy);
+
+                    // NEVEIKIA KOLKAS Problema ta, kad nezinau kaip persiusti AStuddyBuddy StuddyBudy i musu web servisa
+                    //bool personExists = dbObj.FindExistingPerson(StuddyBuddy);
+                    //--------
+
+                    bool personExists = dbProcessor.FindExistingPerson(StuddyBuddy);
 
                     if (nicknameValid && linkValid && !personExists)
                     {
-                        DBprocessor.AddEntryToDatabase(StuddyBuddy);
+                        //NEVEIKIA KOLKAS Tokia pati problema ^^^^^
+                        //dbObj.AddEntryToDatabase( StuddyBuddy);
+                        //---------
+
+                        dbProcessor.AddEntryToDatabase(StuddyBuddy);
 
                         MessageBox.Show("Your nickname: "  + StuddyBuddy.Nickname   + Environment.NewLine +
                                         "Your Link: "      + StuddyBuddy.Link       + Environment.NewLine +

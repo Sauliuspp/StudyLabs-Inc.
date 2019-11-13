@@ -67,18 +67,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\StuddyBuddyDB.mdf" />
+    <Content Include="App_Data\StuddyBuddyDB_log.ldf">
+      <DependentUpon>StuddyBuddyDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="WebService1.asmx" />
+    <Content Include="WebServiceDatabse.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Data\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
     <Compile Include="WebService1.asmx.cs">
       <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceDatabse.asmx.cs">
+      <DependentUpon>WebServiceDatabse.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="App_Data\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

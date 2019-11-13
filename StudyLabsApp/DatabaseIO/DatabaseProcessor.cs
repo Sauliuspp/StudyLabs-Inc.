@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StudyLabsApp.ServiceReferenceDB;
 
 namespace StudyLabsApp.DatabaseIO
 {
@@ -35,6 +36,7 @@ namespace StudyLabsApp.DatabaseIO
                 newBuddyPoints = points;
             }
         }
+        
         public void AddEntryToDatabase(AStuddyBuddy entry)
         {
             //Default parameter initiation from struct
@@ -66,31 +68,11 @@ namespace StudyLabsApp.DatabaseIO
             cmd_Command.ExecuteNonQuery();
         }
 
-        public DataTable LoadData() // Copy what is in form 4
-        {
-            //load list
-            string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
-
-            //Database
-            SqlConnection cn_connection = new SqlConnection(cn_string);
-            if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
-
-            string sql_Text = "SELECT * FROM StuddyBuddy";
-
-            DataTable table = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, cn_connection);
-            adapter.Fill(table);
-
-            //Show database list
-            // lst_SBuddy.DisplayMember = "Nickname";
-            // lst_SBuddy.ValueMember = "Id";
-            // lst_SBuddy.DataSource = tbl;
-            return table;
-        }
-
         public bool FindExistingPerson(AStuddyBuddy person)
         {
-            DataTable table = LoadData();
+            WebService2SoapClient dbObj;
+            dbObj = new WebService2SoapClient();
+            DataTable table = dbObj.LoadData();
 
             foreach (DataRow row in table.Rows)
             {
@@ -105,5 +87,6 @@ namespace StudyLabsApp.DatabaseIO
             }
             return false;
         }
+
     }
 }

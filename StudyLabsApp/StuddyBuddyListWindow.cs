@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using StudyLabsApp.UserIO;
 using StudyLabsApp.DatabaseIO;
+using StudyLabsApp.ServiceReferenceDB;
 
 namespace StudyLabsApp
 {
@@ -17,6 +18,7 @@ namespace StudyLabsApp
     {
         string faculty;
         string studies;
+        WebService2SoapClient dbObj;
 
         public StuddyBuddyListWindow(ComboBox faculty, ComboBox studies)
         {
@@ -35,10 +37,13 @@ namespace StudyLabsApp
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            //WEB SERVICE DB LoadData
+            dbObj = new WebService2SoapClient();
             DatabaseProcessor DBprocessor = new DatabaseProcessor();
-            DataTable table = DBprocessor.LoadData();
+            DataTable table = dbObj.LoadData();
             UIOutput displayer = new UIOutput();
             displayer.DisplayData(table, StuddyBuddyList, faculty, studies);
+            //END
         }
 
         private void StuddyBuddyList_SelectedIndexChanged(object sender, EventArgs e)
