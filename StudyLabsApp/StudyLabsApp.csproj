@@ -103,11 +103,6 @@
     <Compile Include="APIHelper.cs" />
     <Compile Include="ComicModel.cs" />
     <Compile Include="ComicProcessor.cs" />
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\ServiceReferenceTest\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,10 +205,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Faculties_and_studies.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReference1\StudyLabsApp.ServiceReference1.HelloWorldResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\StudyLabsWebServices.wsdl" />
     <None Include="Connected Services\ServiceReferenceTest\StudyLabsApp.ServiceReferenceTest.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -243,13 +234,6 @@
     <None Include="Resources\StuddyBudyicon.ico" />
     <None Include="Resources\StuddyBudyiconSMALL.png" />
     <None Include="Resources\penSmall.png" />
-    <None Include="Connected Services\ServiceReference1\StudyLabsWebServices.disco" />
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\ServiceReferenceTest\WebService1.disco" />
     <None Include="Connected Services\ServiceReferenceTest\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReferenceTest\configuration.svcinfo" />
@@ -281,7 +265,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceTest\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

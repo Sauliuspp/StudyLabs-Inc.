@@ -59,7 +59,7 @@ namespace StudyLabsApp
             //***********************************************************************************************************************
             obj = new WebService1SoapClient();
 
-            int ans = obj.addition(1, 2);
+            int ans = obj.substraction(3, 2);
 
             string ats = ans.ToString();
 

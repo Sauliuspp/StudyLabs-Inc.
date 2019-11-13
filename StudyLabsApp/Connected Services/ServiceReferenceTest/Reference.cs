@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+
 namespace StudyLabsApp.ServiceReferenceTest {
     
     
@@ -146,6 +148,11 @@ namespace StudyLabsApp.ServiceReferenceTest {
         
         public System.Threading.Tasks.Task<int> additionAsync(int x, int y) {
             return base.Channel.additionAsync(x, y);
+        }
+
+        internal int substraction(int v1, int v2)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -28,5 +28,10 @@ namespace WebApplication3
         {
             return x + y;
         }
+        [WebMethod]
+        public int substraction (int x, int y)
+        {
+            return x - y;
+        }
     }
 }
