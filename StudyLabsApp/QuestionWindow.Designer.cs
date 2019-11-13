@@ -49,6 +49,7 @@
             this.Discussion.Location = new System.Drawing.Point(12, 12);
             this.Discussion.Name = "Discussion";
             this.Discussion.Size = new System.Drawing.Size(859, 375);
+            this.Discussion.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.Discussion.TabIndex = 0;
             this.Discussion.UseCompatibleStateImageBehavior = false;
             this.Discussion.View = System.Windows.Forms.View.Details;
@@ -124,7 +125,7 @@
             this.MaximumSize = new System.Drawing.Size(900, 500);
             this.MinimumSize = new System.Drawing.Size(900, 500);
             this.Name = "QuestionWindow";
-            this.Text = "QuestionWindow";
+            this.Text = "Studdy Buddy";
             this.ResumeLayout(false);
             this.PerformLayout();
 

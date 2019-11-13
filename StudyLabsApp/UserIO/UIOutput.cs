@@ -162,7 +162,6 @@ namespace StudyLabsApp.UserIO
             {
                 DateTime date = row.Field<DateTime>("Time");
                 string time = date.ToString();
-                //string date = Convert.ToString(row.Field<string>("Time"));
 
                 ListViewItem item = new ListViewItem(time);
                 for (int j = 0; j < discussionTable.Rows.Count; j++)

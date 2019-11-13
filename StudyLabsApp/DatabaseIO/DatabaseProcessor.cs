@@ -31,6 +31,25 @@ namespace StudyLabsApp.DatabaseIO
             cmd_Command.ExecuteNonQuery();
         }
 
+        public void AddReplyToDiscussion(int questionId, string nickname, string message)
+        {
+            //load list
+            string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
+
+            //Database
+            SqlConnection cn_connection = new SqlConnection(cn_string);
+            if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
+
+            string sql_Text = "INSERT INTO Question ([QuestionId],[Time],[Nickname],[Reply]) VALUES('"
+                + questionId + "','" +
+                DateTime.Now + "','" +
+                nickname + "','" +
+                message + "')";
+
+            SqlCommand cmd_Command = new SqlCommand(sql_Text, cn_connection);
+            cmd_Command.ExecuteNonQuery();
+        }
+
         public DataTable LoadStuddyBuddyData() // Copy what is in form 4
         {
             //load list

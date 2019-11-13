@@ -15,6 +15,7 @@ namespace StudyLabsApp
     public partial class QuestionWindow : Form
     {
         int QuestionId;
+
         public QuestionWindow(string id)
         {
             this.QuestionId = Int32.Parse(id);
@@ -27,7 +28,15 @@ namespace StudyLabsApp
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+            Discussion.Items.Clear();
+            string nickname = NicknameTextBox.Text;
+            string message = MessageTextBox.Text;
 
+            DatabaseProcessor processor = new DatabaseProcessor();
+            processor.AddReplyToDiscussion(QuestionId, nickname, message);
+
+            UIOutput output = new UIOutput();
+            output.ShowFilteredDiscussion(Discussion, QuestionId);
         }
     }
 }
