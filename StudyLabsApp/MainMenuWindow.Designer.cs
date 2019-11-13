@@ -45,7 +45,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.lForums = new System.Windows.Forms.Label();
             this.ComicBox = new System.Windows.Forms.PictureBox();
             this.PreviousImageButton = new System.Windows.Forms.Button();
             this.NextImageButton = new System.Windows.Forms.Button();
@@ -61,7 +60,7 @@
             this.StuddyBuddy.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.StuddyBuddy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.StuddyBuddy.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            //this.StuddyBuddy.Image = global::StudyLabsApp.Properties.Resources.StuddyBudyiconSMALL;
+            this.StuddyBuddy.Image = global::StudyLabsApp.Properties.Resources.StuddyBudyiconSMALL;
             this.StuddyBuddy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.StuddyBuddy.Location = new System.Drawing.Point(0, 0);
             this.StuddyBuddy.Name = "StuddyBuddy";
@@ -250,16 +249,6 @@
             this.label5.Text = "StudyLabs Inc.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lForums
-            // 
-            this.lForums.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lForums.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lForums.Location = new System.Drawing.Point(254, 59);
-            this.lForums.Name = "lForums";
-            this.lForums.Size = new System.Drawing.Size(319, 127);
-            this.lForums.TabIndex = 5;
-            this.lForums.Text = "Not available in current version";
-            // 
             // ComicBox
             // 
             this.ComicBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -302,7 +291,6 @@
             this.Controls.Add(this.PanelForUniversityList);
             this.Controls.Add(this.StuddyBuddy);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lForums);
             this.Controls.Add(this.ComicBox);
             this.Controls.Add(this.PreviousImageButton);
             this.Controls.Add(this.NextImageButton);
@@ -338,7 +326,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lForums;
         private System.Windows.Forms.PictureBox ComicBox;
         private System.Windows.Forms.Button PreviousImageButton;
         private System.Windows.Forms.Button NextImageButton;

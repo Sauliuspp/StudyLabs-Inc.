@@ -46,7 +46,7 @@ namespace StudyLabsApp
 
         private void MainMenuWindow_Load(object sender, EventArgs e)
         {
-            lForums.Visible = false;
+            StuddyBuddy.Visible = true;
             panelLeft.Visible = false;
         }
 
@@ -61,11 +61,9 @@ namespace StudyLabsApp
             panelLeft.Height = EnterForums.Height;
             panelLeft.Top = EnterForums.Top;
             PanelForUniversityList.Visible = false;
-            //lForums.Visible = true;
             ForumsWindow form = new ForumsWindow();
             form.Show();
             //MainMenuPanel.Visible = false;
-            //StuddyBuddy.Visible = false;
         }
 
         private void FindStuddyBuddies_Click(object sender, EventArgs e)
@@ -90,7 +88,6 @@ namespace StudyLabsApp
         {
             PanelForUniversityList.Visible = false;
             panelLeft.Visible = false;
-            lForums.Visible = false;
             StuddyBuddy.Visible = true;
         }
 
