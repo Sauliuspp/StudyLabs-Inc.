@@ -8,19 +8,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StudyLabsApp.ServiceReference1 {
+namespace StudyLabsApp.ServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.StudyLabsWebServicesSoap")]
-    public interface StudyLabsWebServicesSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.WebService1Soap")]
+    public interface WebService1Soap {
         
         // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        StudyLabsApp.ServiceReference1.HelloWorldResponse HelloWorld(StudyLabsApp.ServiceReference1.HelloWorldRequest request);
+        StudyLabsApp.ServiceReference.HelloWorldResponse HelloWorld(StudyLabsApp.ServiceReference.HelloWorldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<StudyLabsApp.ServiceReference1.HelloWorldResponse> HelloWorldAsync(StudyLabsApp.ServiceReference1.HelloWorldRequest request);
+        System.Threading.Tasks.Task<StudyLabsApp.ServiceReference.HelloWorldResponse> HelloWorldAsync(StudyLabsApp.ServiceReference.HelloWorldRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/addition", ReplyAction="*")]
+        int addition(int x, int y);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/addition", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> additionAsync(int x, int y);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/substraction", ReplyAction="*")]
+        int substraction(int x, int y);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/substraction", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> substractionAsync(int x, int y);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -30,12 +42,12 @@ namespace StudyLabsApp.ServiceReference1 {
     public partial class HelloWorldRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public StudyLabsApp.ServiceReference1.HelloWorldRequestBody Body;
+        public StudyLabsApp.ServiceReference.HelloWorldRequestBody Body;
         
         public HelloWorldRequest() {
         }
         
-        public HelloWorldRequest(StudyLabsApp.ServiceReference1.HelloWorldRequestBody Body) {
+        public HelloWorldRequest(StudyLabsApp.ServiceReference.HelloWorldRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -57,12 +69,12 @@ namespace StudyLabsApp.ServiceReference1 {
     public partial class HelloWorldResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public StudyLabsApp.ServiceReference1.HelloWorldResponseBody Body;
+        public StudyLabsApp.ServiceReference.HelloWorldResponseBody Body;
         
         public HelloWorldResponse() {
         }
         
-        public HelloWorldResponse(StudyLabsApp.ServiceReference1.HelloWorldResponseBody Body) {
+        public HelloWorldResponse(StudyLabsApp.ServiceReference.HelloWorldResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -85,53 +97,69 @@ namespace StudyLabsApp.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface StudyLabsWebServicesSoapChannel : StudyLabsApp.ServiceReference1.StudyLabsWebServicesSoap, System.ServiceModel.IClientChannel {
+    public interface WebService1SoapChannel : StudyLabsApp.ServiceReference.WebService1Soap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class StudyLabsWebServicesSoapClient : System.ServiceModel.ClientBase<StudyLabsApp.ServiceReference1.StudyLabsWebServicesSoap>, StudyLabsApp.ServiceReference1.StudyLabsWebServicesSoap {
+    public partial class WebService1SoapClient : System.ServiceModel.ClientBase<StudyLabsApp.ServiceReference.WebService1Soap>, StudyLabsApp.ServiceReference.WebService1Soap {
         
-        public StudyLabsWebServicesSoapClient() {
+        public WebService1SoapClient() {
         }
         
-        public StudyLabsWebServicesSoapClient(string endpointConfigurationName) : 
+        public WebService1SoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public StudyLabsWebServicesSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public WebService1SoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public StudyLabsWebServicesSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public WebService1SoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public StudyLabsWebServicesSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public WebService1SoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        StudyLabsApp.ServiceReference1.HelloWorldResponse StudyLabsApp.ServiceReference1.StudyLabsWebServicesSoap.HelloWorld(StudyLabsApp.ServiceReference1.HelloWorldRequest request) {
+        StudyLabsApp.ServiceReference.HelloWorldResponse StudyLabsApp.ServiceReference.WebService1Soap.HelloWorld(StudyLabsApp.ServiceReference.HelloWorldRequest request) {
             return base.Channel.HelloWorld(request);
         }
         
         public string HelloWorld() {
-            StudyLabsApp.ServiceReference1.HelloWorldRequest inValue = new StudyLabsApp.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new StudyLabsApp.ServiceReference1.HelloWorldRequestBody();
-            StudyLabsApp.ServiceReference1.HelloWorldResponse retVal = ((StudyLabsApp.ServiceReference1.StudyLabsWebServicesSoap)(this)).HelloWorld(inValue);
+            StudyLabsApp.ServiceReference.HelloWorldRequest inValue = new StudyLabsApp.ServiceReference.HelloWorldRequest();
+            inValue.Body = new StudyLabsApp.ServiceReference.HelloWorldRequestBody();
+            StudyLabsApp.ServiceReference.HelloWorldResponse retVal = ((StudyLabsApp.ServiceReference.WebService1Soap)(this)).HelloWorld(inValue);
             return retVal.Body.HelloWorldResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<StudyLabsApp.ServiceReference1.HelloWorldResponse> StudyLabsApp.ServiceReference1.StudyLabsWebServicesSoap.HelloWorldAsync(StudyLabsApp.ServiceReference1.HelloWorldRequest request) {
+        System.Threading.Tasks.Task<StudyLabsApp.ServiceReference.HelloWorldResponse> StudyLabsApp.ServiceReference.WebService1Soap.HelloWorldAsync(StudyLabsApp.ServiceReference.HelloWorldRequest request) {
             return base.Channel.HelloWorldAsync(request);
         }
         
-        public System.Threading.Tasks.Task<StudyLabsApp.ServiceReference1.HelloWorldResponse> HelloWorldAsync() {
-            StudyLabsApp.ServiceReference1.HelloWorldRequest inValue = new StudyLabsApp.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new StudyLabsApp.ServiceReference1.HelloWorldRequestBody();
-            return ((StudyLabsApp.ServiceReference1.StudyLabsWebServicesSoap)(this)).HelloWorldAsync(inValue);
+        public System.Threading.Tasks.Task<StudyLabsApp.ServiceReference.HelloWorldResponse> HelloWorldAsync() {
+            StudyLabsApp.ServiceReference.HelloWorldRequest inValue = new StudyLabsApp.ServiceReference.HelloWorldRequest();
+            inValue.Body = new StudyLabsApp.ServiceReference.HelloWorldRequestBody();
+            return ((StudyLabsApp.ServiceReference.WebService1Soap)(this)).HelloWorldAsync(inValue);
+        }
+        
+        public int addition(int x, int y) {
+            return base.Channel.addition(x, y);
+        }
+        
+        public System.Threading.Tasks.Task<int> additionAsync(int x, int y) {
+            return base.Channel.additionAsync(x, y);
+        }
+        
+        public int substraction(int x, int y) {
+            return base.Channel.substraction(x, y);
+        }
+        
+        public System.Threading.Tasks.Task<int> substractionAsync(int x, int y) {
+            return base.Channel.substractionAsync(x, y);
         }
     }
 }
