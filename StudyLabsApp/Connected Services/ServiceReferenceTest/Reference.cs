@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-
 namespace StudyLabsApp.ServiceReferenceTest {
     
     
@@ -29,6 +27,12 @@ namespace StudyLabsApp.ServiceReferenceTest {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/addition", ReplyAction="*")]
         System.Threading.Tasks.Task<int> additionAsync(int x, int y);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/substraction", ReplyAction="*")]
+        int substraction(int x, int y);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/substraction", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> substractionAsync(int x, int y);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -149,10 +153,13 @@ namespace StudyLabsApp.ServiceReferenceTest {
         public System.Threading.Tasks.Task<int> additionAsync(int x, int y) {
             return base.Channel.additionAsync(x, y);
         }
-
-        internal int substraction(int v1, int v2)
-        {
-            throw new NotImplementedException();
+        
+        public int substraction(int x, int y) {
+            return base.Channel.substraction(x, y);
+        }
+        
+        public System.Threading.Tasks.Task<int> substractionAsync(int x, int y) {
+            return base.Channel.substractionAsync(x, y);
         }
     }
 }
