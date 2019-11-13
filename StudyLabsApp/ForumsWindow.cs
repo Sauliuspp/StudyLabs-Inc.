@@ -51,9 +51,9 @@ namespace StudyLabsApp
         {
             if (QuestionList.SelectedItems.Count == 1)
             {
-                DatabaseProcessor dbProcessor = new DatabaseProcessor();
-                DataTable table = dbProcessor.LoadQuestions();
-                QuestionWindow form = new QuestionWindow(table,
+                var questionId = QuestionList.SelectedItems[0].SubItems[3].Text;
+
+                QuestionWindow form = new QuestionWindow(questionId,
                                                          FacultyComboBox.SelectedItem.ToString(),
                                                          StudiesComboBox.SelectedItem.ToString());
                 form.Show();

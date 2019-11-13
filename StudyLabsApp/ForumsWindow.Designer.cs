@@ -34,6 +34,7 @@
             this.Question_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Author_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Id_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // FacultyComboBox
@@ -63,7 +64,8 @@
             this.QuestionList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Question_header,
             this.Author_header,
-            this.Date_header});
+            this.Date_header,
+            this.Id_header});
             this.QuestionList.FullRowSelect = true;
             this.QuestionList.HideSelection = false;
             this.QuestionList.Location = new System.Drawing.Point(12, 34);
@@ -89,6 +91,11 @@
             this.Date_header.Text = "Date";
             this.Date_header.Width = 117;
             // 
+            // Id_header
+            // 
+            this.Id_header.Text = "Id";
+            this.Id_header.Width = 0;
+            // 
             // ForumsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,5 +120,6 @@
         private System.Windows.Forms.ColumnHeader Question_header;
         private System.Windows.Forms.ColumnHeader Author_header;
         private System.Windows.Forms.ColumnHeader Date_header;
+        private System.Windows.Forms.ColumnHeader Id_header;
     }
 }

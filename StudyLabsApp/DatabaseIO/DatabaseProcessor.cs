@@ -67,7 +67,7 @@ namespace StudyLabsApp.DatabaseIO
             return table;
         }
 
-        public DataTable LoadQuestions()
+        public DataTable LoadDiscussions()
         {
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
@@ -77,6 +77,26 @@ namespace StudyLabsApp.DatabaseIO
             if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
 
             string sql_Text = "SELECT * FROM Question";
+
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, cn_connection);
+            adapter.Fill(table);
+
+            return table;
+        }
+
+        public DataTable LoadFilteredDiscussion(int id)
+        {
+            //load list
+            string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
+
+            //Database
+            SqlConnection cn_connection = new SqlConnection(cn_string);
+            if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
+
+            string sql_Text = "SELECT Nickname, Time, Reply " +
+                              "FROM Question, " +
+                              "WHERE QuestionId = " + id;
 
             DataTable table = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, cn_connection);

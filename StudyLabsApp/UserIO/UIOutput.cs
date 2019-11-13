@@ -1,4 +1,5 @@
-﻿using StudyLabsApp.Resources;
+﻿using StudyLabsApp.DatabaseIO;
+using StudyLabsApp.Resources;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -120,6 +121,54 @@ namespace StudyLabsApp.UserIO
                     {
                         item.SubItems.Add(row[2].ToString());
                         item.SubItems.Add(row[5].ToString());
+                        item.SubItems.Add(row[0].ToString());
+                    }
+                    listView.Items.Add(item);
+                }
+            }
+        }
+
+        public void ShowDiscussions(DataTable table, ListView listView, string faculty, string studies)
+        {
+            tableRows = from DataRow r in table.Rows
+                        select r;
+
+            foreach (DataRow row in tableRows)
+            {
+                if (row.Field<string>("Faculty") == faculty &&
+                    row.Field<string>("Studies") == studies)
+                {
+                    ListViewItem item = new ListViewItem(row.Field<string>("Question"));
+                    for (int j = 0; j < table.Rows.Count; j++)
+                    {
+                        item.SubItems.Add(row[2].ToString());
+                        item.SubItems.Add(row[5].ToString());
+                        item.SubItems.Add(row[0].ToString());
+                    }
+                    listView.Items.Add(item);
+                }
+            }
+        }
+
+        public void ShowFilteredDiscussion(ListView listView, int QuestionId, string faculty, string studies)
+        {
+            DatabaseProcessor dbProcessor = new DatabaseProcessor();
+            DataTable discussionTable = dbProcessor.LoadFilteredDiscussion(QuestionId);
+
+            tableRows = from DataRow r in discussionTable.Rows
+                        select r;
+
+            foreach (DataRow row in tableRows)
+            {
+                if (row.Field<string>("Faculty") == faculty &&
+                    row.Field<string>("Studies") == studies)
+                {
+                    ListViewItem item = new ListViewItem(row.Field<string>("Question"));
+                    for (int j = 0; j < discussionTable.Rows.Count; j++)
+                    {
+                        item.SubItems.Add(row[2].ToString());
+                        item.SubItems.Add(row[5].ToString());
+                        item.SubItems.Add(row[0].ToString());
                     }
                     listView.Items.Add(item);
                 }
