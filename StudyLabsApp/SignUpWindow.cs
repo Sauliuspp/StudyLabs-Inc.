@@ -13,11 +13,15 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudyLabsApp.ExtentionMethods;
+using StudyLabsApp.RegexCheckerReference;
+
 
 namespace StudyLabsApp
 {
     public partial class SignUpWindow : Form
     {
+        //RegexChecker1Soap regexObject;
+
         public static string workingDirectory = Environment.CurrentDirectory;
         public static string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
 
@@ -47,6 +51,8 @@ namespace StudyLabsApp
                                                            LinkBox.Text.ToString(),
                                                            FacultyComboBox.SelectedItem.ToString(),
                                                            StudiesComboBox.SelectedItem.ToString());
+
+                    //regexObject = new RegexChecker1SoapClient();
 
                     RegexChecker regexObject = new RegexChecker();
                     DatabaseProcessor DBprocessor = new DatabaseProcessor();

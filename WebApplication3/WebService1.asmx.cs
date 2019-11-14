@@ -16,20 +16,13 @@ namespace WebApplication3
     // [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
-
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
-        [WebMethod]
-        public int addition(int x, int y)
+        public int Addition(int x, int y)
         {
             return x + y;
         }
         [WebMethod]
-        public int substraction(int x, int y)
+        public int Substraction(int x, int y)
         {
             return x - y;
         }

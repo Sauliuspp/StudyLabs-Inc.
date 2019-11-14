@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckNickname">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckNicknameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckNicknameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckLinkResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckNicknameSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckNickname" />
+  </wsdl:message>
+  <wsdl:message name="CheckNicknameSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckNicknameResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckLink" />
+  </wsdl:message>
+  <wsdl:message name="CheckLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckLinkResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RegexChecker1Soap">
+    <wsdl:operation name="CheckNickname">
+      <wsdl:input message="tns:CheckNicknameSoapIn" />
+      <wsdl:output message="tns:CheckNicknameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLink">
+      <wsdl:input message="tns:CheckLinkSoapIn" />
+      <wsdl:output message="tns:CheckLinkSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegexChecker1Soap" type="tns:RegexChecker1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckNickname">
+      <soap:operation soapAction="http://tempuri.org/CheckNickname" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLink">
+      <soap:operation soapAction="http://tempuri.org/CheckLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RegexChecker1Soap12" type="tns:RegexChecker1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckNickname">
+      <soap12:operation soapAction="http://tempuri.org/CheckNickname" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLink">
+      <soap12:operation soapAction="http://tempuri.org/CheckLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RegexChecker1">
+    <wsdl:port name="RegexChecker1Soap" binding="tns:RegexChecker1Soap">
+      <soap:address location="https://localhost:44304/RegexChecker.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RegexChecker1Soap12" binding="tns:RegexChecker1Soap12">
+      <soap12:address location="https://localhost:44304/RegexChecker.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

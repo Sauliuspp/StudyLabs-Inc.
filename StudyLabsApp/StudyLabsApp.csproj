@@ -103,6 +103,11 @@
     <Compile Include="ComicFiles\APIHelper.cs" />
     <Compile Include="ComicFiles\ComicModel.cs" />
     <Compile Include="ComicFiles\ComicProcessor.cs" />
+    <Compile Include="Connected Services\RegexCheckerReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -216,6 +221,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Faculties_and_studies.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\RegexCheckerReference\RegexChecker.wsdl" />
+    <None Include="Connected Services\RegexCheckerReference\StudyLabsApp.RegexCheckerReference.CheckLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RegexCheckerReference\StudyLabsApp.RegexCheckerReference.CheckNicknameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference\StudyLabsApp.ServiceReference.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -252,6 +264,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\RegexCheckerReference\RegexChecker.disco" />
+    <None Include="Connected Services\RegexCheckerReference\configuration91.svcinfo" />
+    <None Include="Connected Services\RegexCheckerReference\configuration.svcinfo" />
+    <None Include="Connected Services\RegexCheckerReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="StuddyBuddyDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -276,6 +295,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\RegexCheckerReference\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
