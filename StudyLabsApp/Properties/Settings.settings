@@ -25,5 +25,11 @@
     <Setting Name="DefaultColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">41, 44, 51</Value>
     </Setting>
+    <Setting Name="SmallFont" Type="System.Drawing.Font" Scope="Application">
+      <Value Profile="(Default)">Comic Sans MS, 14.25pt, style=Italic</Value>
+    </Setting>
+    <Setting Name="BigFont" Type="System.Drawing.Font" Scope="Application">
+      <Value Profile="(Default)">Comic Sans MS, 36pt, style=Italic</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

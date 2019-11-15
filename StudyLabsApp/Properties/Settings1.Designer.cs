@@ -93,5 +93,23 @@ namespace StudyLabsApp.Properties {
                 this["DefaultColor"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Comic Sans MS, 14.25pt, style=Italic")]
+        public global::System.Drawing.Font SmallFont {
+            get {
+                return ((global::System.Drawing.Font)(this["SmallFont"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Comic Sans MS, 36pt, style=Italic")]
+        public global::System.Drawing.Font BigFont {
+            get {
+                return ((global::System.Drawing.Font)(this["BigFont"]));
+            }
+        }
     }
 }

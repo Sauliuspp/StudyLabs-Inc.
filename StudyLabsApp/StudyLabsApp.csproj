@@ -124,10 +124,10 @@
     <Compile Include="ForumsWindow.Designer.cs">
       <DependentUpon>ForumsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <DependentUpon>Settings.settings</DependentUpon>
+    <Compile Include="Properties\Settings1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="QuestionWindow.cs">
       <SubType>Form</SubType>
@@ -223,7 +223,7 @@
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </None>
     <None Include="StuddyBuddyDBDataSet.xsc">
       <DependentUpon>StuddyBuddyDBDataSet.xsd</DependentUpon>

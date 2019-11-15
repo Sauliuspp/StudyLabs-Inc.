@@ -153,29 +153,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.label3.Font = global::StudyLabsApp.Properties.Settings.Default.SmallFont;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(30, 277);
+            this.label3.Location = new System.Drawing.Point(30, 272);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(239, 22);
+            this.label3.Size = new System.Drawing.Size(244, 27);
             this.label3.TabIndex = 5;
             this.label3.Text = "Pick your desired studies: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.label2.Font = global::StudyLabsApp.Properties.Settings.Default.SmallFont;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(30, 159);
+            this.label2.Location = new System.Drawing.Point(30, 154);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 22);
+            this.label2.Size = new System.Drawing.Size(245, 27);
             this.label2.TabIndex = 4;
             this.label2.Text = "Pick your desired faculty: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = global::StudyLabsApp.Properties.Settings.Default.BigFont; 
+            //new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(20, 42);
             this.label1.Name = "label1";
@@ -570,28 +571,28 @@
             // oliveToolStripMenuItem
             // 
             this.oliveToolStripMenuItem.Name = "oliveToolStripMenuItem";
-            this.oliveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oliveToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.oliveToolStripMenuItem.Text = "Olive";
             this.oliveToolStripMenuItem.Click += new System.EventHandler(this.oliveToolStripMenuItem_Click);
             // 
             // purpleToolStripMenuItem
             // 
             this.purpleToolStripMenuItem.Name = "purpleToolStripMenuItem";
-            this.purpleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.purpleToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.purpleToolStripMenuItem.Text = "Purple";
             this.purpleToolStripMenuItem.Click += new System.EventHandler(this.purpleToolStripMenuItem_Click);
             // 
             // darkToolStripMenuItem
             // 
             this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            this.darkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.darkToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.darkToolStripMenuItem.Text = "Gray";
             this.darkToolStripMenuItem.Click += new System.EventHandler(this.darkToolStripMenuItem_Click);
             // 
             // silverToolStripMenuItem
             // 
             this.silverToolStripMenuItem.Name = "silverToolStripMenuItem";
-            this.silverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silverToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.silverToolStripMenuItem.Text = "Red";
             this.silverToolStripMenuItem.Click += new System.EventHandler(this.redToolStripMenuItem_Click);
             // 
