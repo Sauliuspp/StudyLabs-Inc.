@@ -30,7 +30,8 @@ namespace StudyLabsApp
         public static ResXResourceReader Studies = new ResXResourceReader
                 (projectDirectory + @"\Resources\Faculties_and_studies.resx");
 
-        Lazy<DatabaseProcessor> DBprocessor;
+        Lazy<RegexChecker> regexObject = new Lazy<RegexChecker>();
+        Lazy<DatabaseProcessor> DBprocessor = new Lazy<DatabaseProcessor>();
 
         public SignUpWindow()
         {
@@ -53,10 +54,8 @@ namespace StudyLabsApp
                                                            FacultyComboBox.SelectedItem.ToString(),
                                                            StudiesComboBox.SelectedItem.ToString());
 
-                    RegexChecker regexObject = new RegexChecker();
-                    DBprocessor = new Lazy<DatabaseProcessor>();
-                    bool nicknameValid = regexObject.CheckNickname(StuddyBuddy.Nickname, checkValidity);
-                    bool linkValid = regexObject.CheckLink(StuddyBuddy.Link, checkValidity);
+                    bool nicknameValid = regexObject.Value.CheckNickname(StuddyBuddy.Nickname, checkValidity);
+                    bool linkValid = regexObject.Value.CheckLink(StuddyBuddy.Link, checkValidity);
                     bool personExists = DBprocessor.Value.FindExistingPerson(StuddyBuddy);
 
                     if (nicknameValid && linkValid && !personExists)
