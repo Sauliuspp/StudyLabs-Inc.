@@ -71,18 +71,23 @@ namespace StudyLabsApp.UserIO
 
             foreach (AStuddyBuddy buddy in studdyBuddyList)
             {
-                ListViewItem item = new ListViewItem(buddy.Nickname);
-                for (int j = 2; j < table.Columns.Count; j++)
-                {
-                    item.SubItems.Add(buddy.Link);
-                    item.SubItems.Add(buddy.Faculty);
-                    item.SubItems.Add(buddy.Studies);
-                    item.SubItems.Add(Enum.GetName(typeof(Level), buddy.Status));
-                    item.SubItems.Add(buddy.Points.ToString());
-                }
-                listView.Items.Add(item);
+                addBuddiesToTable(listView, buddy, table);
             }
         }
+
+        Action<ListView, AStuddyBuddy, DataTable> addBuddiesToTable = (listView, buddy, table) =>
+        {
+            ListViewItem item = new ListViewItem(buddy.Nickname);
+            for (int j = 2; j < table.Columns.Count; j++)
+            {
+                item.SubItems.Add(buddy.Link);
+                item.SubItems.Add(buddy.Faculty);
+                item.SubItems.Add(buddy.Studies);
+                item.SubItems.Add(Enum.GetName(typeof(Level), buddy.Status));
+                item.SubItems.Add(buddy.Points.ToString());
+            }
+            listView.Items.Add(item);
+        };
 
         public void ShowFaculties(ComboBox FacultyComboBox)
         {
@@ -107,28 +112,6 @@ namespace StudyLabsApp.UserIO
         }
 
         public void ShowForumThreads(DataTable table, ListView listView, string faculty, string studies)
-        {
-            tableRows = from DataRow r in table.Rows
-                        select r;
-
-            foreach (DataRow row in tableRows)
-            {
-                if (row.Field<string>("Faculty") == faculty &&
-                    row.Field<string>("Studies") == studies)
-                {
-                    ListViewItem item = new ListViewItem(row.Field<string>("Question"));
-                    for (int j = 0; j < table.Rows.Count; j++)
-                    {
-                        item.SubItems.Add(row[2].ToString());
-                        item.SubItems.Add(row[5].ToString());
-                        item.SubItems.Add(row[0].ToString());
-                    }
-                    listView.Items.Add(item);
-                }
-            }
-        }
-
-        public void ShowDiscussions(DataTable table, ListView listView, string faculty, string studies)
         {
             tableRows = from DataRow r in table.Rows
                         select r;

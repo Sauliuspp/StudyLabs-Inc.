@@ -9,24 +9,18 @@ namespace StudyLabsApp
 {
     public class RegexChecker
     {
-        public bool CheckNickname(string input)
+        public delegate bool StringChecker(Regex regex, string input);
+
+        public bool CheckNickname(string input, StringChecker checkValidity)
         {
             Regex nicknameRegex = new Regex(@"^[a-zA-Z]{3,16}$");
-            if (nicknameRegex.IsMatch(input))
-            {
-                return true;
-            }
-            else return false;
+            return checkValidity(nicknameRegex, input);
         }
 
-        public bool CheckLink(string input)
+        public bool CheckLink(string input, StringChecker checkValidity)
         { 
             Regex linkRegex = new Regex(@"^www\.facebook\.com/");
-            if (linkRegex.IsMatch(input))
-            {
-                return true;
-            }
-            else return false;
+            return checkValidity(linkRegex, input);
         }
     }
 }

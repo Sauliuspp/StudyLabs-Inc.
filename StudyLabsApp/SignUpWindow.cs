@@ -55,8 +55,8 @@ namespace StudyLabsApp
 
                     RegexChecker regexObject = new RegexChecker();
                     DBprocessor = new Lazy<DatabaseProcessor>();
-                    bool nicknameValid = regexObject.CheckNickname(StuddyBuddy.Nickname);
-                    bool linkValid = regexObject.CheckLink(StuddyBuddy.Link);
+                    bool nicknameValid = regexObject.CheckNickname(StuddyBuddy.Nickname, checkValidity);
+                    bool linkValid = regexObject.CheckLink(StuddyBuddy.Link, checkValidity);
                     bool personExists = DBprocessor.Value.FindExistingPerson(StuddyBuddy);
 
                     if (nicknameValid && linkValid && !personExists)
@@ -100,6 +100,15 @@ namespace StudyLabsApp
                     }
                 }
             }
+        }
+
+        private bool checkValidity(Regex regex, string input)
+        {
+            if (regex.IsMatch(input))
+            {
+                return true;
+            }
+            else return false;
         }
 
         private void FacultyComboBox_SelectedIndexChanged(object sender, EventArgs e)
