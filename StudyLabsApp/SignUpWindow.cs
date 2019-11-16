@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudyLabsApp.ExtentionMethods;
+using System.Data.SqlClient;
 
 namespace StudyLabsApp
 {
@@ -58,15 +59,26 @@ namespace StudyLabsApp
 
                     if (nicknameValid && linkValid && !personExists)
                     {
-                        DBprocessor.Value.AddEntryToDatabase(StuddyBuddy);
+                        try
+                        {
+                            DBprocessor.Value.AddEntryToDatabase(StuddyBuddy);
 
-                        MessageBox.Show("Your nickname: "  + StuddyBuddy.Nickname   + Environment.NewLine +
-                                        "Your Link: "      + StuddyBuddy.Link       + Environment.NewLine +
-                                        "Chosen faculty: " + StuddyBuddy.Faculty    + Environment.NewLine +
-                                        "Chosen studies: " + StuddyBuddy.Studies    + Environment.NewLine +
-                                        "Your level: "     + (Level) StuddyBuddy.Status);
-                        //LevelUp(StuddyBuddy);
-                        this.Close();
+                            MessageBox.Show("Your nickname: " + StuddyBuddy.Nickname + Environment.NewLine +
+                                            "Your Link: " + StuddyBuddy.Link + Environment.NewLine +
+                                            "Chosen faculty: " + StuddyBuddy.Faculty + Environment.NewLine +
+                                            "Chosen studies: " + StuddyBuddy.Studies + Environment.NewLine +
+                                            "Your level: " + (Level)StuddyBuddy.Status);
+                            //LevelUp(StuddyBuddy);
+                            this.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            Console.WriteLine(ex.StackTrace);
+                            MessageBox.Show("The student's information is invalid. " +
+                                "We could not be register the student to the system. " +
+                                "Please try again.");
+                        }
                     }
                     else if(!nicknameValid)
                     {
