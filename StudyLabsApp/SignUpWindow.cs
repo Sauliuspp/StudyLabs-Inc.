@@ -102,10 +102,10 @@ namespace StudyLabsApp
         //A method to increase the level of a studdybuddy
         private void LevelUp(AStuddyBuddy StuddyBuddy)
         {
-            int enumvalue = (int)StuddyBuddy.Status;
-
+            int enumvalue = StuddyBuddy.Status;
             //Extension method usage
-            if (enumvalue.IsGreaterThan(10)){
+            if (enumvalue.IsGreaterThan<int>(10))
+            {
                 MessageBox.Show("You have reached maximum level possible! Good job! ");
                 return;
             }

@@ -109,7 +109,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="DatabaseIO\DatabaseProcessor.cs" />
-    <Compile Include="ExtentionMethods\IntExtensions.cs" />
+    <Compile Include="ExtentionMethods\MathExtensions.cs" />
     <Compile Include="ForumFiles\ForumThread.cs" />
     <Compile Include="ForumFiles\ForumThreadList.cs" />
     <Compile Include="MainMenuWindow.cs">
