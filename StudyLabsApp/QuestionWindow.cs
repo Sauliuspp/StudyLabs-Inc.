@@ -14,7 +14,8 @@ namespace StudyLabsApp
 {
     public partial class QuestionWindow : Form
     {
-        int QuestionId;
+        private int QuestionId;
+        private UIOutput output;
 
         public QuestionWindow(string id)
         {
@@ -22,7 +23,7 @@ namespace StudyLabsApp
 
             InitializeComponent();
 
-            UIOutput output = new UIOutput();
+            this.output = new UIOutput();
             output.ShowFilteredDiscussion(Discussion, QuestionId);
         }
 
@@ -35,7 +36,7 @@ namespace StudyLabsApp
             DatabaseProcessor processor = new DatabaseProcessor();
             processor.AddReplyToDiscussion(QuestionId, nickname, message);
 
-            UIOutput output = new UIOutput();
+            output = new UIOutput();
             output.ShowFilteredDiscussion(Discussion, QuestionId);
         }
     }

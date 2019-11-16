@@ -27,6 +27,8 @@ namespace StudyLabsApp
         public static ResXResourceReader Studies = new ResXResourceReader
                 (projectDirectory + @"\Resources\Faculties_and_studies.resx");
 
+        Lazy<DatabaseProcessor> DBprocessor;
+
         public SignUpWindow()
         {
             InitializeComponent();
@@ -49,14 +51,14 @@ namespace StudyLabsApp
                                                            StudiesComboBox.SelectedItem.ToString());
 
                     RegexChecker regexObject = new RegexChecker();
-                    DatabaseProcessor DBprocessor = new DatabaseProcessor();
+                    DBprocessor = new Lazy<DatabaseProcessor>();
                     bool nicknameValid = regexObject.CheckNickname(StuddyBuddy.Nickname);
                     bool linkValid = regexObject.CheckLink(StuddyBuddy.Link);
-                    bool personExists = DBprocessor.FindExistingPerson(StuddyBuddy);
+                    bool personExists = DBprocessor.Value.FindExistingPerson(StuddyBuddy);
 
                     if (nicknameValid && linkValid && !personExists)
                     {
-                        DBprocessor.AddEntryToDatabase(StuddyBuddy);
+                        DBprocessor.Value.AddEntryToDatabase(StuddyBuddy);
 
                         MessageBox.Show("Your nickname: "  + StuddyBuddy.Nickname   + Environment.NewLine +
                                         "Your Link: "      + StuddyBuddy.Link       + Environment.NewLine +
@@ -112,11 +114,6 @@ namespace StudyLabsApp
 
             //Boxing happening. Enum type to string
             MessageBox.Show("Your new level: " + (Level) StuddyBuddy.Status);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

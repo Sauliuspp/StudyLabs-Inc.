@@ -17,11 +17,13 @@ namespace StudyLabsApp
 {
     public partial class ForumsWindow : Form
     {
+        private UIOutput output;
+
         public ForumsWindow()
         {
             InitializeComponent();
 
-            UIOutput output = new UIOutput();
+            this.output = new UIOutput();
             output.ShowFaculties(FacultyComboBox);
         }
 
@@ -30,7 +32,6 @@ namespace StudyLabsApp
             StudiesComboBox.Items.Clear();
             FacultyComboBox.SelectedItem = "";
 
-            UIOutput output = new UIOutput();
             output.ShowStudies(this.FacultyComboBox, this.StudiesComboBox);
         }
 
@@ -40,7 +41,6 @@ namespace StudyLabsApp
             DatabaseProcessor dbProcessor = new DatabaseProcessor();
             DataTable table = dbProcessor.LoadForumThreads();
 
-            UIOutput output = new UIOutput();
             output.ShowForumThreads(table,
                                     QuestionList,
                                     FacultyComboBox.SelectedItem.ToString(),
