@@ -17,6 +17,8 @@ using System.Data.SqlClient;
 
 namespace StudyLabsApp
 {
+    public delegate void Message(string message);
+
     public partial class SignUpWindow : Form
     {
         public static string workingDirectory = Environment.CurrentDirectory;
@@ -75,9 +77,13 @@ namespace StudyLabsApp
                         {
                             Console.WriteLine(ex.Message);
                             Console.WriteLine(ex.StackTrace);
-                            MessageBox.Show("The student's information is invalid. " +
-                                "We could not be register the student to the system. " +
-                                "Please try again.");
+                            Message showMessage = delegate (string message)
+                            {
+                                MessageBox.Show(message);
+                            };
+                            showMessage("The student's information is invalid. " +
+                                        "We could not be register the student to the system. " +
+                                        "Please try again.");
                         }
                     }
                     else if(!nicknameValid)
