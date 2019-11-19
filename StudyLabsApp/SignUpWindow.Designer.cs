@@ -32,6 +32,7 @@ namespace StudyLabsApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpWindow));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.InvalidNickLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.StudiesComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@ namespace StudyLabsApp
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.InvalidNickLabel);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.StudiesComboBox);
             this.panel1.Controls.Add(this.label4);
@@ -65,6 +67,17 @@ namespace StudyLabsApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(596, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // InvalidNickLabel
+            // 
+            this.InvalidNickLabel.AutoSize = true;
+            this.InvalidNickLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.InvalidNickLabel.Location = new System.Drawing.Point(495, 159);
+            this.InvalidNickLabel.Name = "InvalidNickLabel";
+            this.InvalidNickLabel.Size = new System.Drawing.Size(96, 13);
+            this.InvalidNickLabel.TabIndex = 15;
+            this.InvalidNickLabel.Text = "Nickname too long";
+            this.InvalidNickLabel.Visible = false;
             // 
             // label5
             // 
@@ -146,6 +159,7 @@ namespace StudyLabsApp
             this.NicknameBox.Name = "NicknameBox";
             this.NicknameBox.Size = new System.Drawing.Size(284, 21);
             this.NicknameBox.TabIndex = 2;
+            this.NicknameBox.TextChanged += new System.EventHandler(this.NicknameBox_TextChanged);
             // 
             // label1
             // 
@@ -211,5 +225,6 @@ namespace StudyLabsApp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox StudiesComboBox;
         private Label lPenIMG;
+        private Label InvalidNickLabel;
     }
 }

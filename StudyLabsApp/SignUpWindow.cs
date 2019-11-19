@@ -141,5 +141,14 @@ namespace StudyLabsApp
             //Boxing happening. Enum type to string
             MessageBox.Show("Your new level: " + (Level) StuddyBuddy.Status);
         }
+
+        private void NicknameBox_TextChanged(object sender, EventArgs e)
+        {
+            if(NicknameBox.Text.Length > 16)
+            {
+                InvalidNickLabel.Visible = true;
+            }
+            else InvalidNickLabel.Visible = false;
+        }
     }
 }
