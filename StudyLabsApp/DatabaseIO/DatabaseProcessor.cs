@@ -10,7 +10,7 @@ namespace StudyLabsApp.DatabaseIO
 {
     public class DatabaseProcessor
     {
-        public void AddEntryToDatabase(AStuddyBuddy entry)
+        public void AddEntry(IPerson entry)
         {
             //load list
             string cn_string = Properties.Settings.Default.StuddyBuddyDBConnectionString;
@@ -19,13 +19,7 @@ namespace StudyLabsApp.DatabaseIO
             SqlConnection cn_connection = new SqlConnection(cn_string);
             if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
 
-            string sql_Text = "INSERT INTO StuddyBuddy ([Nickname],[Facebook],[Faculty],[Studies],[Status],[Points]) VALUES('"
-                + entry.Nickname + "','" +
-                entry.Link + "','" +
-                entry.Faculty + "','" +
-                entry.Studies + "','" +
-                (int)Level.Starter + "','" +
-                0 +  "')";
+            string sql_Text = entry.CreateDatabaseEntry();
 
             SqlCommand cmd_Command = new SqlCommand(sql_Text, cn_connection);
             cmd_Command.ExecuteNonQuery();

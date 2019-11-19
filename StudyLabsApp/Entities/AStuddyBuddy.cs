@@ -21,7 +21,7 @@ namespace StudyLabsApp
         Genius,
         PhD
     }
-    public class AStuddyBuddy : IEquatable<AStuddyBuddy>, IComparable
+    public class AStuddyBuddy : IEquatable<AStuddyBuddy>, IComparable, IPerson
     {
         public string Nickname { get; set; }
         public string Link { get; set; }
@@ -31,7 +31,7 @@ namespace StudyLabsApp
         public int Points { get; set; }
 
         public AStuddyBuddy()
-            : this("No Nickname","No Link","No faculty","No studies") { }
+            : this("No Nickname", "No Link", "No faculty", "No studies") { }
 
         public AStuddyBuddy(string nickname, string link, string faculty, string studies)
         {
@@ -51,7 +51,7 @@ namespace StudyLabsApp
             }
             else
             {
-                return  this.Nickname == other.Nickname &&
+                return this.Nickname == other.Nickname &&
                         this.Faculty == other.Faculty &&
                         this.Studies == other.Studies;
             }
@@ -68,6 +68,17 @@ namespace StudyLabsApp
             {
                 return this.Points.CompareTo(other.Points);
             }
+        }
+
+        public string CreateDatabaseEntry()
+        {
+            return "INSERT INTO StuddyBuddy ([Nickname],[Facebook],[Faculty],[Studies],[Status],[Points]) VALUES('" +
+                Nickname + "','" +
+                Link + "','" +
+                Faculty + "','" +
+                Studies + "','" +
+                (int)Level.Starter + "','" +
+                0 + "')";
         }
     }
 }

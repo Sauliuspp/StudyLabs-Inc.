@@ -62,7 +62,7 @@ namespace StudyLabsApp
                     {
                         try
                         {
-                            DBprocessor.Value.AddEntryToDatabase(StuddyBuddy);
+                            DBprocessor.Value.AddEntry(StuddyBuddy);
 
                             MessageBox.Show("Your nickname: " + StuddyBuddy.Nickname + Environment.NewLine +
                                             "Your Link: " + StuddyBuddy.Link + Environment.NewLine +
