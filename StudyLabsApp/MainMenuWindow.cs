@@ -26,8 +26,6 @@ namespace StudyLabsApp
         private int maxNumber = 0;
         private int currentNumber = 0;
 
-        #region Constructor
-
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -43,8 +41,6 @@ namespace StudyLabsApp
             UIOutput output = new UIOutput();
             output.ShowFaculties(this.FacultyComboBox);
         }
-
-        #endregion
 
         private void MainMenuWindow_Load(object sender, EventArgs e)
         {

@@ -10,6 +10,8 @@ namespace StudyLabsApp.DatabaseIO
 {
     public class DatabaseProcessor
     {
+        public event EventHandler<string> QueryCompletedEvent;
+
         public void AddEntry(IPerson entry)
         {
             //load list
@@ -23,6 +25,7 @@ namespace StudyLabsApp.DatabaseIO
 
             SqlCommand cmd_Command = new SqlCommand(sql_Text, cn_connection);
             cmd_Command.ExecuteNonQuery();
+            QueryCompletedEvent?.Invoke(this, "You have successfully signed up.");
         }
 
         public void AddReplyToDiscussion(int questionId, string nickname, string message)

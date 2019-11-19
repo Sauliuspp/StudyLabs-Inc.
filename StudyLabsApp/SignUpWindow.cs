@@ -62,8 +62,8 @@ namespace StudyLabsApp
                     {
                         try
                         {
+                            DBprocessor.Value.QueryCompletedEvent += Value_QueryCompletedEvent;
                             DBprocessor.Value.AddEntry(StuddyBuddy);
-
                             MessageBox.Show("Your nickname: " + StuddyBuddy.Nickname + Environment.NewLine +
                                             "Your Link: " + StuddyBuddy.Link + Environment.NewLine +
                                             "Chosen faculty: " + StuddyBuddy.Faculty + Environment.NewLine +
@@ -99,6 +99,12 @@ namespace StudyLabsApp
                     }
                 }
             }
+        }
+
+        private void Value_QueryCompletedEvent(object sender, string e)
+        {
+            panel1.BackColor = Properties.Settings.Default.Olive;
+            MessageBox.Show("You have registered succesfully");
         }
 
         private bool checkValidity(Regex regex, string input)
