@@ -17,7 +17,7 @@ using System.Data.SqlClient;
 
 namespace StudyLabsApp
 {
-    public delegate void Message(string message);
+    public delegate void Message<in T>(T message);
 
     public partial class SignUpWindow : Form
     {
@@ -76,7 +76,7 @@ namespace StudyLabsApp
                         {
                             Console.WriteLine(ex.Message);
                             Console.WriteLine(ex.StackTrace);
-                            Message showMessage = delegate (string message)
+                            Message<string> showMessage = delegate (string message)
                             {
                                 MessageBox.Show(message);
                             };
