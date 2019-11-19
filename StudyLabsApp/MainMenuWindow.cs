@@ -162,28 +162,28 @@ namespace StudyLabsApp
             ComicBox.LoadAsync(uriSource.ToString());
         }
 
-        private void oliveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OliveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PanelForUniversityList.BackColor = Properties.Settings.Default.Olive;
             this.BackColor = Properties.Settings.Default.Olive;
             SaveSettings();
         }
 
-        private void purpleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PurpleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PanelForUniversityList.BackColor = Properties.Settings.Default.Purple;
             this.BackColor = Properties.Settings.Default.Purple;
             SaveSettings();
         }
 
-        private void darkToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DarkToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PanelForUniversityList.BackColor = Properties.Settings.Default.Gray;
             this.BackColor = Properties.Settings.Default.Gray;
             SaveSettings();
         }
 
-        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PanelForUniversityList.BackColor = Properties.Settings.Default.Red;
             this.BackColor = Properties.Settings.Default.Red;
