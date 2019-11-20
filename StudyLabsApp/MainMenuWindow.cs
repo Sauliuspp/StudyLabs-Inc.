@@ -12,6 +12,8 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace StudyLabsApp
 {
@@ -61,9 +63,16 @@ namespace StudyLabsApp
 
         private void MainMenuWindow_Load(object sender, EventArgs e)
         {
+
+            AStuddyBuddy buddy = new AStuddyBuddy("Tom", "link", "faculty", "studies");
+
+            Task.Run(() => Web.webService.GetWebStuffPOST(buddy));
+            Console.ReadKey();
+
             lForums.Visible = false;
             panelLeft.Visible = false;
         }
+
 
         private async void MainMenuWindow_Shown(Object sender, EventArgs e)
         {

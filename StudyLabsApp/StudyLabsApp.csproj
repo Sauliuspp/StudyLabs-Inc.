@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIHelper.cs" />
+    <Compile Include="webService.cs" />
     <Compile Include="ComicModel.cs" />
     <Compile Include="ComicProcessor.cs" />
     <Compile Include="DatabaseIO\DatabaseProcessor.cs" />
