@@ -67,7 +67,6 @@ namespace StudyLabsApp
             AStuddyBuddy buddy = new AStuddyBuddy("Tom", "link", "faculty", "studies");
 
             Task.Run(() => Web.webService.GetWebStuffPOST(buddy));
-            Console.ReadKey();
 
             lForums.Visible = false;
             panelLeft.Visible = false;

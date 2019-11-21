@@ -15,7 +15,7 @@ namespace StudyLabsApp.Web
         {
             var client = new HttpClient();
 
-            var response = await client.GetAsync("https://localhost:44347/weatherforecast").ConfigureAwait(false);
+            var response = await client.GetAsync("https://localhost:44347/").ConfigureAwait(false);
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
             Console.WriteLine(response.Content);
         }
