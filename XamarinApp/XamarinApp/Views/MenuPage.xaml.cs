@@ -22,7 +22,8 @@ namespace XamarinApp.Views
             {
                 new HomeMenuItem {Id = MenuItemType.MainMenu, Title="Main Menu" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Testuks, Title="Testuks" }
+                new HomeMenuItem {Id = MenuItemType.Testuks, Title="Testuks" },
+                new HomeMenuItem {Id = MenuItemType.AStuddyBuddy, Title="AStuddyBuddy" }
             };
 
             ListViewMenu.ItemsSource = menuItems;
