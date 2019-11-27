@@ -9,7 +9,7 @@ namespace XamarinApp.Models
         MainMenu,
         About,
         Testuks,
-        Items
+        AStuddyBuddy
     }
     public class HomeMenuItem
     {
