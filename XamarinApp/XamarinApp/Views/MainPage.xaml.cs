@@ -21,7 +21,7 @@ namespace XamarinApp.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.MainMenu, (NavigationPage)Detail);
+            //MenuPages.Add((int)MenuItemType.MainMenu, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -31,7 +31,7 @@ namespace XamarinApp.Views
                 switch (id)
                 {
                     case (int)MenuItemType.MainMenu:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        MenuPages.Add(id, new NavigationPage(new SBMainMenuPage()));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
