@@ -8,7 +8,8 @@ namespace XamarinApp.Models
     {
         MainMenu,
         About,
-        Testuks
+        Testuks,
+        Items
     }
     public class HomeMenuItem
     {

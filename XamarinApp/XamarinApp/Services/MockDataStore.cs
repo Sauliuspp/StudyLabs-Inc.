@@ -14,9 +14,9 @@ namespace XamarinApp.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Cia", Description="Kaip bebutu keista." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Yra", Description="Sunku pripazinti." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Bandymas", Description="Damm." }
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Cia", Description="123." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Yra", Description="456." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Bandymas", Description="789." }
             };
         }
 
