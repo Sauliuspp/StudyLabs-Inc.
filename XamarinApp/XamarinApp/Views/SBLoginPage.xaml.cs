@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace XamarinApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SBMainMenuPage : ContentPage
+    public partial class SBLoginPage : ContentPage
     {
         bool _istapped = false;
 
-        public SBMainMenuPage()
+        public SBLoginPage()
         {
             InitializeComponent();
         }

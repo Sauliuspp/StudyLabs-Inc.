@@ -21,13 +21,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\SBMainMenuPage.xaml.cs">
-      <DependentUpon>SBMainMenuPage.xaml</DependentUpon>
+    <Compile Update="Views\SBLoginPage.xaml.cs">
+      <DependentUpon>SBLoginPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\SBMainMenuPage.xaml">
+    <EmbeddedResource Update="Views\SBLoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TestPage.xaml">
