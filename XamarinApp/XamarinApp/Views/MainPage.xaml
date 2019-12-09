@@ -19,7 +19,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:SBLoginPage />
+                <views:SBMainMenuPage />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

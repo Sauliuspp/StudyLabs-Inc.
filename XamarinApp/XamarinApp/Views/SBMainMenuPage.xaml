@@ -4,10 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinApp.Views.SBLoginPage">
+             x:Class="XamarinApp.Views.SBMainMenuPage">
     <ContentPage.Content>
         <StackLayout>
-            <Grid  x:Name="LoginPageGrid" RowSpacing="2" ColumnSpacing="2">
+            <Grid x:Name="MainMenuPageGrid" RowSpacing="2" ColumnSpacing="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -27,38 +27,18 @@
                     <RowDefinition Height="50" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-                
-                <Label Text="Username"
-                       VerticalOptions="Fill" 
-                       HorizontalOptions="FillAndExpand"
-                       Grid.Row="2"/>
-            
-                <Entry x:Name="usernameField"
-                       Text=""
-                       Placeholder="Insert username here" 
-                       Grid.Row="3"
-                       Grid.Column="0"
-                       Grid.ColumnSpan="3"/>
-                
-                <Label Text="Password"
-                       VerticalOptions="Fill" 
-                       HorizontalOptions="FillAndExpand"
-                       Grid.Row="5"/>
-
-                <Entry x:Name="passwordField"
-                       Text=""
-                       Placeholder="Insert password here"
-                       IsPassword="True"
-                       Grid.Row="6"
-                       Grid.Column="0"
-                       Grid.ColumnSpan="3"/>
-                
                 <Button Text = "Login" 
-                        Grid.Row="8" 
+                        Grid.Row="6" 
                         Grid.RowSpan="2" 
                         Grid.Column="1" 
                         Grid.ColumnSpan="1"
-                        Clicked="LoginToSB_ClickedAsync" />
+                        Clicked="Login_ClickedAsync" />
+                <Button Text = "Sign up" 
+                        Grid.Row="9" 
+                        Grid.RowSpan="2" 
+                        Grid.Column="1" 
+                        Grid.ColumnSpan="1"
+                        Clicked="SignUp_ClickedAsync" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

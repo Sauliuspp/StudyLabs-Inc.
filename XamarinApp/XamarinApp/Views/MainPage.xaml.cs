@@ -32,7 +32,7 @@ namespace XamarinApp.Views
                 switch (id)
                 {
                     case (int)MenuItemType.MainMenu:
-                        MenuPages.Add(id, new NavigationPage(new SBLoginPage()));
+                        MenuPages.Add(id, new NavigationPage(new SBMainMenuPage()));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
