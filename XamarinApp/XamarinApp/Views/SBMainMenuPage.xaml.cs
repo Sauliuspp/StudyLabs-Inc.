@@ -40,8 +40,8 @@ namespace XamarinApp.Views
 
             _istapped = true;
 
-            var newPage = new ItemsPage();
-            await Navigation.PushAsync(newPage);
+            var registerPage = new SBRegisterPage();
+            await Navigation.PushAsync(registerPage);
 
             _istapped = false;
         }

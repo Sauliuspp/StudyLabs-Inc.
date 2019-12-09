@@ -41,7 +41,7 @@ namespace XamarinApp.Views
                         MenuPages.Add(id, new NavigationPage(new TestPage()));
                         break;
                     case (int)MenuItemType.AStuddyBuddy:
-                        MenuPages.Add(id, new NavigationPage(new RegisterPage()));
+                        MenuPages.Add(id, new NavigationPage(new SBRegisterPage()));
                         break;
                 }
             }

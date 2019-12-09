@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinApp.Views.SBRegisterPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontSize="Large" 
+                   Text="StuddyBuddy"/>
+            
+            <Label HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontSize="Medium" 
+                   Text="Register"/>
+
+            <Entry x:Name="nickEntry" 
+                   Placeholder="NickName" 
+                   PlaceholderColor="PaleVioletRed">
+            </Entry>
+
+            <Entry x:Name="Password" 
+                   Placeholder="Password" 
+                   IsPassword="True"
+                   PlaceholderColor="PaleVioletRed">
+            </Entry>
+            
+            <Entry x:Name="linkEntry" 
+                   Placeholder="Link" 
+                   PlaceholderColor="PaleVioletRed">
+            </Entry>
+
+            <Entry x:Name="facEntry" 
+                   Placeholder="Faculty" 
+                   PlaceholderColor="PaleVioletRed">
+            </Entry>
+
+            <Entry x:Name="studEntry" 
+                   Placeholder="Studies" 
+                   PlaceholderColor="PaleVioletRed">
+            </Entry>
+
+            <Button HorizontalOptions="Center" 
+                    VerticalOptions="Center" 
+                    Text="Submit"
+                Clicked="SignUp_Clicked">
+            </Button>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

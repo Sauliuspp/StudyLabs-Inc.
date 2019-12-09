@@ -36,6 +36,7 @@ namespace XamarinApp.Views
                 DataSet ds = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter();
 
+
                 SqlCommand command = new SqlCommand("SELECT Id, Username FROM [dbo].[StuddyBuddy] WHERE Username = @username", cn);
                 command.Parameters.AddWithValue("@username", usernameField.Text);
 
@@ -52,7 +53,10 @@ namespace XamarinApp.Views
                 }
                 catch(Exception ex)
                 {
-                    await DisplayAlert("Alert", "Could not log in, try again", "OK");
+                    cn.Close();
+                    adapter.Dispose();
+                    await DisplayAlert("Alert", "Could not log in, wrong username, try again", "OK");
+                    return;
                 }
 
                 command.CommandText = "SELECT Id, Password FROM [dbo].[Password] WHERE Password = @password";
@@ -72,11 +76,10 @@ namespace XamarinApp.Views
                 }
                 catch (Exception ex)
                 {
-                    await DisplayAlert("Alert", "Could not log in, try again", "OK");
+                    cn.Close();
+                    adapter.Dispose();
+                    await DisplayAlert("Alert", "Could not log in, wrong password, try again", "OK");
                 }
-
-                cn.Close();
-                adapter.Dispose();
             }
         }
     }

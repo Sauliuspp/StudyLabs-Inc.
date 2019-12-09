@@ -22,6 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\SBRegisterPage.xaml.cs">
+      <DependentUpon>SBRegisterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\SBLoginPage.xaml.cs">
       <DependentUpon>SBLoginPage.xaml</DependentUpon>
     </Compile>
