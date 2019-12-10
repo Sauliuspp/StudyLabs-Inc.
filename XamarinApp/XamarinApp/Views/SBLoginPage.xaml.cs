@@ -22,6 +22,12 @@ namespace XamarinApp.Views
 
         private async void LoginToSB_ClickedAsync(object sender, EventArgs e)
         {
+            ConfirmUser();
+            var menuPage = new MenuPage();
+            await Navigation.PushAsync(menuPage);
+        }
+        private async void ConfirmUser() 
+        {
             IsEnabled = false;
             string connectionString = "Server=tcp:studylabs-inc.database.windows.net,1433;" +
                                         "Initial Catalog=StudyLabs_DB;" +
@@ -52,10 +58,9 @@ namespace XamarinApp.Views
 
                     string studdyBuddyUsername = (string)ds.Tables[0].Rows[0]["Username"];
                     string studdyBuddyPassword = (string)ds.Tables[0].Rows[0]["Password"];
-                    Console.WriteLine(studdyBuddyUsername);
-                    Console.WriteLine(studdyBuddyPassword);
 
                     adapter.Dispose();
+
                     IsEnabled = true;
                 }
                 catch (SqlException ex)
@@ -72,8 +77,6 @@ namespace XamarinApp.Views
                     await DisplayAlert("Alert", "Could not log in, try again", "OK");
                     return;
                 }
-
-                adapter.Dispose();
             }
         }
     }

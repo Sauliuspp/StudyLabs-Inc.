@@ -17,8 +17,6 @@ namespace XamarinApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SBRegisterPage : ContentPage
     {
-        RegisterViewModel registerViewModel;
-
         public SBRegisterPage()
         {
             InitializeComponent();

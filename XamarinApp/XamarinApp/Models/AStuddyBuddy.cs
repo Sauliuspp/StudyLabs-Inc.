@@ -24,18 +24,17 @@ namespace XamarinApp.Models
     public class AStuddyBuddy : IEquatable<AStuddyBuddy>, IComparable
     {
         public string Nickname { get; set; }
+        public string Password { get; set; }
         public string Link { get; set; }
         public string Faculty { get; set; }
         public string Studies { get; set; }
         public int Status { get; set; }
         public int Points { get; set; }
 
-        public AStuddyBuddy()
-            : this("No Nickname", "No Link", "No faculty", "No studies") { }
-
-        public AStuddyBuddy(string nickname, string link, string faculty, string studies)
+        public AStuddyBuddy(string nickname, string password, string link, string faculty, string studies)
         {
             this.Nickname = nickname;
+            this.Password = password;
             this.Link = link;
             this.Faculty = faculty;
             this.Studies = studies;

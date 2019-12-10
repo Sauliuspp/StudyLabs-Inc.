@@ -16,6 +16,9 @@ namespace XamarinApp.Views
     {
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
 
+        public string username { get; set; }
+        public string password { get; set; }
+
         public MainPage()
         {
             InitializeComponent();
@@ -32,7 +35,7 @@ namespace XamarinApp.Views
                 switch (id)
                 {
                     case (int)MenuItemType.MainMenu:
-                        MenuPages.Add(id, new NavigationPage(new SBMainMenuPage()));
+                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));

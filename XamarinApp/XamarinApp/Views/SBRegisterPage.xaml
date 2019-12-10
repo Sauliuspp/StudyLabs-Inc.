@@ -38,14 +38,14 @@
                    PlaceholderColor="PaleVioletRed">
             </Entry>
 
-            <Entry x:Name="studEntry" 
+            <Entry x:Name="studEntry"
                    Placeholder="Studies" 
                    PlaceholderColor="PaleVioletRed">
             </Entry>
 
-                <Button HorizontalOptions="Center" 
-                    VerticalOptions="Center" 
-                    Text="Submit"
+            <Button HorizontalOptions="Center" 
+                VerticalOptions="Center" 
+                Text="Submit"
                 Clicked="SignUp_Clicked">
             </Button>
             
