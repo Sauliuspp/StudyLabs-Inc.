@@ -33,6 +33,7 @@ namespace XamarinApp.Views
 
             using (SqlConnection cn = new SqlConnection(connectionString))
             {
+                IsEnabled = false;
                 DataSet ds = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Username, Password, Link, Faculty, " +
                                                             "Studies, Status, Points FROM [dbo].[StuddyBuddy]", cn);
@@ -60,17 +61,21 @@ namespace XamarinApp.Views
                     newRow["Link"] = linkEntry.Text;
                     newRow["Faculty"] = facEntry.Text;
                     newRow["Studies"] = studEntry.Text;
-                    newRow["Status"] = 1; // column does not belong to table Studdybuddy
+                    newRow["Status"] = 1;
                     newRow["Points"] = 0;
+
+                    ds.Tables[0].Rows.Add(newRow);
+                    adapter.Update(ds.Tables[0]);
+                    adapter.Dispose();
+                    IsEnabled = false;
                 }
                 catch (Exception ex)
                 {
-                    cn.Close();
+                    IsEnabled = true;
                     adapter.Dispose();
                     await DisplayAlert("Alert", "Could not register, try again", "OK");
                 }
 
-                cn.Close();
                 adapter.Dispose();
             }
         }
