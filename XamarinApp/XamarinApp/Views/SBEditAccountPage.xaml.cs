@@ -27,5 +27,11 @@ namespace XamarinApp.Views
             var changePasswordPage = new ChangePasswordPage(username, password);
             await Navigation.PushAsync(changePasswordPage);
         }
+
+        private async void DeleteAccount_ClickedAsync(object sender, EventArgs e)
+        {
+            var deleteAccountPage = new DeleteAccountPage(username, password);
+            await Navigation.PushAsync(deleteAccountPage);
+        }
     }
 }

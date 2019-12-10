@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinApp.Views.DeleteAccountPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker x:Name="DeleteConfirmation"
+                    Title="Are you sure?"
+                    TitleColor="Red">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Yes</x:String>
+                        <x:String>No</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            
+            <Button Text="Delete account"
+                        Grid.Row="6" 
+                        Grid.RowSpan="2" 
+                        Grid.Column="1" 
+                        Grid.ColumnSpan="2"
+                        Clicked="DeleteAccount_ClickedAsync"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
