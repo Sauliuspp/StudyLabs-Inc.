@@ -30,7 +30,7 @@ namespace XamarinApp.Models
         public string Studies { get; set; }
         public int Status { get; set; }
         public int Points { get; set; }
-
+        public AStuddyBuddy() : this("", "", "", "", "") {}
         public AStuddyBuddy(string nickname, string password, string link, string faculty, string studies)
         {
             this.Nickname = nickname;

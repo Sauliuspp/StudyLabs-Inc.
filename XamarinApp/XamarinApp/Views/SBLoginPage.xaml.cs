@@ -15,18 +15,23 @@ namespace XamarinApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SBLoginPage : ContentPage
     {
+        AStuddyBuddy buddy;
         public SBLoginPage()
         {
             InitializeComponent();
+            buddy = new AStuddyBuddy();
         }
 
         private async void LoginToSB_ClickedAsync(object sender, EventArgs e)
         {
-            ConfirmUser();
-            var menuPage = new MenuPage();
-            await Navigation.PushAsync(menuPage);
+            if(await ConfirmUser())
+            {
+                var userPage = new SBAuthentifiedPage(buddy);
+                await Navigation.PushAsync(userPage);
+            }
         }
-        private async void ConfirmUser() 
+
+        private async Task<bool> ConfirmUser() 
         {
             IsEnabled = false;
             string connectionString = "Server=tcp:studylabs-inc.database.windows.net,1433;" +
@@ -62,20 +67,24 @@ namespace XamarinApp.Views
                     adapter.Dispose();
 
                     IsEnabled = true;
+
+                    buddy.Nickname = studdyBuddyUsername;
+                    buddy.Password = studdyBuddyPassword;
+                    return true;
                 }
                 catch (SqlException ex)
                 {
                     IsEnabled = true;
                     adapter.Dispose();
                     await DisplayAlert("Alert", "Error with the database, try again", "OK");
-                    return;
+                    return false;
                 }
                 catch (Exception ex)
                 {
                     IsEnabled = true;
                     adapter.Dispose();
                     await DisplayAlert("Alert", "Could not log in, try again", "OK");
-                    return;
+                    return false;
                 }
             }
         }
