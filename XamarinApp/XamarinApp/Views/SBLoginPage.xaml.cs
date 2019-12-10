@@ -36,49 +36,38 @@ namespace XamarinApp.Views
                 DataSet ds = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter();
 
-
-                SqlCommand command = new SqlCommand("SELECT Id, Username FROM [dbo].[StuddyBuddy] WHERE Username = @username", cn);
-                command.Parameters.AddWithValue("@username", usernameField.Text);
-
-                adapter.SelectCommand = command;
-
-                adapter.Fill(ds, "StuddyBuddy");
-
                 try
                 {
-                    int studdyBuddyID = (int)ds.Tables[0].Rows[0]["Id"];
+                    SqlCommand command = new SqlCommand("SELECT Id, Username, Password FROM [dbo].[StuddyBuddy] " +
+                                                        "WHERE Username = @username" +
+                                                        "      AND " +
+                                                        "      Password = @password", cn);
+                    command.Parameters.AddWithValue("@username", usernameField.Text);
+                    command.Parameters.AddWithValue("@password", passwordField.Text);
+               
+                    adapter.SelectCommand = command;
+                
+                    adapter.Fill(ds, "StuddyBuddy");
+
                     string studdyBuddyUsername = (string)ds.Tables[0].Rows[0]["Username"];
+                    string studdyBuddyPassword = (string)ds.Tables[0].Rows[0]["Password"];
                     Console.WriteLine(studdyBuddyID);
                     Console.WriteLine(studdyBuddyUsername);
+                    Console.WriteLine(studdyBuddyPassword);
                 }
-                catch(Exception ex)
+                catch (SqlException ex)
                 {
                     cn.Close();
                     adapter.Dispose();
-                    await DisplayAlert("Alert", "Could not log in, wrong username, try again", "OK");
+                    await DisplayAlert("Alert", "Error with the database, try again", "OK");
                     return;
-                }
-
-                command.CommandText = "SELECT Id, Password FROM [dbo].[Password] WHERE Password = @password";
-                command.Parameters.AddWithValue("@password", passwordField.Text);
-
-                adapter.SelectCommand = command;
-
-                ds = new DataSet();
-                adapter.Fill(ds, "Password");
-
-                try
-                {
-                    int passwordID = (int)ds.Tables[0].Rows[0]["Id"];
-                    string password = (string)ds.Tables[0].Rows[0]["Password"];
-                    Console.WriteLine(passwordID);
-                    Console.WriteLine(password);
                 }
                 catch (Exception ex)
                 {
                     cn.Close();
                     adapter.Dispose();
-                    await DisplayAlert("Alert", "Could not log in, wrong password, try again", "OK");
+                    await DisplayAlert("Alert", "Could not log in, try again", "OK");
+                    return;
                 }
             }
         }

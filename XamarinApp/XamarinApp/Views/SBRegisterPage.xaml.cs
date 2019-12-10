@@ -34,16 +34,17 @@ namespace XamarinApp.Views
             using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 DataSet ds = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Username, Link, Faculty, " +
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Username, Password, Link, Faculty, " +
                                                             "Studies, Status, Points FROM [dbo].[StuddyBuddy]", cn);
 
                 try     // to do - autogenerate studddybuddy table id column
                 {
-                    SqlCommand insert = new SqlCommand("INSERT INTO [dbo].[StuddyBuddy] (Username, Link, Faculty, Studies, Status, Points) " +
-                                                    "VALUES ( @username, @link, @faculty, @studies, @status, @points );", cn);
+                    SqlCommand insert = new SqlCommand("INSERT INTO [dbo].[StuddyBuddy] (Username, Password, Link, Faculty, Studies, Status, Points) " +
+                                                    "VALUES ( @username, @password, @link, @faculty, @studies, @status, @points );", cn);
                     insert.CommandType = CommandType.Text;
 
                     insert.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar, 20, "Username"));
+                    insert.Parameters.Add(new SqlParameter("@Password", SqlDbType.VarChar, 30, "Password"));
                     insert.Parameters.Add(new SqlParameter("@link", SqlDbType.VarChar, 50, "Link"));
                     insert.Parameters.Add(new SqlParameter("@faculty", SqlDbType.VarChar, 30, "Faculty"));
                     insert.Parameters.Add(new SqlParameter("@studies", SqlDbType.VarChar, 30, "Studies"));
@@ -55,31 +56,12 @@ namespace XamarinApp.Views
 
                     DataRow newRow = ds.Tables[0].NewRow();
                     newRow["Username"] = nickEntry.Text;
+                    newRow["Password"] = Password.Text;
                     newRow["Link"] = linkEntry.Text;
                     newRow["Faculty"] = facEntry.Text;
                     newRow["Studies"] = studEntry.Text;
                     newRow["Status"] = 1; // column does not belong to table Studdybuddy
                     newRow["Points"] = 0;
-
-                    ds.Tables[0].Rows.Add(newRow);
-                    adapter.Update(ds.Tables[0]);
-
-                    ds = new DataSet();
-                    adapter = new SqlDataAdapter("SELECT Password FROM [dbo].[Password]", cn);
-
-                    insert = new SqlCommand("INSERT INTO [dbo].[Password] (Password) " +
-                                                    "VALUES ( @password );", cn);
-
-                    insert.Parameters.Add(new SqlParameter("@password", SqlDbType.VarChar, 30, "Password"));
-
-                    adapter.InsertCommand = insert;
-                    adapter.Fill(ds, "Password");
-
-                    newRow = ds.Tables[0].NewRow();
-                    newRow["Password"] = Password.Text;
-
-                    ds.Tables[0].Rows.Add(newRow);
-                    adapter.Update(ds.Tables[0]);
                 }
                 catch (Exception ex)
                 {
