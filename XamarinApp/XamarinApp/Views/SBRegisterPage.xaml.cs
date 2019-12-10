@@ -24,7 +24,7 @@ namespace XamarinApp.Views
             InitializeComponent();
 
             BindingContext = viewModel = new FacultiesViewModel();
-            if (viewModel.Items.Count == 0)
+            if (viewModel.Faculties.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
 

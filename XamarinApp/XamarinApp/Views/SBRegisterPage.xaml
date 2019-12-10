@@ -35,7 +35,8 @@
 
             <Picker x:Name="facEntry" 
                     Title="Select faculty"
-                    ItemsSource="{Binding Items}" >
+                    ItemsSource="{Binding Faculties}"
+                    ItemDisplayBinding="{ Binding Text }">
             </Picker>
 
             <Picker x:Name="studEntry"

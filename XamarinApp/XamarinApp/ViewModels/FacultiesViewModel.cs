@@ -16,7 +16,7 @@ namespace XamarinApp.ViewModels
     class FacultiesViewModel : INotifyPropertyChanged
     {
 
-        public ObservableCollection<Faculty> Items { get; set; }
+        public ObservableCollection<Faculty> Faculties { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         bool isBusy = false;
@@ -60,7 +60,7 @@ namespace XamarinApp.ViewModels
 
         public FacultiesViewModel()
         {
-            Items = new ObservableCollection<Faculty>();
+            Faculties = new ObservableCollection<Faculty>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
         }
 
@@ -73,12 +73,12 @@ namespace XamarinApp.ViewModels
 
             try
             {
-                Items.Clear();
+                Faculties.Clear();
                 FacultyDataStore dataStore = new FacultyDataStore();
                 var items = await dataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    Faculties.Add(item);
                 }
             }
             catch (Exception ex)
