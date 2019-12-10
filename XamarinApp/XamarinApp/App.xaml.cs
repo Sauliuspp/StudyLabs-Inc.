@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using System.Resources;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

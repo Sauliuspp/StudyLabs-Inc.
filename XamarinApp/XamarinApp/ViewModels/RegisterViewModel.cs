@@ -13,10 +13,11 @@ using XamarinApp.Services;
 
 namespace XamarinApp.ViewModels
 {
-    class FacultiesViewModel : INotifyPropertyChanged
+    class RegisterViewModel : INotifyPropertyChanged
     {
 
         public ObservableCollection<Faculty> Faculties { get; set; }
+        public ObservableCollection<Studies> Studies { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         bool isBusy = false;
@@ -58,9 +59,10 @@ namespace XamarinApp.ViewModels
         }
         #endregion
 
-        public FacultiesViewModel()
+        public RegisterViewModel()
         {
             Faculties = new ObservableCollection<Faculty>();
+            Studies = new ObservableCollection<Studies>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
         }
 
@@ -74,11 +76,19 @@ namespace XamarinApp.ViewModels
             try
             {
                 Faculties.Clear();
-                FacultyDataStore dataStore = new FacultyDataStore();
-                var items = await dataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                Studies.Clear();
+                FacultyDataStore facultyStore = new FacultyDataStore();
+                StudiesDataStore studyStore = new StudiesDataStore();
+                var faculties = await facultyStore.GetItemsAsync(true);
+                var studies = await studyStore.GetItemsAsync(true);
+
+                foreach (var item in faculties)
                 {
                     Faculties.Add(item);
+                }
+                foreach (var item in studies)
+                {
+                    Studies.Add(item);
                 }
             }
             catch (Exception ex)

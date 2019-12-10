@@ -27,11 +27,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Faculties.resx</DependentUpon>
     </Compile>
-    <Compile Update="Resources\Faculties.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Faculties.resx</DependentUpon>
-    </Compile>
     <Compile Update="Views\SBRegisterPage.xaml.cs">
       <DependentUpon>SBRegisterPage.xaml</DependentUpon>
     </Compile>
@@ -46,11 +41,7 @@
   <ItemGroup>
     <EmbeddedResource Update="Faculties.resx">
       <LastGenOutput>Faculties.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Faculties.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Faculties.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SBLoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

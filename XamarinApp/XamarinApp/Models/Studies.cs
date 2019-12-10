@@ -4,7 +4,7 @@ using System.Text;
 
 namespace XamarinApp.Models
 {
-    public class Faculty
+    public class Studies
     {
         public string Name { get; set; }
         public int Value { get; set; }
