@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +10,22 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinApp.Models;
+using XamarinApp.ViewModels;
 
 namespace XamarinApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SBRegisterPage : ContentPage
     {
+        FacultiesViewModel viewModel;
+
         public SBRegisterPage()
         {
             InitializeComponent();
+
+            BindingContext = viewModel = new FacultiesViewModel();
+            if (viewModel.Items.Count == 0)
+                viewModel.LoadItemsCommand.Execute(null);
         }
 
         private async void SignUp_Clicked(object sender, EventArgs e)
@@ -59,8 +67,8 @@ namespace XamarinApp.Views
                     newRow["Username"] = nickEntry.Text;
                     newRow["Password"] = Password.Text;
                     newRow["Link"] = linkEntry.Text;
-                    newRow["Faculty"] = facEntry.Text;
-                    newRow["Studies"] = studEntry.Text;
+                    newRow["Faculty"] = facEntry.SelectedItem;
+                    newRow["Studies"] = studEntry.SelectedItem;
                     newRow["Status"] = 1;
                     newRow["Points"] = 0;
 

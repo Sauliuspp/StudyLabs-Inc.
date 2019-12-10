@@ -33,17 +33,25 @@
                    PlaceholderColor="PaleVioletRed">
             </Entry>
 
-            <Entry x:Name="facEntry" 
-                   Placeholder="Faculty" 
-                   PlaceholderColor="PaleVioletRed">
-            </Entry>
+            <Picker x:Name="facEntry" 
+                    Title="Select faculty"
+                    ItemsSource="{Binding Items}" >
+            </Picker>
 
-            <Entry x:Name="studEntry" 
-                   Placeholder="Studies" 
-                   PlaceholderColor="PaleVioletRed">
-            </Entry>
+            <Picker x:Name="studEntry"
+                     Title="Select studies">
+                <Picker.Items>
+                <x:String>Baboon</x:String>
+                <x:String>Capuchin Monkey</x:String>
+                <x:String>Blue Monkey</x:String>
+                <x:String>Squirrel Monkey</x:String>
+                <x:String>Golden Lion Tamarin</x:String>
+                <x:String>Howler Monkey</x:String>
+                <x:String>Japanese Macaque</x:String>
+                </Picker.Items>
+            </Picker>
 
-            <Button HorizontalOptions="Center" 
+                <Button HorizontalOptions="Center" 
                     VerticalOptions="Center" 
                     Text="Submit"
                 Clicked="SignUp_Clicked">
