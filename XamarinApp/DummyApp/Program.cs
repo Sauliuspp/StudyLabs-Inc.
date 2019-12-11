@@ -26,7 +26,7 @@ namespace DummyApp
 
             //Take(buddyList, threadList);
 
-            Aggregate(buddyList, threadList);
+            //Aggregate(buddyList, threadList);
             Console.ReadKey();
         }
 
