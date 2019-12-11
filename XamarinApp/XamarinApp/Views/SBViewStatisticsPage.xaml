@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinApp.Views.SBAuthentifiedPage">
+             x:Class="XamarinApp.Views.SBViewStatisticsPage">
     <ContentPage.Content>
         <StackLayout>
             <Grid  x:Name="OptionsGrid" RowSpacing="2" ColumnSpacing="2">
@@ -28,43 +28,13 @@
                     <RowDefinition Height="50" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-                
-                <Label Text="Welcome!"
-                       FontSize="Title"
-                       VerticalTextAlignment="Center"
-                       HorizontalTextAlignment="Center"
-                       Grid.Row="0" 
-                       Grid.RowSpan="2" 
-                       Grid.Column="1" 
-                       Grid.ColumnSpan="2" />
-                
-                <Button Text = "Enter forums" 
+
+                <Button Text = "View your statistics" 
                         Grid.Row="2" 
                         Grid.RowSpan="2" 
                         Grid.Column="1" 
                         Grid.ColumnSpan="2"
-                        Clicked="EnterForums_ClickedAsync" />
-
-                <Button Text = "Find best buddies" 
-                        Grid.Row="4" 
-                        Grid.RowSpan="2" 
-                        Grid.Column="1" 
-                        Grid.ColumnSpan="2"
-                        Clicked="FindBestBuddies_ClickedAsync" />
-
-                <Button Text = "Edit account" 
-                        Grid.Row="6" 
-                        Grid.RowSpan="2" 
-                        Grid.Column="1" 
-                        Grid.ColumnSpan="2"
-                        Clicked="EditAccount_ClickedAsync" />
-
-                <Button Text = "View statistics" 
-                        Grid.Row="8" 
-                        Grid.RowSpan="2" 
-                        Grid.Column="1" 
-                        Grid.ColumnSpan="2"
-                        Clicked="ViewStatistics_ClickedAsync" />
+                        Clicked="YourStatistics_Clicked" />
 
             </Grid>
         </StackLayout>

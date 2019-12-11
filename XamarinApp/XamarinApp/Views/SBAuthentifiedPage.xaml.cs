@@ -24,7 +24,7 @@ namespace XamarinApp.Views
 
         private async void EnterForums_ClickedAsync(object sender, EventArgs e)
         {
-            var forumsPage = new SBForumsPage();
+            var forumsPage = new SBForumsPage(username, password);
             await Navigation.PushAsync(forumsPage);
         }
 
@@ -38,6 +38,12 @@ namespace XamarinApp.Views
         {
             var editAccountPage = new SBEditAccountPage(username, password);
             await Navigation.PushAsync(editAccountPage);
+        }
+
+        private async void ViewStatistics_ClickedAsync(object sender, EventArgs e)
+        {
+            var viewStatisticsPage = new SBViewStatisticsPage(username, password);
+            await Navigation.PushAsync(viewStatisticsPage);
         }
     }
 }

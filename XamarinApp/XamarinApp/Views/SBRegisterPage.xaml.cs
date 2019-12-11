@@ -61,8 +61,8 @@ namespace XamarinApp.Views
                     newRow["Username"] = nickEntry.Text;
                     newRow["Password"] = Password.Text;
                     newRow["Link"] = linkEntry.Text;
-                    newRow["Faculty"] = facEntry.Text;
-                    newRow["Studies"] = studEntry.Text;
+                    newRow["Faculty"] = facEntry.Text.ToLower();
+                    newRow["Studies"] = studEntry.Text.ToLower();
                     newRow["Status"] = 1;
                     newRow["Points"] = 0;
 

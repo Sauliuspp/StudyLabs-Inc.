@@ -7,11 +7,21 @@
              x:Class="XamarinApp.Views.SBForumsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Select faculty"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   HorizontalOptions="Fill"
-                   VerticalOptions="Fill"/>
+
+            <Label HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontSize="Large" 
+                   Text="Forums"/>
+
+            <Entry x:Name="Studies" 
+                   Placeholder="Enter the desired studies"
+                   PlaceholderColor="PaleVioletRed" />
+
+            <Button HorizontalOptions="Center" 
+                    VerticalOptions="Center" 
+                    Text="View threads"
+                    Clicked="ViewThreads_ClickedAsync" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
