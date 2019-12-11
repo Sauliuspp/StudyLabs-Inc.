@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinApp.ViewModels;
 
 namespace XamarinApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SBBestBuddiesSearchPage : ContentPage
+    public partial class SBBestStuddyBuddiesPage : ContentPage
     {
-        public SBBestBuddiesSearchPage()
+        BestStuddyBuddiesViewModel viewModel;
+        public SBBestStuddyBuddiesPage()
         {
             InitializeComponent();
+            BindingContext = viewModel = new BestStuddyBuddiesViewModel();
         }
     }
 }

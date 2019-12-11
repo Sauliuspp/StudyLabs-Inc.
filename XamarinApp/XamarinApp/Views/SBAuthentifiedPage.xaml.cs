@@ -30,8 +30,8 @@ namespace XamarinApp.Views
 
         private async void FindBestBuddies_ClickedAsync(object sender, EventArgs e)
         {
-            var bestBuddiesSearchPage = new SBBestBuddiesSearchPage();
-            await Navigation.PushAsync(bestBuddiesSearchPage);
+            var findBuddiesSearchPage = new SBFindBuddiesSearchPage();
+            await Navigation.PushAsync(findBuddiesSearchPage);
         }
 
         private async void EditAccount_ClickedAsync(object sender, EventArgs e)
