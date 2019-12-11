@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="ItemsListView"
-                ItemsSource="{Binding StudyBuddyStatistics}"
+                ItemsSource="{Binding BestStuddyBuddies}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
                 RefreshCommand="{Binding LoadItemsCommand}"
@@ -19,8 +19,8 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding Username}" 
-                                d:Text="{Binding .}"
+                                <Label Text="{Binding Nickname}" 
+                                d:Text="{Binding Nickname}"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />

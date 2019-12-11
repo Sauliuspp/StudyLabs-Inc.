@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Resources;
 using System.Text;
@@ -23,6 +24,7 @@ namespace XamarinApp.Models
     }
     public class AStuddyBuddy : IEquatable<AStuddyBuddy>, IComparable
     {
+        public int Id { get; set; }
         public string Nickname { get; set; }
         public string Password { get; set; }
         public string Link { get; set; }

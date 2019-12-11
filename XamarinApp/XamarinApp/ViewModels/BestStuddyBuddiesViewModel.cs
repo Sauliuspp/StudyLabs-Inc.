@@ -15,7 +15,7 @@ namespace XamarinApp.ViewModels
     class BestStuddyBuddiesViewModel : INotifyPropertyChanged
     {
 
-        public ObservableCollection<BestStuddyBuddy> StudyBuddyStatistics { get; set; }
+        public ObservableCollection<AStuddyBuddy> BestStuddyBuddies { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         bool isBusy = false;
@@ -59,7 +59,7 @@ namespace XamarinApp.ViewModels
 
         public BestStuddyBuddiesViewModel()
         {
-            StudyBuddyStatistics = new ObservableCollection<BestStuddyBuddy>();
+            BestStuddyBuddies = new ObservableCollection<AStuddyBuddy>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
         }
 
@@ -70,24 +70,24 @@ namespace XamarinApp.ViewModels
 
             IsBusy = true;
 
-            try
-            {
-                StudyBuddyStatistics.Clear();
+            //try
+            //{
+                BestStuddyBuddies.Clear();
                 BestStuddyBuddiesDataStore dataStore = new BestStuddyBuddiesDataStore();
                 var items = await dataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    StudyBuddyStatistics.Add(item);
+                    BestStuddyBuddies.Add(item);
                 }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Debug.WriteLine(ex);
+            //}
+            //finally
+            //{
+            //    IsBusy = false;
+            //}
         }
     }
 }

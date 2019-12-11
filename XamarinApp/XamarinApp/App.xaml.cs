@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Resources;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinApp.Models;
 using XamarinApp.Services;
 using XamarinApp.Views;
 
@@ -18,14 +21,9 @@ namespace XamarinApp
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
         public static bool UseMockDataStore = true;
 
-        public App()
+        public App(string dbPath)
         {
             InitializeComponent();
-
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
-            else
-                DependencyService.Register<AzureDataStore>();
             MainPage = new NavigationPage(new SBMainMenuPage());//MainPage();
         }
 

@@ -18,6 +18,7 @@ namespace XamarinApp.Views
         {
             InitializeComponent();
             BindingContext = viewModel = new BestStuddyBuddiesViewModel();
+            viewModel.LoadItemsCommand.Execute(null);
         }
     }
 }
