@@ -37,7 +37,7 @@ namespace XamarinApp.Services
 
                 try
                 {
-                    SqlCommand command = new SqlCommand("SELECT Id, Creator, Topic, Description, Faculty, Studies FROM [dbo].[ForumThread] " +
+                    SqlCommand command = new SqlCommand("SELECT Id, Creator, Topic, Description, Studies FROM [dbo].[ForumThread] " +
                                                         "WHERE Studies LIKE @studies", cn);
                     command.Parameters.AddWithValue("@studies", "%" + studies.ToLower() + "%");
 
