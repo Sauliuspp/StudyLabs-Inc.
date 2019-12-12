@@ -16,7 +16,7 @@ namespace DummyApp
 
             //InnerJoin(buddyList, threadList);
 
-            //GroupJoin(buddyList, threadList);
+            GroupJoin(buddyList, threadList);
 
             //LeftOuterJoin(buddyList, threadList);
 

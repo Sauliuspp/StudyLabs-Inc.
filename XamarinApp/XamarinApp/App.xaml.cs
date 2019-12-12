@@ -21,6 +21,7 @@ namespace XamarinApp
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
         public static bool UseMockDataStore = true;
 
+        public static EntityFramework Repository;
         public App(string dbPath)
         {
             InitializeComponent();

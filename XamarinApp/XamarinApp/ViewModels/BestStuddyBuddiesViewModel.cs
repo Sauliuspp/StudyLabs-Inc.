@@ -14,7 +14,7 @@ namespace XamarinApp.ViewModels
 {
     class BestStuddyBuddiesViewModel : INotifyPropertyChanged
     {
-
+        public IDataStore<AStuddyBuddy> DataStore => App.Repository;
         public ObservableCollection<AStuddyBuddy> BestStuddyBuddies { get; set; }
         public Command LoadItemsCommand { get; set; }
 
@@ -70,24 +70,24 @@ namespace XamarinApp.ViewModels
 
             IsBusy = true;
 
-            //try
-            //{
-                BestStuddyBuddies.Clear();
+            try
+            {
+            BestStuddyBuddies.Clear();
                 BestStuddyBuddiesDataStore dataStore = new BestStuddyBuddiesDataStore();
                 var items = await dataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
                     BestStuddyBuddies.Add(item);
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Debug.WriteLine(ex);
-            //}
-            //finally
-            //{
-            //    IsBusy = false;
-            //}
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }
